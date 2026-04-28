@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold">Notifications</h1>
+<div class="mt-4 space-y-3">
+  {% for notification in notifications %}
+    <div class="rounded-xl border bg-white p-4">
+      <strong>{{ notification.title }}</strong>
+      <p class="text-sm text-slate-600">{{ notification.message }}</p>
+    </div>
+  {% empty %}
+    <p class="rounded-xl border bg-white p-5 text-slate-600">No notifications.</p>
+  {% endfor %}
+</div>
+{% endblock %}

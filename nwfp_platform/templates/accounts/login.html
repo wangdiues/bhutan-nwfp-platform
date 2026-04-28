@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold">Login</h1>
+<form method="post" class="mt-4 grid gap-4 rounded-xl border bg-white p-5 md:max-w-md">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="rounded-lg bg-emerald-700 px-4 py-3 font-bold text-white">Login</button>
+</form>
+{% endblock %}

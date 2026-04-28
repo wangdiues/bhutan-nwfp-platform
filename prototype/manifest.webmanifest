@@ -1,0 +1,17 @@
+{
+  "name": "Bhutan NWFP Digital Marketplace",
+  "short_name": "NWFP Market",
+  "description": "Prototype PWA for Bhutan NWFP marketplace, group management, approvals, and GIS monitoring.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbfcfa",
+  "theme_color": "#1f6f5f",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

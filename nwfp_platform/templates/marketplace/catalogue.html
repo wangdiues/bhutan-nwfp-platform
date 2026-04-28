@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mb-5">
+  <h1 class="text-3xl font-bold">Product Catalogue</h1>
+  <form class="mt-4 grid gap-3 rounded-xl border bg-white p-4 md:grid-cols-4">
+    <input name="q" value="{{ search_params.q }}" class="rounded-lg border border-slate-300 px-3 py-2" placeholder="Search">
+    <select name="category" class="rounded-lg border border-slate-300 px-3 py-2">
+      <option value="">All categories</option>
+      {% for category in categories %}
+        <option value="{{ category.slug }}" {% if search_params.category == category.slug %}selected{% endif %}>{{ category.name }}</option>
+      {% endfor %}
+    </select>
+    <input name="dzongkhag" value="{{ search_params.dzongkhag }}" class="rounded-lg border border-slate-300 px-3 py-2" placeholder="Dzongkhag">
+    <button class="rounded-lg bg-emerald-700 px-4 py-2 font-bold text-white">Filter</button>
+  </form>
+</div>
+<div class="grid gap-4 md:grid-cols-4">
+  {% for product in products %}
+    {% include "marketplace/partials/product_card.html" with product=product %}
+  {% empty %}
+    <p class="rounded-xl border bg-white p-5 text-slate-600 md:col-span-4">No products match the current filters.</p>
+  {% endfor %}
+</div>
+{% endblock %}

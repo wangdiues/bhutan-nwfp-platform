@@ -1,0 +1,7 @@
+-r base.txt
+
+# Error tracking
+sentry-sdk[django]>=1.40
+
+# Cloud/object storage backends
+django-storages>=1.14

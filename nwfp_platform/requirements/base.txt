@@ -1,0 +1,42 @@
+# Core Django
+Django>=5.0,<6.0
+djangorestframework>=3.15
+
+# Environment configuration
+django-environ>=0.11
+
+# Image processing
+Pillow>=10.0
+
+# PostgreSQL adapter
+psycopg2-binary>=2.9
+
+# Geospatial
+GDAL>=3.0
+# django.contrib.gis is built-in — no separate install needed
+djangorestframework-gis>=1.0
+
+# Developer utilities
+django-extensions>=3.2
+
+# Static files
+whitenoise>=6.6
+
+# WSGI server
+gunicorn>=21.0
+
+# HTMX integration
+django-htmx>=1.17
+
+# Filtering
+django-filter>=23.0
+
+# File type detection
+python-magic>=0.4
+
+# PDF processing
+PyPDF2>=3.0
+
+# Geospatial file I/O
+fiona>=1.9
+shapely>=2.0

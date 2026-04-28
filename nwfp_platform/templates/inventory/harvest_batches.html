@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold">Harvest Batches</h1>
+<div class="mt-4 space-y-3">
+  {% for batch in harvest_batches %}
+    <div class="rounded-xl border bg-white p-4">
+      <strong>{{ batch.species }}</strong>
+      <p class="text-sm text-slate-500">{{ batch.group.name }} - {{ batch.quantity_harvested }} {{ batch.quantity_unit }} - {{ batch.harvest_date }}</p>
+    </div>
+  {% empty %}
+    <p class="rounded-xl border bg-white p-5 text-slate-600">No harvest batches yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

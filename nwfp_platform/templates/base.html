@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f6f5f">
+  <title>{% block title %}{{ page_title|default:"Bhutan NWFP Marketplace" }}{% endblock %}</title>
+  <link rel="manifest" href="{% static 'manifest.webmanifest' %}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  {% block extra_head %}{% endblock %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <a href="{% url 'marketplace:home' %}" class="flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-emerald-700 font-bold text-white">NW</span>
+        <span>
+          <strong class="block leading-tight">Bhutan NWFP</strong>
+          <small class="text-slate-500">Marketplace and management</small>
+        </span>
+      </a>
+      <nav class="hidden items-center gap-4 text-sm font-semibold md:flex">
+        <a href="{% url 'marketplace:catalogue' %}">Products</a>
+        <a href="{% url 'groups:list' %}">Groups</a>
+        <a href="{% url 'spatial:map' %}">Map</a>
+        <a href="{% url 'documents:list' %}">Documents</a>
+        <a href="{% url 'approvals:dashboard' %}">Management</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a class="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold" href="{% url 'marketplace:cart' %}">
+          Cart <span data-cart-badge{% if not cart_count %} hidden{% endif %}>{{ cart_count }}</span>
+        </a>
+        {% if request.user.is_authenticated %}
+          <a class="rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white" href="{% url 'accounts:profile' %}">Profile</a>
+        {% else %}
+          <a class="rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white" href="{% url 'accounts:login' %}">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  {% if messages %}
+    <div class="mx-auto max-w-7xl px-4 pt-4">
+      {% for message in messages %}
+        <div class="mb-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <main class="mx-auto max-w-7xl px-4 py-6">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{% static 'js/app.js' %}"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register("{% static 'js/sw.js' %}").catch(function () {});
+      });
+    }
+  </script>
+  {% block extra_body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+  <p class="text-sm font-bold uppercase text-emerald-700">DoFPS internal</p>
+  <h1 class="text-3xl font-bold">Management Dashboard</h1>
+</div>
+<section class="mt-5 grid gap-4 md:grid-cols-3">
+  <article class="rounded-xl border bg-white p-5"><span class="text-sm text-slate-500">Pending approvals</span><strong class="block text-3xl">{{ pending_approvals_count }}</strong></article>
+  <article class="rounded-xl border bg-white p-5"><span class="text-sm text-slate-500">Active groups</span><strong class="block text-3xl">{{ active_groups_count }}</strong></article>
+  <article class="rounded-xl border bg-white p-5"><span class="text-sm text-slate-500">Unread notifications</span><strong class="block text-3xl">{{ unread_notification_count }}</strong></article>
+</section>
+<section class="mt-6 grid gap-4 md:grid-cols-2">
+  <a class="rounded-xl border bg-white p-5" href="{% url 'approvals:queue' %}"><strong>Approval Queue</strong><p class="text-sm text-slate-500">Review products, groups, and documents.</p></a>
+  <a class="rounded-xl border bg-white p-5" href="{% url 'approvals:group_registry' %}"><strong>Group Registry</strong><p class="text-sm text-slate-500">Filter and inspect group records.</p></a>
+  <a class="rounded-xl border bg-white p-5" href="{% url 'approvals:audit_log' %}"><strong>Audit Log</strong><p class="text-sm text-slate-500">Trace administrative changes.</p></a>
+  <a class="rounded-xl border bg-white p-5" href="{% url 'spatial:map' %}"><strong>GIS Map</strong><p class="text-sm text-slate-500">Inspect public spatial layers.</p></a>
+</section>
+{% endblock %}

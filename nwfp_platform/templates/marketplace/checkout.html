@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold">Checkout</h1>
+<form method="post" class="mt-4 grid gap-4 rounded-xl border bg-white p-5 md:max-w-2xl">
+  {% csrf_token %}
+  <label class="form-field">Name<input name="buyer_name" required value="{{ request.user.full_name }}"></label>
+  <label class="form-field">Email<input type="email" name="buyer_email" required value="{{ request.user.email }}"></label>
+  <label class="form-field">Phone<input name="buyer_phone" value="{{ request.user.phone }}"></label>
+  <label class="form-field">Address<textarea name="buyer_address" required></textarea></label>
+  <label class="form-field">Notes<textarea name="notes"></textarea></label>
+  <button class="rounded-lg bg-emerald-700 px-4 py-3 font-bold text-white">Submit Order</button>
+</form>
+{% endblock %}

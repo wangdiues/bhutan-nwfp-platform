@@ -1,0 +1,5 @@
+product_id,product_name,category,dzongkhag,group_name,batch_id,unit,stock,price_nu,status,latitude,longitude,plan_file
+CORD-001,Cordyceps sinensis,Medicinal,Bumthang,Tang NWFP Group,CORD-2026-TG,kg,18,18500,Published,27.5726,90.7421,WCNP_Tang-NWFP.pdf
+CAN-001,Himalayan Cane,Craft,Trongsa,Zangbi NWFP Group,CAN-2026-ZB,bundle,42,780,Published,27.5028,90.5072,RMNP_Zangbi_NWFP.pdf
+DAPH-001,Daphne Bark,Fiber,Trashigang,Sakteng Lhayul Sangzey Deytshen,DAPH-2026-SK,bundle,11,1200,Review,27.8452,91.9471,SWS_Daphne Management Plan_Yumzang_Semthuen_NWFP.pdf
+MUSH-001,Dried Wild Mushroom,Food,Wangdue Phodrang,Sephu NWFP Group,MUSH-2026-SP,kg,26,1450,Published,27.5381,90.1218,WCNP_Sephu-NWFP.pdf

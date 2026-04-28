@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="rounded-xl border bg-white p-5">
+  <p class="text-sm font-bold uppercase text-emerald-700">{{ group.get_status_display }}</p>
+  <h1 class="mt-1 text-3xl font-bold">{{ group.name }}</h1>
+  <p class="mt-2 text-slate-600">{{ group.description|default:"No description recorded." }}</p>
+  <dl class="mt-5 grid gap-3 md:grid-cols-4">
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">Dzongkhag</dt><dd>{{ group.get_dzongkhag_display }}</dd></div>
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">Gewog</dt><dd>{{ group.gewog|default:"Not recorded" }}</dd></div>
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">Village</dt><dd>{{ group.village|default:"Not recorded" }}</dd></div>
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">Members</dt><dd>{{ group.total_members }}</dd></div>
+  </dl>
+</article>
+<section class="mt-6">
+  <h2 class="text-xl font-bold">Published Products</h2>
+  <div class="mt-3 grid gap-4 md:grid-cols-4">
+    {% for product in products %}
+      {% include "marketplace/partials/product_card.html" with product=product %}
+    {% empty %}
+      <p class="rounded-xl border bg-white p-5 text-slate-600 md:col-span-4">No published products for this group.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

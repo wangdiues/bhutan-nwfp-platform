@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load marketplace_tags %}
+{% block content %}
+<h1 class="text-3xl font-bold">My Orders</h1>
+<div class="mt-4 space-y-3">
+  {% for order in orders %}
+    <a class="block rounded-xl border bg-white p-4" href="{% url 'marketplace:order_detail' order.order_number %}">
+      <strong>{{ order.order_number }}</strong> - {{ order.get_status_display }} - {{ order.total_amount|format_price }}
+    </a>
+  {% empty %}
+    <p class="rounded-xl border bg-white p-5 text-slate-600">No orders yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold">Group Registry</h1>
+<form class="mt-4 grid gap-3 rounded-xl border bg-white p-4 md:grid-cols-4">
+  <input name="q" value="{{ filter_params.q }}" class="rounded-lg border border-slate-300 px-3 py-2" placeholder="Search group">
+  <input name="dzongkhag" value="{{ filter_params.dzongkhag }}" class="rounded-lg border border-slate-300 px-3 py-2" placeholder="Dzongkhag code">
+  <select name="status" class="rounded-lg border border-slate-300 px-3 py-2">
+    <option value="">All statuses</option>
+    <option value="pending" {% if filter_params.status == "pending" %}selected{% endif %}>Pending</option>
+    <option value="active" {% if filter_params.status == "active" %}selected{% endif %}>Active</option>
+    <option value="suspended" {% if filter_params.status == "suspended" %}selected{% endif %}>Suspended</option>
+    <option value="dissolved" {% if filter_params.status == "dissolved" %}selected{% endif %}>Dissolved</option>
+  </select>
+  <button class="rounded-lg bg-emerald-700 px-4 py-2 font-bold text-white">Filter</button>
+</form>
+<div class="mt-4 overflow-hidden rounded-xl border bg-white">
+  {% for group in groups %}
+    <a class="grid gap-2 border-b p-4 md:grid-cols-[1fr_180px_140px]" href="{% url 'groups:detail' group.slug %}">
+      <strong>{{ group.name }}</strong><span>{{ group.get_dzongkhag_display }}</span><span>{{ group.get_status_display }}</span>
+    </a>
+  {% empty %}
+    <p class="p-5 text-slate-600">No groups found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

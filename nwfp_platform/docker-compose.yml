@@ -1,0 +1,78 @@
+version: '3.9'
+
+# ---------------------------------------------------------------------------
+# Bhutan NWFP Digital Marketplace — Docker Compose stack
+#
+# Services:
+#   db      — PostGIS 16 / PostgreSQL 16 (spatial database)
+#   web     — Django development server (swap to gunicorn in staging)
+#   nginx   — Reverse proxy, static/media file serving
+#
+# Volumes:
+#   postgres_data  — persistent PostGIS data directory
+#   media_data     — user-uploaded files shared between web and nginx
+#   staticfiles    — collected static assets shared between web and nginx
+# ---------------------------------------------------------------------------
+
+services:
+
+  # -------------------------------------------------------------------------
+  # PostGIS database
+  # -------------------------------------------------------------------------
+  db:
+    image: postgis/postgis:16-3.4
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: nwfp_db
+      POSTGRES_USER: nwfp_user
+      POSTGRES_PASSWORD: nwfp_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nwfp_user -d nwfp_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # -------------------------------------------------------------------------
+  # Django application
+  # -------------------------------------------------------------------------
+  web:
+    build: .
+    # Use the development server locally; replace with gunicorn in staging/prod
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - media_data:/app/media
+      - staticfiles:/app/staticfiles
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.development
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # -------------------------------------------------------------------------
+  # Nginx reverse proxy
+  # -------------------------------------------------------------------------
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - media_data:/app/media:ro
+      - staticfiles:/app/staticfiles:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  media_data:
+  staticfiles:

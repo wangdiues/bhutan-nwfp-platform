@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="rounded-xl border bg-white p-5">
+  <h1 class="text-3xl font-bold">{{ document.title }}</h1>
+  <p class="mt-2 text-slate-600">{{ document.description|default:"No description recorded." }}</p>
+  <dl class="mt-5 grid gap-3 md:grid-cols-3">
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">Type</dt><dd>{{ document.get_file_type_display }}</dd></div>
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">Status</dt><dd>{{ document.get_status_display }}</dd></div>
+    <div class="rounded-lg bg-slate-50 p-3"><dt class="text-xs font-bold uppercase text-slate-500">File</dt><dd><a class="text-emerald-700" href="{{ document.file.url }}">Open</a></dd></div>
+  </dl>
+</article>
+{% endblock %}

@@ -1,0 +1,862 @@
+Folder PATH listing for volume New Volume
+Volume serial number is AA4E-641F
+D:\NATIONAL NWFP GROUPS
++---Bumdelling Wildlife Sanctuary
+|   +---Aja Illicium griffithii Management group
+|   |       Aja Illicium griffithii Management group.cpg
+|   |       Aja Illicium griffithii Management group.dbf
+|   |       Aja Illicium griffithii Management group.prj
+|   |       Aja Illicium griffithii Management group.sbn
+|   |       Aja Illicium griffithii Management group.sbx
+|   |       Aja Illicium griffithii Management group.shp
+|   |       Aja Illicium griffithii Management group.shp.xml
+|   |       Aja Illicium griffithii Management group.shx
+|   |       
+|   +---Bumdir Herbal Tea Management Group
+|   |       Bumdir Herbal Tea Management Group.cpg
+|   |       Bumdir Herbal Tea Management Group.dbf
+|   |       Bumdir Herbal Tea Management Group.prj
+|   |       Bumdir Herbal Tea Management Group.qmd
+|   |       Bumdir Herbal Tea Management Group.shp
+|   |       Bumdir Herbal Tea Management Group.shx
+|   |       
+|   +---Cheng NWFP Management Group
+|   |       Cheng NWFP Management Group.cpg
+|   |       Cheng NWFP Management Group.dbf
+|   |       Cheng NWFP Management Group.prj
+|   |       Cheng NWFP Management Group.sbn
+|   |       Cheng NWFP Management Group.sbx
+|   |       Cheng NWFP Management Group.shp
+|   |       Cheng NWFP Management Group.shp.xml
+|   |       Cheng NWFP Management Group.shx
+|   |       
+|   +---Jabgang Cane (Plectocomia himalayana) NWFP group
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.cpg
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.dbf
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.prj
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.sbn
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.sbx
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.shp
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.shp.xml
+|   |       Jabgang Cane (Plectocomia himalayana) NWFP group.shx
+|   |       
+|   +---Longkhar NWFP management group
+|   |       Longkhar NWFP management group.cpg
+|   |       Longkhar NWFP management group.dbf
+|   |       Longkhar NWFP management group.prj
+|   |       Longkhar NWFP management group.sbn
+|   |       Longkhar NWFP management group.sbx
+|   |       Longkhar NWFP management group.shp
+|   |       Longkhar NWFP management group.shp.xml
+|   |       Longkhar NWFP management group.shx
+|   |       
+|   \---Singyedzong Sangzey Management group
+|           Singyedzong Sangzey Management group.cpg
+|           Singyedzong Sangzey Management group.dbf
+|           Singyedzong Sangzey Management group.prj
+|           Singyedzong Sangzey Management group.sbn
+|           Singyedzong Sangzey Management group.sbx
+|           Singyedzong Sangzey Management group.shp
+|           Singyedzong Sangzey Management group.shp.xml
+|           Singyedzong Sangzey Management group.shx
+|           
++---DFO Bumthang
+|   \---Namther Throgmen Tshogpa
+|           Namther Throgmen Tshogpa.cpg
+|           Namther Throgmen Tshogpa.dbf
+|           Namther Throgmen Tshogpa.prj
+|           Namther Throgmen Tshogpa.sbn
+|           Namther Throgmen Tshogpa.sbx
+|           Namther Throgmen Tshogpa.shp
+|           Namther Throgmen Tshogpa.shp.xml
+|           Namther Throgmen Tshogpa.shx
+|           
++---DFO Dagana
+|   +---Balung NWFP Management and marketing group
+|   |       Balung NWFP Management and marketing group.cpg
+|   |       Balung NWFP Management and marketing group.dbf
+|   |       Balung NWFP Management and marketing group.prj
+|   |       Balung NWFP Management and marketing group.qmd
+|   |       Balung NWFP Management and marketing group.shp
+|   |       Balung NWFP Management and marketing group.shx
+|   |       
+|   +---Devitar Nagtshel Shingmen Tshogpa
+|   |       Devitar Nagtshel Shingmen Tshogpa.cpg
+|   |       Devitar Nagtshel Shingmen Tshogpa.dbf
+|   |       Devitar Nagtshel Shingmen Tshogpa.prj
+|   |       Devitar Nagtshel Shingmen Tshogpa.qmd
+|   |       Devitar Nagtshel Shingmen Tshogpa.shp
+|   |       Devitar Nagtshel Shingmen Tshogpa.shx
+|   |       
+|   \---Dorjiphu Nagtshel Shingmen Tshogpa
+|           Dorjiphu Nagtshel Shingmen Tshogpa.cpg
+|           Dorjiphu Nagtshel Shingmen Tshogpa.dbf
+|           Dorjiphu Nagtshel Shingmen Tshogpa.prj
+|           Dorjiphu Nagtshel Shingmen Tshogpa.qmd
+|           Dorjiphu Nagtshel Shingmen Tshogpa.shp
+|           Dorjiphu Nagtshel Shingmen Tshogpa.shx
+|           
++---DFO Gedu
+|   +---Betar NWFP Group
+|   |       Betar NWFP Group.cpg
+|   |       Betar NWFP Group.dbf
+|   |       Betar NWFP Group.prj
+|   |       Betar NWFP Group.qmd
+|   |       Betar NWFP Group.shp
+|   |       Betar NWFP Group.shx
+|   |       
+|   \---Sarphu Broom Grass Management Group
+|           Sarphu Broom Grass Management Group.cpg
+|           Sarphu Broom Grass Management Group.dbf
+|           Sarphu Broom Grass Management Group.prj
+|           Sarphu Broom Grass Management Group.qmd
+|           Sarphu Broom Grass Management Group.shp
+|           Sarphu Broom Grass Management Group.shx
+|           
++---DFO Mongar
+|   +---Balam Shingmen Detshen
+|   |       Balam Shingmen Detshen.cpg
+|   |       Balam Shingmen Detshen.dbf
+|   |       Balam Shingmen Detshen.prj
+|   |       Balam Shingmen Detshen.qmd
+|   |       Balam Shingmen Detshen.shp
+|   |       Balam Shingmen Detshen.shx
+|   |       
+|   +---Broksar Shingmen Thuenkhen Detshen
+|   |       Broksar Shingmen Thuenkhen Detshen.cpg
+|   |       Broksar Shingmen Thuenkhen Detshen.dbf
+|   |       Broksar Shingmen Thuenkhen Detshen.prj
+|   |       Broksar Shingmen Thuenkhen Detshen.qmd
+|   |       Broksar Shingmen Thuenkhen Detshen.shp
+|   |       Broksar Shingmen Thuenkhen Detshen.shx
+|   |       
+|   +---Mangling Ragwang Chithuen Shingmen Detshen
+|   |       Mangling Ragwang Chithuen Shingmen Detshen.cpg
+|   |       Mangling Ragwang Chithuen Shingmen Detshen.dbf
+|   |       Mangling Ragwang Chithuen Shingmen Detshen.prj
+|   |       Mangling Ragwang Chithuen Shingmen Detshen.qmd
+|   |       Mangling Ragwang Chithuen Shingmen Detshen.shp
+|   |       Mangling Ragwang Chithuen Shingmen Detshen.shx
+|   |       
+|   +---Ngatshang NWFP Management and Marketing Group
+|   |       Ngatshang NWFP Management and Marketing Group.cpg
+|   |       Ngatshang NWFP Management and Marketing Group.dbf
+|   |       Ngatshang NWFP Management and Marketing Group.prj
+|   |       Ngatshang NWFP Management and Marketing Group.qmd
+|   |       Ngatshang NWFP Management and Marketing Group.shp
+|   |       Ngatshang NWFP Management and Marketing Group.shx
+|   |       
+|   +---Tsangkhar Shingmen Detsen
+|   |       Tsangkhar Shingmen Detsen.cpg
+|   |       Tsangkhar Shingmen Detsen.dbf
+|   |       Tsangkhar Shingmen Detsen.prj
+|   |       Tsangkhar Shingmen Detsen.qmd
+|   |       Tsangkhar Shingmen Detsen.shp
+|   |       Tsangkhar Shingmen Detsen.shx
+|   |       
+|   \---Yengkhartsheng NWFP marketing and management group
++---DFO Paro
+|   \---Drakey Chinto Ngomen Tshogpa
+|           Drakey Chinto Ngomen Tshogpa.cpg
+|           Drakey Chinto Ngomen Tshogpa.dbf
+|           Drakey Chinto Ngomen Tshogpa.prj
+|           Drakey Chinto Ngomen Tshogpa.qmd
+|           Drakey Chinto Ngomen Tshogpa.shp
+|           Drakey Chinto Ngomen Tshogpa.shx
+|           
++---DFO Pemagatshel
+|   +---Bongman NWFP management and marketing group
+|   |       Bongman NWFP management and marketing group.cpg
+|   |       Bongman NWFP management and marketing group.dbf
+|   |       Bongman NWFP management and marketing group.prj
+|   |       Bongman NWFP management and marketing group.qmd
+|   |       Bongman NWFP management and marketing group.shp
+|   |       Bongman NWFP management and marketing group.shx
+|   |       
+|   +---Chimong Gongphel Shingmen Thoenkey Detshen
+|   |       Chimong Gongphel Shingmen Thoenkey Detshen.cpg
+|   |       Chimong Gongphel Shingmen Thoenkey Detshen.dbf
+|   |       Chimong Gongphel Shingmen Thoenkey Detshen.prj
+|   |       Chimong Gongphel Shingmen Thoenkey Detshen.qmd
+|   |       Chimong Gongphel Shingmen Thoenkey Detshen.shp
+|   |       Chimong Gongphel Shingmen Thoenkey Detshen.shx
+|   |       
+|   +---Dagore Shingmen Gongphel Detshen
+|   |       Dagore Shingmen Gongphel Detshen.cpg
+|   |       Dagore Shingmen Gongphel Detshen.dbf
+|   |       Dagore Shingmen Gongphel Detshen.prj
+|   |       Dagore Shingmen Gongphel Detshen.qmd
+|   |       Dagore Shingmen Gongphel Detshen.shp
+|   |       Dagore Shingmen Gongphel Detshen.shx
+|   |       
+|   +---Dezema NWFP Group
+|   |       Dezema NWFP Group.cpg
+|   |       Dezema NWFP Group.dbf
+|   |       Dezema NWFP Group.prj
+|   |       Dezema NWFP Group.qmd
+|   |       Dezema NWFP Group.shp
+|   |       Dezema NWFP Group.shx
+|   |       
+|   +---Gamung NWFP
+|   |       Gamung NWFP.cpg
+|   |       Gamung NWFP.dbf
+|   |       Gamung NWFP.prj
+|   |       Gamung NWFP.qmd
+|   |       Gamung NWFP.shp
+|   |       Gamung NWFP.shx
+|   |       
+|   +---Gonpung Shingmen Detshen
+|   |       Gonpung Shingmen Detshen.cpg
+|   |       Gonpung Shingmen Detshen.dbf
+|   |       Gonpung Shingmen Detshen.prj
+|   |       Gonpung Shingmen Detshen.qmd
+|   |       Gonpung Shingmen Detshen.shp
+|   |       Gonpung Shingmen Detshen.shx
+|   |       
+|   +---Kerong NWFP Group
+|   |       Kerong NWFP Group.cpg
+|   |       Kerong NWFP Group.dbf
+|   |       Kerong NWFP Group.prj
+|   |       Kerong NWFP Group.qmd
+|   |       Kerong NWFP Group.shp
+|   |       Kerong NWFP Group.shx
+|   |       
+|   +---Khengzor NWFP
+|   |       Khengzor NWFP.cpg
+|   |       Khengzor NWFP.dbf
+|   |       Khengzor NWFP.prj
+|   |       Khengzor NWFP.qmd
+|   |       Khengzor NWFP.shp
+|   |       Khengzor NWFP.shx
+|   |       
+|   +---Labar Chithuen NWFP
+|   |       Labar Chithuen NWFP.cpg
+|   |       Labar Chithuen NWFP.dbf
+|   |       Labar Chithuen NWFP.prj
+|   |       Labar Chithuen NWFP.qmd
+|   |       Labar Chithuen NWFP.shp
+|   |       Labar Chithuen NWFP.shx
+|   |       
+|   +---Menchu pipla NWFP Group
+|   |       Menchu pipla NWFP Group.cpg
+|   |       Menchu pipla NWFP Group.dbf
+|   |       Menchu pipla NWFP Group.prj
+|   |       Menchu pipla NWFP Group.qmd
+|   |       Menchu pipla NWFP Group.shp
+|   |       Menchu pipla NWFP Group.shx
+|   |       
+|   +---Ngangray NWFP Group
+|   |       Ngangray NWFP Group.cpg
+|   |       Ngangray NWFP Group.dbf
+|   |       Ngangray NWFP Group.prj
+|   |       Ngangray NWFP Group.qmd
+|   |       Ngangray NWFP Group.shp
+|   |       Ngangray NWFP Group.shx
+|   |       
+|   +---Norbugang NWFP Group
+|   |       Norbugang NWFP Group.cpg
+|   |       Norbugang NWFP Group.dbf
+|   |       Norbugang NWFP Group.prj
+|   |       Norbugang NWFP Group.qmd
+|   |       Norbugang NWFP Group.shp
+|   |       Norbugang NWFP Group.shx
+|   |       
+|   +---Tokari Shingmen Detshen
+|   |       Tokari Shingmen Detshen.cpg
+|   |       Tokari Shingmen Detshen.dbf
+|   |       Tokari Shingmen Detshen.prj
+|   |       Tokari Shingmen Detshen.qmd
+|   |       Tokari Shingmen Detshen.shp
+|   |       Tokari Shingmen Detshen.shx
+|   |       
+|   +---Tomi-Zimzore NWFP group
+|   |       Tomi-Zimzore NWFP group.cpg
+|   |       Tomi-Zimzore NWFP group.dbf
+|   |       Tomi-Zimzore NWFP group.prj
+|   |       Tomi-Zimzore NWFP group.qmd
+|   |       Tomi-Zimzore NWFP group.shp
+|   |       Tomi-Zimzore NWFP group.shx
+|   |       
+|   +---Tshelingore NWFP Management and Marketing Group
+|   |       Tshelingore NWFP Management and Marketing Group.cpg
+|   |       Tshelingore NWFP Management and Marketing Group.dbf
+|   |       Tshelingore NWFP Management and Marketing Group.prj
+|   |       Tshelingore NWFP Management and Marketing Group.qmd
+|   |       Tshelingore NWFP Management and Marketing Group.shp
+|   |       Tshelingore NWFP Management and Marketing Group.shx
+|   |       
+|   +---Wongborang NWFP group
+|   |       Wongborang NWFP group.cpg
+|   |       Wongborang NWFP group.dbf
+|   |       Wongborang NWFP group.prj
+|   |       Wongborang NWFP group.qmd
+|   |       Wongborang NWFP group.shp
+|   |       Wongborang NWFP group.shx
+|   |       
+|   +---Wongchelo Chigthuen Tshogpa
+|   |       Wongchelo Chigthuen Tshogpa.cpg
+|   |       Wongchelo Chigthuen Tshogpa.dbf
+|   |       Wongchelo Chigthuen Tshogpa.prj
+|   |       Wongchelo Chigthuen Tshogpa.qmd
+|   |       Wongchelo Chigthuen Tshogpa.shp
+|   |       Wongchelo Chigthuen Tshogpa.shx
+|   |       
+|   \---Yangmalashing NWFP management group (Yangmalashing Pipla Group)
+|           Yangmalashing NWFP management group (Yangmalashing Pipla Group).cpg
+|           Yangmalashing NWFP management group (Yangmalashing Pipla Group).dbf
+|           Yangmalashing NWFP management group (Yangmalashing Pipla Group).prj
+|           Yangmalashing NWFP management group (Yangmalashing Pipla Group).qmd
+|           Yangmalashing NWFP management group (Yangmalashing Pipla Group).shp
+|           Yangmalashing NWFP management group (Yangmalashing Pipla Group).shx
+|           
++---DFO Samchi
+|   +---Majuwa_Pangkha NWFP management and marketing group
+|   |       Majuwa_Pangkha NWFP management and marketing group.cpg
+|   |       Majuwa_Pangkha NWFP management and marketing group.dbf
+|   |       Majuwa_Pangkha NWFP management and marketing group.prj
+|   |       Majuwa_Pangkha NWFP management and marketing group.qmd
+|   |       Majuwa_Pangkha NWFP management and marketing group.shp
+|   |       Majuwa_Pangkha NWFP management and marketing group.shx
+|   |       
+|   \---Namseling NWFP management Group
+|           Namseling NWFP management Group.cpg
+|           Namseling NWFP management Group.dbf
+|           Namseling NWFP management Group.prj
+|           Namseling NWFP management Group.qmd
+|           Namseling NWFP management Group.shp
+|           Namseling NWFP management Group.shx
+|           
++---DFO Samdrup Jongkhar
+|   +---Denchi Non-Wood Forest Products Management Group
+|   |       Denchi Non-Wood Forest Products Management Group.cpg
+|   |       Denchi Non-Wood Forest Products Management Group.dbf
+|   |       Denchi Non-Wood Forest Products Management Group.prj
+|   |       Denchi Non-Wood Forest Products Management Group.qmd
+|   |       Denchi Non-Wood Forest Products Management Group.shp
+|   |       Denchi Non-Wood Forest Products Management Group.shx
+|   |       
+|   +---Dupthob Shingmin Detshen
+|   |       Dupthob Shingmin Detshen.cpg
+|   |       Dupthob Shingmin Detshen.dbf
+|   |       Dupthob Shingmin Detshen.prj
+|   |       Dupthob Shingmin Detshen.qmd
+|   |       Dupthob Shingmin Detshen.shp
+|   |       Dupthob Shingmin Detshen.shx
+|   |       
+|   +---Pangthang NWFP Group
+|   |       Pangthang NWFP Group.cpg
+|   |       Pangthang NWFP Group.dbf
+|   |       Pangthang NWFP Group.prj
+|   |       Pangthang NWFP Group.qmd
+|   |       Pangthang NWFP Group.shp
+|   |       Pangthang NWFP Group.shx
+|   |       
+|   +---Perung-Bargoenpa NWFP group
+|   |       Perung-Bargoenpa NWFP group.cpg
+|   |       Perung-Bargoenpa NWFP group.dbf
+|   |       Perung-Bargoenpa NWFP group.prj
+|   |       Perung-Bargoenpa NWFP group.qmd
+|   |       Perung-Bargoenpa NWFP group.shp
+|   |       Perung-Bargoenpa NWFP group.shx
+|   |       
+|   +---Potala Shingmin Drongdey Nagtshel
+|   |       Potala Shingmin Drongdey Nagtshel.cpg
+|   |       Potala Shingmin Drongdey Nagtshel.dbf
+|   |       Potala Shingmin Drongdey Nagtshel.prj
+|   |       Potala Shingmin Drongdey Nagtshel.qmd
+|   |       Potala Shingmin Drongdey Nagtshel.shp
+|   |       Potala Shingmin Drongdey Nagtshel.shx
+|   |       
+|   +---Remung Lhuendrup Shingmin Gongphel Detshen
+|   |       Remung Lhuendrup Shingmin Gongphel Detshen.cpg
+|   |       Remung Lhuendrup Shingmin Gongphel Detshen.dbf
+|   |       Remung Lhuendrup Shingmin Gongphel Detshen.prj
+|   |       Remung Lhuendrup Shingmin Gongphel Detshen.qmd
+|   |       Remung Lhuendrup Shingmin Gongphel Detshen.shp
+|   |       Remung Lhuendrup Shingmin Gongphel Detshen.shx
+|   |       
+|   \---Thungshing Yubephodrang Shingmin Detshen
+|           Thungshing Yubephodrang Shingmin Detshen.cpg
+|           Thungshing Yubephodrang Shingmin Detshen.dbf
+|           Thungshing Yubephodrang Shingmin Detshen.prj
+|           Thungshing Yubephodrang Shingmin Detshen.qmd
+|           Thungshing Yubephodrang Shingmin Detshen.shp
+|           Thungshing Yubephodrang Shingmin Detshen.shx
+|           
++---DFO Sarpang
+|   +---Bumpa Shingmin Dulen Tshopa
+|   |       Bumpa Shingmin Dulen Tshopa.cpg
+|   |       Bumpa Shingmin Dulen Tshopa.dbf
+|   |       Bumpa Shingmin Dulen Tshopa.prj
+|   |       Bumpa Shingmin Dulen Tshopa.qmd
+|   |       Bumpa Shingmin Dulen Tshopa.shp
+|   |       Bumpa Shingmin Dulen Tshopa.shx
+|   |       
+|   +---Doringphu NWFP Management and Marketing Group
+|   |       Doringphu NWFP Management and Marketing Group.cpg
+|   |       Doringphu NWFP Management and Marketing Group.dbf
+|   |       Doringphu NWFP Management and Marketing Group.prj
+|   |       Doringphu NWFP Management and Marketing Group.qmd
+|   |       Doringphu NWFP Management and Marketing Group.shp
+|   |       Doringphu NWFP Management and Marketing Group.shx
+|   |       
+|   +---Pemaling Pagshing Tshopa
+|   |       Pemaling Pagshing Tshopa.cpg
+|   |       Pemaling Pagshing Tshopa.dbf
+|   |       Pemaling Pagshing Tshopa.prj
+|   |       Pemaling Pagshing Tshopa.qmd
+|   |       Pemaling Pagshing Tshopa.shp
+|   |       Pemaling Pagshing Tshopa.shx
+|   |       
+|   +---Sangkha NWFP Group
+|   |       Sangkha NWFP Group.cpg
+|   |       Sangkha NWFP Group.dbf
+|   |       Sangkha NWFP Group.prj
+|   |       Sangkha NWFP Group.qmd
+|   |       Sangkha NWFP Group.shp
+|   |       Sangkha NWFP Group.shx
+|   |       
+|   \---Tashiling Shingmin Dulen and Tsongdrel Tshogpa
+|           Tashiling Shingmin Dulen and Tsongdrel Tshogpa.cpg
+|           Tashiling Shingmin Dulen and Tsongdrel Tshogpa.dbf
+|           Tashiling Shingmin Dulen and Tsongdrel Tshogpa.prj
+|           Tashiling Shingmin Dulen and Tsongdrel Tshogpa.qmd
+|           Tashiling Shingmin Dulen and Tsongdrel Tshogpa.shp
+|           Tashiling Shingmin Dulen and Tsongdrel Tshogpa.shx
+|           
++---DFO Trashigang
+|   +---Beypam Sorbang Bangtse Group
+|   |       Beypam Sorbang Bangtse Group.cpg
+|   |       Beypam Sorbang Bangtse Group.dbf
+|   |       Beypam Sorbang Bangtse Group.prj
+|   |       Beypam Sorbang Bangtse Group.qmd
+|   |       Beypam Sorbang Bangtse Group.shp
+|   |       Beypam Sorbang Bangtse Group.shx
+|   |       
+|   +---Bimkhar Bamboo Management Group
+|   |       Bimkhar Bamboo Management Group.cpg
+|   |       Bimkhar Bamboo Management Group.dbf
+|   |       Bimkhar Bamboo Management Group.prj
+|   |       Bimkhar Bamboo Management Group.qmd
+|   |       Bimkhar Bamboo Management Group.shp
+|   |       Bimkhar Bamboo Management Group.shx
+|   |       
+|   +---Gengkhar Bangsee Group  Bangtshe
+|   |       Gengkhar Bangsee Group  Bangtshe.cpg
+|   |       Gengkhar Bangsee Group  Bangtshe.dbf
+|   |       Gengkhar Bangsee Group  Bangtshe.prj
+|   |       Gengkhar Bangsee Group  Bangtshe.qmd
+|   |       Gengkhar Bangsee Group  Bangtshe.shp
+|   |       Gengkhar Bangsee Group  Bangtshe.shx
+|   |       
+|   \---Udzorong Lemon grass group
+|           Udzorong Lemon grass group.cpg
+|           Udzorong Lemon grass group.dbf
+|           Udzorong Lemon grass group.prj
+|           Udzorong Lemon grass group.qmd
+|           Udzorong Lemon grass group.shp
+|           Udzorong Lemon grass group.shx
+|           
++---DFO Tsirang
+|   +---Batasey Non-Wood Forest Products Group
+|   |       Batasey Non-Wood Forest Products Group.cpg
+|   |       Batasey Non-Wood Forest Products Group.dbf
+|   |       Batasey Non-Wood Forest Products Group.prj
+|   |       Batasey Non-Wood Forest Products Group.qmd
+|   |       Batasey Non-Wood Forest Products Group.shp
+|   |       Batasey Non-Wood Forest Products Group.shx
+|   |       
+|   +---Serzhong and Menchuna NWFP management & marketing Group
+|   |       Serzhong and Menchuna NWFP management & marketing Group.cpg
+|   |       Serzhong and Menchuna NWFP management & marketing Group.dbf
+|   |       Serzhong and Menchuna NWFP management & marketing Group.prj
+|   |       Serzhong and Menchuna NWFP management & marketing Group.qmd
+|   |       Serzhong and Menchuna NWFP management & marketing Group.shp
+|   |       Serzhong and Menchuna NWFP management & marketing Group.shx
+|   |       
+|   \---Tashiling Non-wood Forest Products Management & Marketing Group
+|           Tashiling Non-wood Forest Products Management & Marketing Group.cpg
+|           Tashiling Non-wood Forest Products Management & Marketing Group.dbf
+|           Tashiling Non-wood Forest Products Management & Marketing Group.prj
+|           Tashiling Non-wood Forest Products Management & Marketing Group.qmd
+|           Tashiling Non-wood Forest Products Management & Marketing Group.shp
+|           Tashiling Non-wood Forest Products Management & Marketing Group.shx
+|           
++---DFO Zhemgang
+|   +---Bjoka NWFP management and marketing group
+|   |       Bjoka NWFP management and marketing group.cpg
+|   |       Bjoka NWFP management and marketing group.dbf
+|   |       Bjoka NWFP management and marketing group.prj
+|   |       Bjoka NWFP management and marketing group.qmd
+|   |       Bjoka NWFP management and marketing group.shp
+|   |       Bjoka NWFP management and marketing group.shx
+|   |       
+|   +---Dali Shingmen Tshogpa
+|   |       Dali Shingmen Tshogpa.cpg
+|   |       Dali Shingmen Tshogpa.dbf
+|   |       Dali Shingmen Tshogpa.prj
+|   |       Dali Shingmen Tshogpa.qmd
+|   |       Dali Shingmen Tshogpa.shp
+|   |       Dali Shingmen Tshogpa.shx
+|   |       
+|   +---Goling Jamphel Thoenkhung Tshogpa
+|   |       Goling Jamphel Thoenkhung Tshogpa.cpg
+|   |       Goling Jamphel Thoenkhung Tshogpa.dbf
+|   |       Goling Jamphel Thoenkhung Tshogpa.prj
+|   |       Goling Jamphel Thoenkhung Tshogpa.qmd
+|   |       Goling Jamphel Thoenkhung Tshogpa.shp
+|   |       Goling Jamphel Thoenkhung Tshogpa.shx
+|   |       
+|   +---Kamati Pipla Management Group
+|   |       Kamati Pipla Management Group.cpg
+|   |       Kamati Pipla Management Group.dbf
+|   |       Kamati Pipla Management Group.prj
+|   |       Kamati Pipla Management Group.qmd
+|   |       Kamati Pipla Management Group.shp
+|   |       Kamati Pipla Management Group.shx
+|   |       
+|   +---Lamtang NWFP Management and Marketing Group
+|   |       Lamtang NWFP Management and Marketing Group.cpg
+|   |       Lamtang NWFP Management and Marketing Group.dbf
+|   |       Lamtang NWFP Management and Marketing Group.prj
+|   |       Lamtang NWFP Management and Marketing Group.qmd
+|   |       Lamtang NWFP Management and Marketing Group.shp
+|   |       Lamtang NWFP Management and Marketing Group.shx
+|   |       
+|   +---Marangduth NWFP Management and Marketing Group
+|   |       Marangduth NWFP Management and Marketing Group.cpg
+|   |       Marangduth NWFP Management and Marketing Group.dbf
+|   |       Marangduth NWFP Management and Marketing Group.prj
+|   |       Marangduth NWFP Management and Marketing Group.qmd
+|   |       Marangduth NWFP Management and Marketing Group.shp
+|   |       Marangduth NWFP Management and Marketing Group.shx
+|   |       
+|   +---Ngangla Trong Singmen Tshogpa
+|   |       Ngangla Trong Singmen Tshogpa.cpg
+|   |       Ngangla Trong Singmen Tshogpa.dbf
+|   |       Ngangla Trong Singmen Tshogpa.prj
+|   |       Ngangla Trong Singmen Tshogpa.qmd
+|   |       Ngangla Trong Singmen Tshogpa.shp
+|   |       Ngangla Trong Singmen Tshogpa.shx
+|   |       
+|   +---Shobling Singmen Tshopka
+|   |       Shobling Singmen Tshopka.cpg
+|   |       Shobling Singmen Tshopka.dbf
+|   |       Shobling Singmen Tshopka.prj
+|   |       Shobling Singmen Tshopka.qmd
+|   |       Shobling Singmen Tshopka.shp
+|   |       Shobling Singmen Tshopka.shx
+|   |       
+|   \---Tsaidang Shingmenn Tshogpa
+|           Tsaidang Shingmenn Tshogpa.cpg
+|           Tsaidang Shingmenn Tshogpa.dbf
+|           Tsaidang Shingmenn Tshogpa.prj
+|           Tsaidang Shingmenn Tshogpa.qmd
+|           Tsaidang Shingmenn Tshogpa.shp
+|           Tsaidang Shingmenn Tshogpa.shx
+|           
++---Dzongkhag Boundary
+|       Dzongkhag Boundary.cpg
+|       Dzongkhag Boundary.dbf
+|       Dzongkhag Boundary.prj
+|       Dzongkhag Boundary.sbn
+|       Dzongkhag Boundary.sbx
+|       Dzongkhag Boundary.shp
+|       Dzongkhag Boundary.shp.xml
+|       Dzongkhag Boundary.shx
+|       
++---Jigme Dorji National Park
+|   +---Gangri Phunsum Ngomen Tshokpa
+|   |       Gangri Phunsum Ngomen Tshokpa.cpg
+|   |       Gangri Phunsum Ngomen Tshokpa.dbf
+|   |       Gangri Phunsum Ngomen Tshokpa.prj
+|   |       Gangri Phunsum Ngomen Tshokpa.qmd
+|   |       Gangri Phunsum Ngomen Tshokpa.shp
+|   |       Gangri Phunsum Ngomen Tshokpa.shx
+|   |       
+|   +---Jomolhari Ngomoen Tshogpa
+|   |       Jomolhari Ngomoen Tshogpa.cpg
+|   |       Jomolhari Ngomoen Tshogpa.dbf
+|   |       Jomolhari Ngomoen Tshogpa.prj
+|   |       Jomolhari Ngomoen Tshogpa.qmd
+|   |       Jomolhari Ngomoen Tshogpa.shp
+|   |       Jomolhari Ngomoen Tshogpa.shx
+|   |       
+|   +---Laya Ngomen Tshokpa
+|   |       Laya Ngomen Tshokpa.cpg
+|   |       Laya Ngomen Tshokpa.dbf
+|   |       Laya Ngomen Tshokpa.prj
+|   |       Laya Ngomen Tshokpa.qmd
+|   |       Laya Ngomen Tshokpa.shp
+|   |       Laya Ngomen Tshokpa.shx
+|   |       
+|   +---Lingzhi Ngomen Tshogpa
+|   |       Lingzhi Ngomen Tshogpa.cpg
+|   |       Lingzhi Ngomen Tshogpa.dbf
+|   |       Lingzhi Ngomen Tshogpa.prj
+|   |       Lingzhi Ngomen Tshogpa.qmd
+|   |       Lingzhi Ngomen Tshogpa.shp
+|   |       Lingzhi Ngomen Tshogpa.shx
+|   |       
+|   \---Yaksa Ngomoen Tshogpoa
+|           Yaksa Ngomoen Tshogpoa.cpg
+|           Yaksa Ngomoen Tshogpoa.dbf
+|           Yaksa Ngomoen Tshogpoa.prj
+|           Yaksa Ngomoen Tshogpoa.qmd
+|           Yaksa Ngomoen Tshogpoa.shp
+|           Yaksa Ngomoen Tshogpoa.shx
+|           
++---Jigme Singye Wangchuck National Park
+|   \---Mongpa Selwai Yoezer Tshokpa
+|           Mongpa Selwai Yoezer Tshokpa.cpg
+|           Mongpa Selwai Yoezer Tshokpa.dbf
+|           Mongpa Selwai Yoezer Tshokpa.prj
+|           Mongpa Selwai Yoezer Tshokpa.qmd
+|           Mongpa Selwai Yoezer Tshokpa.shp
+|           Mongpa Selwai Yoezer Tshokpa.shx
+|           
++---Jomotshangkha Wildlife Sanctuary
+|   +---Barkalangna Shingmein Thuenkyed Tshogpa
+|   |       Barkalangna Shingmein Thuenkyed Tshogpa.cpg
+|   |       Barkalangna Shingmein Thuenkyed Tshogpa.dbf
+|   |       Barkalangna Shingmein Thuenkyed Tshogpa.prj
+|   |       Barkalangna Shingmein Thuenkyed Tshogpa.qmd
+|   |       Barkalangna Shingmein Thuenkyed Tshogpa.shp
+|   |       Barkalangna Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Beytseling Shingmein Yargay Gongphel Tshogpa
+|   |       Beytseling Shingmein Yargay Gongphel Tshogpa.cpg
+|   |       Beytseling Shingmein Yargay Gongphel Tshogpa.dbf
+|   |       Beytseling Shingmein Yargay Gongphel Tshogpa.prj
+|   |       Beytseling Shingmein Yargay Gongphel Tshogpa.qmd
+|   |       Beytseling Shingmein Yargay Gongphel Tshogpa.shp
+|   |       Beytseling Shingmein Yargay Gongphel Tshogpa.shx
+|   |       
+|   +---Chitori Shingmein Thuenkyed
+|   |       Chitori Shingmein Thuenkyed.cpg
+|   |       Chitori Shingmein Thuenkyed.dbf
+|   |       Chitori Shingmein Thuenkyed.prj
+|   |       Chitori Shingmein Thuenkyed.qmd
+|   |       Chitori Shingmein Thuenkyed.shp
+|   |       Chitori Shingmein Thuenkyed.shx
+|   |       
+|   +---Dephu Shingmein Thuenkyed Tshogpa
+|   |       Dephu Shingmein Thuenkyed Tshogpa.cpg
+|   |       Dephu Shingmein Thuenkyed Tshogpa.dbf
+|   |       Dephu Shingmein Thuenkyed Tshogpa.prj
+|   |       Dephu Shingmein Thuenkyed Tshogpa.qmd
+|   |       Dephu Shingmein Thuenkyed Tshogpa.shp
+|   |       Dephu Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Dungmanma Shingmein Gakey Pelzom
+|   |       Dungmanma Shingmein Gakey Pelzom.cpg
+|   |       Dungmanma Shingmein Gakey Pelzom.dbf
+|   |       Dungmanma Shingmein Gakey Pelzom.prj
+|   |       Dungmanma Shingmein Gakey Pelzom.qmd
+|   |       Dungmanma Shingmein Gakey Pelzom.shp
+|   |       Dungmanma Shingmein Gakey Pelzom.shx
+|   |       
+|   +---Kakanay Shingmein Thuenkyed Tshogpa
+|   |       Kakanay Shingmein Thuenkyed Tshogpa.cpg
+|   |       Kakanay Shingmein Thuenkyed Tshogpa.dbf
+|   |       Kakanay Shingmein Thuenkyed Tshogpa.prj
+|   |       Kakanay Shingmein Thuenkyed Tshogpa.qmd
+|   |       Kakanay Shingmein Thuenkyed Tshogpa.shp
+|   |       Kakanay Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Lauri Gaki Shingmein Thuenkyed Tshogpa
+|   |       Lauri Gaki Shingmein Thuenkyed Tshogpa.cpg
+|   |       Lauri Gaki Shingmein Thuenkyed Tshogpa.dbf
+|   |       Lauri Gaki Shingmein Thuenkyed Tshogpa.prj
+|   |       Lauri Gaki Shingmein Thuenkyed Tshogpa.qmd
+|   |       Lauri Gaki Shingmein Thuenkyed Tshogpa.shp
+|   |       Lauri Gaki Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Mawong Chirphen Shingmein Thuenkyed Tshogpa
+|   |       Mawong Chirphen Shingmein Thuenkyed Tshogpa.cpg
+|   |       Mawong Chirphen Shingmein Thuenkyed Tshogpa.dbf
+|   |       Mawong Chirphen Shingmein Thuenkyed Tshogpa.prj
+|   |       Mawong Chirphen Shingmein Thuenkyed Tshogpa.qmd
+|   |       Mawong Chirphen Shingmein Thuenkyed Tshogpa.shp
+|   |       Mawong Chirphen Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Momring Shingmein Thuenkyed Tshogpa
+|   |       Momring Shingmein Thuenkyed Tshogpa.cpg
+|   |       Momring Shingmein Thuenkyed Tshogpa.dbf
+|   |       Momring Shingmein Thuenkyed Tshogpa.prj
+|   |       Momring Shingmein Thuenkyed Tshogpa.qmd
+|   |       Momring Shingmein Thuenkyed Tshogpa.shp
+|   |       Momring Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Patpanadang Shingmein Dondru tshogpa
+|   |       Patpanadang Shingmein Dondru tshogpa.cpg
+|   |       Patpanadang Shingmein Dondru tshogpa.dbf
+|   |       Patpanadang Shingmein Dondru tshogpa.prj
+|   |       Patpanadang Shingmein Dondru tshogpa.qmd
+|   |       Patpanadang Shingmein Dondru tshogpa.shp
+|   |       Patpanadang Shingmein Dondru tshogpa.shx
+|   |       
+|   +---Raynang Shingmein Thuenkyed Tshogpa
+|   |       Raynang Shingmein Thuenkyed Tshogpa.cpg
+|   |       Raynang Shingmein Thuenkyed Tshogpa.dbf
+|   |       Raynang Shingmein Thuenkyed Tshogpa.prj
+|   |       Raynang Shingmein Thuenkyed Tshogpa.qmd
+|   |       Raynang Shingmein Thuenkyed Tshogpa.shp
+|   |       Raynang Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Risum Tsholing Shingmein Thuenkyed Tshogpa
+|   |       Risum Tsholing Shingmein Thuenkyed Tshogpa.cpg
+|   |       Risum Tsholing Shingmein Thuenkyed Tshogpa.dbf
+|   |       Risum Tsholing Shingmein Thuenkyed Tshogpa.prj
+|   |       Risum Tsholing Shingmein Thuenkyed Tshogpa.qmd
+|   |       Risum Tsholing Shingmein Thuenkyed Tshogpa.shp
+|   |       Risum Tsholing Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Samten Shingmen Thuenkyed Tshogpa
+|   |       Samten Shingmen Thuenkyed Tshogpa.cpg
+|   |       Samten Shingmen Thuenkyed Tshogpa.dbf
+|   |       Samten Shingmen Thuenkyed Tshogpa.prj
+|   |       Samten Shingmen Thuenkyed Tshogpa.qmd
+|   |       Samten Shingmen Thuenkyed Tshogpa.shp
+|   |       Samten Shingmen Thuenkyed Tshogpa.shx
+|   |       
+|   +---Serthi Shingmein Thuenkyed Tshogpa
+|   |       Serthi Shingmein Thuenkyed Tshogpa.cpg
+|   |       Serthi Shingmein Thuenkyed Tshogpa.dbf
+|   |       Serthi Shingmein Thuenkyed Tshogpa.prj
+|   |       Serthi Shingmein Thuenkyed Tshogpa.qmd
+|   |       Serthi Shingmein Thuenkyed Tshogpa.shp
+|   |       Serthi Shingmein Thuenkyed Tshogpa.shx
+|   |       
+|   +---Tashithangjay Shingmein Thunekyed Tshogpa
+|   |       Tashithangjay Shingmein Thunekyed Tshogpa.cpg
+|   |       Tashithangjay Shingmein Thunekyed Tshogpa.dbf
+|   |       Tashithangjay Shingmein Thunekyed Tshogpa.prj
+|   |       Tashithangjay Shingmein Thunekyed Tshogpa.qmd
+|   |       Tashithangjay Shingmein Thunekyed Tshogpa.shp
+|   |       Tashithangjay Shingmein Thunekyed Tshogpa.shx
+|   |       
+|   +---Thekcho Choeling Gonpa Shingmein Tshogpa
+|   |       Thekcho Choeling Gonpa Shingmein Tshogpa.cpg
+|   |       Thekcho Choeling Gonpa Shingmein Tshogpa.dbf
+|   |       Thekcho Choeling Gonpa Shingmein Tshogpa.prj
+|   |       Thekcho Choeling Gonpa Shingmein Tshogpa.qmd
+|   |       Thekcho Choeling Gonpa Shingmein Tshogpa.shp
+|   |       Thekcho Choeling Gonpa Shingmein Tshogpa.shx
+|   |       
+|   +---Woongthi Shingmein Natshok Thuendrel Tshogpa
+|   |       Woongthi Shingmein Natshok Thuendrel Tshogpa.cpg
+|   |       Woongthi Shingmein Natshok Thuendrel Tshogpa.dbf
+|   |       Woongthi Shingmein Natshok Thuendrel Tshogpa.prj
+|   |       Woongthi Shingmein Natshok Thuendrel Tshogpa.qmd
+|   |       Woongthi Shingmein Natshok Thuendrel Tshogpa.shp
+|   |       Woongthi Shingmein Natshok Thuendrel Tshogpa.shx
+|   |       
+|   \---Zangthi-Tshothang Shingmein Thuenkyed Tshogpa
+|           Zangthi-Tshothang Shingmein Thuenkyed Tshogpa.cpg
+|           Zangthi-Tshothang Shingmein Thuenkyed Tshogpa.dbf
+|           Zangthi-Tshothang Shingmein Thuenkyed Tshogpa.prj
+|           Zangthi-Tshothang Shingmein Thuenkyed Tshogpa.qmd
+|           Zangthi-Tshothang Shingmein Thuenkyed Tshogpa.shp
+|           Zangthi-Tshothang Shingmein Thuenkyed Tshogpa.shx
+|           
++---Phrumsengla National Park
+|   \---Ura Mushroom Conservation and Marketing Group
+|           Ura Mushroom Conservation and Marketing Group.cpg
+|           Ura Mushroom Conservation and Marketing Group.dbf
+|           Ura Mushroom Conservation and Marketing Group.prj
+|           Ura Mushroom Conservation and Marketing Group.qmd
+|           Ura Mushroom Conservation and Marketing Group.shp
+|           Ura Mushroom Conservation and Marketing Group.shx
+|           
++---Royal Manas National Park
+|   +---Mamung Bamboo Management group
+|   |       Mamung Bamboo Management group.cpg
+|   |       Mamung Bamboo Management group.dbf
+|   |       Mamung Bamboo Management group.prj
+|   |       Mamung Bamboo Management group.qmd
+|   |       Mamung Bamboo Management group.shp
+|   |       Mamung Bamboo Management group.shx
+|   |       
+|   +---Panabe NWFP Group
+|   |       Panabe NWFP Group.cpg
+|   |       Panabe NWFP Group.dbf
+|   |       Panabe NWFP Group.prj
+|   |       Panabe NWFP Group.qmd
+|   |       Panabe NWFP Group.shp
+|   |       Panabe NWFP Group.shx
+|   |       
+|   +---Pongchula Pema Choling Tsharzaw Group
+|   |       Pongchula Pema Choling Tsharzaw Group.cpg
+|   |       Pongchula Pema Choling Tsharzaw Group.dbf
+|   |       Pongchula Pema Choling Tsharzaw Group.prj
+|   |       Pongchula Pema Choling Tsharzaw Group.qmd
+|   |       Pongchula Pema Choling Tsharzaw Group.shp
+|   |       Pongchula Pema Choling Tsharzaw Group.shx
+|   |       
+|   +---Salapong NWFP group
+|   |       Salapong NWFP group.cpg
+|   |       Salapong NWFP group.dbf
+|   |       Salapong NWFP group.prj
+|   |       Salapong NWFP group.qmd
+|   |       Salapong NWFP group.shp
+|   |       Salapong NWFP group.shx
+|   |       
+|   \---Zangbe shingmen Duelen Dang Tshongdrel Dhetshen
+|           Zangbe shingmen Duelen Dang Tshongdrel Dhetshen.cpg
+|           Zangbe shingmen Duelen Dang Tshongdrel Dhetshen.dbf
+|           Zangbe shingmen Duelen Dang Tshongdrel Dhetshen.prj
+|           Zangbe shingmen Duelen Dang Tshongdrel Dhetshen.qmd
+|           Zangbe shingmen Duelen Dang Tshongdrel Dhetshen.shp
+|           Zangbe shingmen Duelen Dang Tshongdrel Dhetshen.shx
+|           
++---Sakteng Wildlife Sanctuary
+|   +---Kuenphen Poina Tshokpa
+|   |       Kuenphen Poina Tshokpa.cpg
+|   |       Kuenphen Poina Tshokpa.dbf
+|   |       Kuenphen Poina Tshokpa.prj
+|   |       Kuenphen Poina Tshokpa.qmd
+|   |       Kuenphen Poina Tshokpa.shp
+|   |       Kuenphen Poina Tshokpa.shx
+|   |       
+|   \---Sakteng Lhayul Sangzey Detshen
+|           Sakteng Lhayul Sangzey Detshen.cpg
+|           Sakteng Lhayul Sangzey Detshen.dbf
+|           Sakteng Lhayul Sangzey Detshen.prj
+|           Sakteng Lhayul Sangzey Detshen.qmd
+|           Sakteng Lhayul Sangzey Detshen.shp
+|           Sakteng Lhayul Sangzey Detshen.shx
+|           
+\---Wangchuck Centennial National Park
+    +---Ney Kuenphen Jakpai Tshogpa
+    |       Ney Kuenphen Jakpai Tshogpa.cpg
+    |       Ney Kuenphen Jakpai Tshogpa.dbf
+    |       Ney Kuenphen Jakpai Tshogpa.prj
+    |       Ney Kuenphen Jakpai Tshogpa.qmd
+    |       Ney Kuenphen Jakpai Tshogpa.shp
+    |       Ney Kuenphen Jakpai Tshogpa.shx
+    |       
+    +---Sephu NWFP management group
+    |       Sephu NWFP management group.cpg
+    |       Sephu NWFP management group.dbf
+    |       Sephu NWFP management group.prj
+    |       Sephu NWFP management group.qmd
+    |       Sephu NWFP management group.shp
+    |       Sephu NWFP management group.shx
+    |       
+    +---Tangpa Shingmein Menrig Detshen
+    |       Tangpa Shingmein Menrig Detshen.cpg
+    |       Tangpa Shingmein Menrig Detshen.dbf
+    |       Tangpa Shingmein Menrig Detshen.prj
+    |       Tangpa Shingmein Menrig Detshen.qmd
+    |       Tangpa Shingmein Menrig Detshen.shp
+    |       Tangpa Shingmein Menrig Detshen.shx
+    |       
+    \---Tshamdrok Tshosum Shingmen Detshen
+            Tshamdrok Tshosum Shingmen Detshen.cpg
+            Tshamdrok Tshosum Shingmen Detshen.dbf
+            Tshamdrok Tshosum Shingmen Detshen.prj
+            Tshamdrok Tshosum Shingmen Detshen.qmd
+            Tshamdrok Tshosum Shingmen Detshen.shp
+            Tshamdrok Tshosum Shingmen Detshen.shx
+            
