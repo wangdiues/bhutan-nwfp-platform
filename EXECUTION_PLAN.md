@@ -73,10 +73,11 @@ python manage.py runserver
 ### 1.7 Verification
 - [x] Python source compiles with `python -m compileall nwfp_platform`
 - [x] JavaScript syntax checks pass for prototype and Django static JS
-- [ ] Install Python dependencies
-- [ ] Run `python manage.py check`
-- [ ] Generate migrations and migrate database
+- [x] Install lightweight local preview Python dependencies
+- [x] Run `python manage.py check --settings=config.settings.local_lite`
+- [x] Generate migrations and migrate local SQLite database
 - [ ] Seed initial groups/products/categories from source data
+- [x] Seed minimal local preview product/group/admin data
 
 ## Phase 2 — Inventory & Maps
 - Inventory batch tracking
