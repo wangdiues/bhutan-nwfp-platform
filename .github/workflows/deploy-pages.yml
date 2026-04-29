@@ -39,6 +39,10 @@ jobs:
           cp -R Images public/Images
           cp -R management_plans_nwfp public/management_plans_nwfp
           cp -R "NWFP Groups Shp Files" "public/NWFP Groups Shp Files"
+          python - <<'PY'
+          import shutil
+          shutil.make_archive("public/NWFP_Groups_Shp_Files", "zip", "NWFP Groups Shp Files")
+          PY
           touch public/.nojekyll
 
       - name: Configure Pages
