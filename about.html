@@ -3,30 +3,172 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About - Bhutan NWFP Platform</title>
+  <title>About — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="About the NWFP Platform">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero rounded-[2rem] p-6 text-white shadow-2xl md:p-10">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Platform overview</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">A connected knowledge, planning, market, and traceability portal for Bhutan's NWFP sector.</h1>
-        <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50">This platform brings together management plans, Dzongkhag coverage, NWFP groups, product opportunities, spatial resources, buyer enquiries, and training content for sustainable non-wood forest product development.</p>
-      </section>
-      <section id="stats" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></section>
-      <section class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <a class="card rounded-3xl p-5 hover:bg-lime-50" href="dzongkhag_directory.html"><p class="kicker">Dzongkhag</p><h2 class="mt-1 text-2xl font-black text-emerald-950">Directory</h2><p class="mt-3 text-sm text-slate-700">Browse groups, plans, products, and spatial links by Dzongkhag.</p></a>
-        <a class="card rounded-3xl p-5 hover:bg-lime-50" href="nwfp_groups.html"><p class="kicker">Groups</p><h2 class="mt-1 text-2xl font-black text-emerald-950">Registry</h2><p class="mt-3 text-sm text-slate-700">Search group records, gewogs, offices, status, households, and products.</p></a>
-        <a class="card rounded-3xl p-5 hover:bg-lime-50" href="product_catalog.html"><p class="kicker">Products</p><h2 class="mt-1 text-2xl font-black text-emerald-950">Catalogue</h2><p class="mt-3 text-sm text-slate-700">Review commercial product categories and linked records.</p></a>
-        <a class="card rounded-3xl p-5 hover:bg-lime-50" href="certification_traceability.html"><p class="kicker">Compliance</p><h2 class="mt-1 text-2xl font-black text-emerald-950">Traceability</h2><p class="mt-3 text-sm text-slate-700">Follow the flow from management plan to buyer-ready product.</p></a>
-      </section>
-    </main>
-    <div id="siteFooter"></div>
+<body>
+<div class="shell">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
   </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+
+  <!-- MAIN -->
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO -->
+    <section class="hero anim-1">
+      <div class="hero-inner grid gap-8 lg:grid-cols-[1fr_22rem]">
+        <div>
+          <p class="kicker kicker-lt">Platform overview</p>
+          <h1>A connected knowledge, planning, market &amp; traceability portal for Bhutan's NWFP sector.</h1>
+          <p class="lead">This platform brings together management plans, Dzongkhag coverage, NWFP groups, product opportunities, spatial resources, buyer enquiries, and training content for sustainable non-wood forest product development.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="NWFP_Management_Plans.html" class="btn btn-amber">Explore Plans</a>
+            <a href="dzongkhag_directory.html" class="btn btn-outline">Browse Dzongkhags</a>
+          </div>
+        </div>
+        <div class="hero-stats self-end">
+          <div class="hero-stat">
+            <div class="hero-stat-num">119</div>
+            <div class="hero-stat-label">Management records</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">17</div>
+            <div class="hero-stat-label">Dzongkhags covered</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">83k</div>
+            <div class="hero-stat-label">Hectares managed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">1.2k</div>
+            <div class="hero-stat-label">Households recorded</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC STATS (injected by nwfp_pages.js) -->
+    <section id="stats" class="section-gap grid gap-4 sm:grid-cols-2 lg:grid-cols-4 anim-2"></section>
+
+    <!-- MODULE CARDS -->
+    <section class="section-gap anim-3">
+      <p class="kicker mb-4">Platform modules</p>
+      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <a class="card p-6 hoverable" href="dzongkhag_directory.html">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">🗺</div>
+          <p class="kicker">Dzongkhag</p>
+          <h2 class="section-title mt-1">Directory</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Browse groups, plans, products, and spatial links by district.</p>
+        </a>
+        <a class="card p-6 hoverable" href="nwfp_groups.html">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">👥</div>
+          <p class="kicker">Groups</p>
+          <h2 class="section-title mt-1">Registry</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Search group records, gewogs, offices, status, households, and products.</p>
+        </a>
+        <a class="card p-6 hoverable" href="product_catalog.html">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">🌿</div>
+          <p class="kicker">Products</p>
+          <h2 class="section-title mt-1">Catalogue</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Review commercial product categories and linked records.</p>
+        </a>
+        <a class="card p-6 hoverable" href="certification_traceability.html">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">✅</div>
+          <p class="kicker">Compliance</p>
+          <h2 class="section-title mt-1">Traceability</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Follow the flow from management plan to buyer-ready product.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECONDARY LINKS -->
+    <section class="section-gap anim-4">
+      <div class="grid gap-4 md:grid-cols-3">
+        <a href="data_analytics.html" class="card p-6 hoverable">
+          <p class="kicker">Analytics</p>
+          <h3 class="mt-1 font-bold text-lg text-emerald-950">Data Dashboard</h3>
+          <p class="mt-2 text-sm text-slate-600">Plans by Dzongkhag, area, status, and timeline.</p>
+        </a>
+        <a href="spatial_resources.html" class="card p-6 hoverable">
+          <p class="kicker">GIS</p>
+          <h3 class="mt-1 font-bold text-lg text-emerald-950">Spatial Resources</h3>
+          <p class="mt-2 text-sm text-slate-600">GeoPackage, shapefiles, and map outputs.</p>
+        </a>
+        <a href="marketplace_sample.html" class="card p-6 hoverable">
+          <p class="kicker">Commerce</p>
+          <h3 class="mt-1 font-bold text-lg text-emerald-950">Marketplace Sample</h3>
+          <p class="mt-2 text-sm text-slate-600">Traceable product listings and buyer cart demo.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>

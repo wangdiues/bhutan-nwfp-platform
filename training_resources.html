@@ -3,30 +3,195 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Training Resources - Bhutan NWFP Platform</title>
+  <title>Training Resources — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="NWFP Training Resources">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero rounded-[2rem] p-6 text-white shadow-2xl md:p-10">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Capacity building</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Training materials for collectors, groups, processors, and local enterprises.</h1>
-      </section>
-      <section class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        <article class="card rounded-3xl p-5"><p class="kicker">Harvesting</p><h2 class="mt-1 text-xl font-black text-emerald-950">Sustainable collection</h2><p class="mt-3 text-sm leading-7 text-slate-700">Species identification, harvest timing, regeneration, quota respect, and low-impact collection.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Post-harvest</p><h2 class="mt-1 text-xl font-black text-emerald-950">Drying and storage</h2><p class="mt-3 text-sm leading-7 text-slate-700">Cleaning, drying, sifting, moisture control, storage hygiene, and handling near source areas.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Processing</p><h2 class="mt-1 text-xl font-black text-emerald-950">Value addition</h2><p class="mt-3 text-sm leading-7 text-slate-700">Grading, packaging, herbal products, natural dyes, bamboo/cane craft, and quality consistency.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Business</p><h2 class="mt-1 text-xl font-black text-emerald-950">Enterprise skills</h2><p class="mt-3 text-sm leading-7 text-slate-700">Pricing, record keeping, buyer negotiation, digital listings, cooperative roles, and basic finance.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Certification</p><h2 class="mt-1 text-xl font-black text-emerald-950">Traceability skills</h2><p class="mt-3 text-sm leading-7 text-slate-700">Batch records, permit attachment, quality assurance, labels, and audit-ready documentation.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Market access</p><h2 class="mt-1 text-xl font-black text-emerald-950">Buyer readiness</h2><p class="mt-3 text-sm leading-7 text-slate-700">Product photos, specifications, packaging sizes, transport plans, and enquiry response.</p></article>
-      </section>
-    </main>
-    <div id="siteFooter"></div>
+<body>
+<div class="shell">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link active">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
   </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO -->
+    <section class="hero anim-1">
+      <div class="hero-inner grid gap-8 lg:grid-cols-[1fr_18rem]">
+        <div>
+          <p class="kicker kicker-lt">Capacity building</p>
+          <h1>Training materials for collectors, groups, processors &amp; local enterprises.</h1>
+          <p class="lead">Practical knowledge across the full NWFP value chain — from sustainable field collection through processing, enterprise skills, and buyer-ready market access.</p>
+        </div>
+        <div class="self-center hidden lg:flex flex-col gap-3">
+          <div class="hero-stat">
+            <div class="hero-stat-num">6</div>
+            <div class="hero-stat-label">Training modules</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4</div>
+            <div class="hero-stat-label">Audience groups</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINING CARDS -->
+    <section class="section-gap">
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+
+        <div class="training-card anim-1">
+          <div class="training-icon">🌿</div>
+          <p class="kicker mb-2">Harvesting</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Sustainable Collection</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Species identification, harvest timing, natural regeneration, quota compliance, and low-impact collection methods that protect long-term resource availability.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="chip">Identification</span>
+            <span class="chip">Timing</span>
+            <span class="chip">Quota</span>
+          </div>
+        </div>
+
+        <div class="training-card anim-2">
+          <div class="training-icon">☀️</div>
+          <p class="kicker mb-2">Post-harvest</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Drying &amp; Storage</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Cleaning, drying, sifting, moisture control, storage hygiene, and proper handling near collection areas to preserve product quality and shelf life.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="chip">Moisture control</span>
+            <span class="chip">Hygiene</span>
+            <span class="chip">Shelf life</span>
+          </div>
+        </div>
+
+        <div class="training-card anim-3">
+          <div class="training-icon">⚗️</div>
+          <p class="kicker mb-2">Processing</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Value Addition</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Grading, packaging, herbal product development, natural dyes, bamboo and cane craft, and maintaining quality consistency for premium markets.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="chip">Grading</span>
+            <span class="chip">Packaging</span>
+            <span class="chip">Craft</span>
+          </div>
+        </div>
+
+        <div class="training-card anim-4">
+          <div class="training-icon">📊</div>
+          <p class="kicker mb-2">Business</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Enterprise Skills</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Pricing strategies, record keeping, buyer negotiation, digital listings, cooperative governance roles, and basic financial management for group enterprises.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="chip">Pricing</span>
+            <span class="chip">Negotiation</span>
+            <span class="chip">Finance</span>
+          </div>
+        </div>
+
+        <div class="training-card anim-5">
+          <div class="training-icon">🔖</div>
+          <p class="kicker mb-2">Certification</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Traceability Skills</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Batch records, permit attachment, quality assurance protocols, labelling standards, and audit-ready documentation for compliance at market.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="chip">Batch records</span>
+            <span class="chip">Permits</span>
+            <span class="chip">Audit</span>
+          </div>
+        </div>
+
+        <div class="training-card anim-6">
+          <div class="training-icon">🛒</div>
+          <p class="kicker mb-2">Market access</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Buyer Readiness</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Product photography, specifications, packaging sizes and formats, transport planning, and how to respond to buyer enquiries efficiently.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="chip">Photography</span>
+            <span class="chip">Logistics</span>
+            <span class="chip">Enquiries</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-gap anim-4">
+      <div class="card card-dark p-8 flex flex-col md:flex-row items-center gap-6 justify-between">
+        <div>
+          <p class="kicker kicker-lt mb-2">Ready to learn more?</p>
+          <h2 class="section-title" style="color:var(--cream)">Connect with a field coordinator</h2>
+          <p class="text-sm leading-relaxed mt-2" style="color:rgba(243,232,206,0.65)">Training materials and facilitated capacity-building sessions are available for registered NWFP groups and DFO partners.</p>
+        </div>
+        <div class="flex gap-3 flex-shrink-0">
+          <a href="buyer_enquiry.html" class="btn btn-amber">Make Enquiry</a>
+          <a href="nwfp_groups.html" class="btn btn-outline">View Groups</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>

@@ -3,47 +3,173 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Buyer Enquiry - Bhutan NWFP Platform</title>
+  <title>Buyer Enquiry — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="NWFP Buyer Enquiry">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero-photo rounded-[2rem] p-6 text-white shadow-2xl md:p-10" style="--hero-image:url('assets/nwfp_images/rubia-cordifolia.jpg')">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Buyer enquiry</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Request products, quantities, grades, and delivery information.</h1>
-      </section>
-      <section class="mt-6 grid gap-4 lg:grid-cols-[1fr_22rem]">
-        <form class="card rounded-3xl p-6">
-          <div class="grid gap-4 md:grid-cols-2">
-            <label class="block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Buyer name</span><input class="field mt-2" placeholder="Organization or person"></label>
-            <label class="block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Email</span><input class="field mt-2" type="email" placeholder="buyer@example.com"></label>
-            <label class="block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Product</span><select class="field mt-2"><option>Cordyceps sinensis</option><option>Matsutake mushroom</option><option>Paris polyphylla</option><option>Rubia cordifolia</option><option>Bamboo / cane</option><option>Daphne spp</option></select></label>
-            <label class="block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Quantity</span><input class="field mt-2" placeholder="Example: 25 kg"></label>
-            <label class="block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Preferred grade</span><input class="field mt-2" placeholder="Fresh, dried, sorted, premium..."></label>
-            <label class="block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Delivery location</span><input class="field mt-2" placeholder="Town, Dzongkhag, country"></label>
-          </div>
-          <label class="mt-4 block"><span class="text-xs font-black uppercase tracking-wide text-slate-500">Notes</span><textarea class="field mt-2 min-h-32" placeholder="Packaging, timeline, certification, quality requirements..."></textarea></label>
-          <button type="button" class="mt-5 rounded-xl bg-emerald-950 px-5 py-3 text-sm font-black text-white hover:bg-emerald-900">Prepare Enquiry</button>
-        </form>
-        <aside class="card rounded-3xl p-6">
-          <p class="kicker">Enquiry checklist</p>
-          <h2 class="mt-1 text-2xl font-black text-emerald-950">Include enough detail</h2>
-          <div class="mt-5 space-y-3 text-sm font-bold text-slate-700">
-            <div class="chip rounded-2xl p-3">Product and species</div>
-            <div class="chip rounded-2xl p-3">Quantity and grade</div>
-            <div class="chip rounded-2xl p-3">Delivery location</div>
-            <div class="chip rounded-2xl p-3">Certification needs</div>
-            <div class="chip rounded-2xl p-3">Expected delivery date</div>
-          </div>
-        </aside>
-      </section>
-    </main>
-    <div id="siteFooter"></div>
+<body>
+<div class="shell">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link active">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
   </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO with background photo -->
+    <section class="hero-photo anim-1" style="--hero-image:url('assets/nwfp_images/rubia-cordifolia.jpg')">
+      <div class="hero-inner">
+        <p class="kicker kicker-lt">Buyer enquiry</p>
+        <h1>Request products, quantities, grades &amp; delivery information.</h1>
+        <p class="lead">Connect directly with Bhutan's certified NWFP collection groups. Specify your requirements and a coordinator will follow up with sourcing details, availability, and traceability documentation.</p>
+      </div>
+    </section>
+
+    <!-- FORM + SIDEBAR -->
+    <section class="section-gap anim-2 grid gap-6 lg:grid-cols-[1fr_21rem]">
+
+      <!-- Form -->
+      <div class="card p-7">
+        <p class="kicker mb-1">Enquiry details</p>
+        <h2 class="section-title mb-6">Tell us what you need</h2>
+        <form onsubmit="return false">
+          <div class="grid gap-5 md:grid-cols-2">
+            <label class="block">
+              <span class="field-label">Buyer name</span>
+              <input class="field" type="text" placeholder="Organisation or person">
+            </label>
+            <label class="block">
+              <span class="field-label">Email address</span>
+              <input class="field" type="email" placeholder="buyer@example.com">
+            </label>
+            <label class="block">
+              <span class="field-label">Product</span>
+              <select class="field">
+                <option>Cordyceps sinensis</option>
+                <option>Matsutake mushroom</option>
+                <option>Paris polyphylla</option>
+                <option>Rubia cordifolia</option>
+                <option>Bamboo / cane</option>
+                <option>Daphne spp</option>
+                <option>Juniperus recurva</option>
+                <option>Other (specify in notes)</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="field-label">Quantity required</span>
+              <input class="field" type="text" placeholder="e.g. 25 kg, 100 kg">
+            </label>
+            <label class="block">
+              <span class="field-label">Preferred grade</span>
+              <input class="field" type="text" placeholder="Fresh, dried, sorted, premium…">
+            </label>
+            <label class="block">
+              <span class="field-label">Delivery location</span>
+              <input class="field" type="text" placeholder="Town, Dzongkhag, country">
+            </label>
+          </div>
+          <label class="block mt-5">
+            <span class="field-label">Additional notes</span>
+            <textarea class="field" rows="5" placeholder="Packaging requirements, expected delivery window, certification needs, quality standards…"></textarea>
+          </label>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button type="submit" class="btn btn-forest">Submit Enquiry</button>
+            <button type="reset" class="btn btn-outline" style="border-color:rgba(13,36,25,0.2);color:var(--ink)">Clear form</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="flex flex-col gap-5">
+        <div class="card p-6">
+          <p class="kicker mb-1">Enquiry checklist</p>
+          <h3 class="font-bold text-lg text-emerald-950 mb-4">Include enough detail</h3>
+          <div class="flex flex-col gap-2">
+            <div class="check-item"><span class="check-dot"></span>Product species name</div>
+            <div class="check-item"><span class="check-dot"></span>Required quantity and unit</div>
+            <div class="check-item"><span class="check-dot"></span>Preferred grade or processing</div>
+            <div class="check-item"><span class="check-dot"></span>Delivery location</div>
+            <div class="check-item"><span class="check-dot"></span>Certification requirements</div>
+            <div class="check-item"><span class="check-dot"></span>Expected delivery date</div>
+          </div>
+        </div>
+
+        <div class="card card-dark p-6">
+          <p class="kicker kicker-lt mb-1">Traceability</p>
+          <h3 class="font-bold text-lg text-cream mb-3" style="color:var(--cream)">All products traceable</h3>
+          <p class="text-sm leading-relaxed" style="color:rgba(243,232,206,0.65)">Every sourced product links to an approved management plan, harvest permit, group record, and DFO or park office reference.</p>
+          <a href="certification_traceability.html" class="btn btn-amber btn-sm mt-4 inline-flex">Learn about traceability</a>
+        </div>
+
+        <div class="card p-6">
+          <p class="kicker mb-2">Response time</p>
+          <p class="text-sm leading-relaxed text-slate-600">Enquiries are reviewed by the Forest Resources Planning and Management Division. Typical response time is 3–5 business days.</p>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>

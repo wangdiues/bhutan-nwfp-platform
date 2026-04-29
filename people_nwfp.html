@@ -3,62 +3,170 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>People and NWFP - Bhutan NWFP Platform</title>
+  <title>People &amp; NWFP — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
-  <style>
-    .story-card{position:relative;overflow:hidden;border-radius:1.5rem;background:#082f1a;box-shadow:0 20px 50px rgba(8,47,26,.14)}
-    .story-card img{height:100%;width:100%;object-fit:cover;transition:transform .5s ease}
-    .story-card:hover img{transform:scale(1.04)}
-    .story-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(8,47,26,.84))}
-    .story-label{position:absolute;inset:auto 0 0 0;z-index:1;padding:1rem;color:white}
-  </style>
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="People and NWFP">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero-photo rounded-[2rem] p-6 text-white shadow-2xl md:p-10" style="--hero-image:url('assets/people_nwfp/COFFEE TABLE BOOK_page-0010.jpg')">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">People and NWFP</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Community stories behind Bhutan's non-wood forest products.</h1>
-        <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50">A visual section for people, landscapes, products, collection practices, and local livelihoods connected to sustainable NWFP management.</p>
-      </section>
+<body>
+<div class="shell">
 
-      <section class="mt-6 grid gap-4 lg:grid-cols-[1.15fr_.85fr]">
-        <article class="story-card min-h-[32rem]">
-          <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0001.jpg" alt="People and NWFP coffee table book page 1">
-          <div class="story-label">
-            <span class="rounded-full bg-yellow-300 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-950">Featured story</span>
-            <h2 class="mt-3 text-3xl font-black md:text-5xl">People, forests, and livelihoods</h2>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link active">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
+  </div>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO with photo bg -->
+    <section class="hero-photo anim-1" style="--hero-image:url('assets/people_nwfp/COFFEE TABLE BOOK_page-0010.jpg')">
+      <div class="hero-inner">
+        <p class="kicker kicker-lt">People and NWFP</p>
+        <h1>Community stories behind Bhutan's non-wood forest products.</h1>
+        <p class="lead">A visual section for people, landscapes, products, collection practices, and local livelihoods connected to sustainable NWFP management across Bhutan's forest communities.</p>
+      </div>
+    </section>
+
+    <!-- FEATURED STORY -->
+    <section class="section-gap anim-2 grid gap-5 lg:grid-cols-[1.2fr_.8fr]">
+      <article class="photo-card min-h-[32rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0001.jpg" alt="People and NWFP — featured story">
+        <div class="photo-copy">
+          <span class="badge mb-3">Featured story</span>
+          <h2 style="font-size:clamp(1.75rem,4vw,3.25rem);color:white">People, forests &amp; livelihoods</h2>
+          <p class="text-sm leading-relaxed mt-2" style="color:rgba(255,255,255,0.75)">Rural communities across Bhutan's forest landscapes depend on non-wood forest products for livelihoods, culture, and seasonal income.</p>
+        </div>
+      </article>
+      <div class="flex flex-col gap-5">
+        <div class="card p-6">
+          <p class="kicker mb-2">Visual archive</p>
+          <h3 class="font-bold text-xl text-emerald-950 mb-3">Coffee-table-book pages</h3>
+          <p class="text-sm leading-relaxed text-slate-600">These images are kept locally under <code class="text-xs bg-lime-50 px-1.5 py-0.5 rounded text-emerald-800">assets/people_nwfp</code> and presented as a browsable community and NWFP story section, capturing the human dimension of forest product management.</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="chip">Collection</span>
+            <span class="chip">Livelihoods</span>
+            <span class="chip">Community</span>
+          </div>
+        </div>
+        <article class="photo-card min-h-[17rem]">
+          <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0002.jpg" alt="Collection and care">
+          <div class="photo-copy">
+            <h3 class="font-bold text-2xl" style="color:white">Collection &amp; care</h3>
           </div>
         </article>
-        <div class="grid gap-4">
-          <article class="card rounded-3xl p-6">
-            <p class="kicker">Visual archive</p>
-            <h2 class="mt-1 text-2xl font-black text-emerald-950">Coffee-table-book pages</h2>
-            <p class="mt-3 text-sm leading-7 text-slate-700">These images are kept locally under <strong>assets/people_nwfp</strong> and presented as a browsable community and NWFP story section.</p>
-          </article>
-          <article class="story-card min-h-[18rem]">
-            <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0002.jpg" alt="People and NWFP coffee table book page 2">
-            <div class="story-label"><h3 class="text-2xl font-black">Collection and care</h3></div>
-          </article>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0003.jpg" alt="People and NWFP coffee table book page 3"><div class="story-label"><h3 class="text-xl font-black">Local knowledge</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0004.jpg" alt="People and NWFP coffee table book page 4"><div class="story-label"><h3 class="text-xl font-black">Forest products</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0005.jpg" alt="People and NWFP coffee table book page 5"><div class="story-label"><h3 class="text-xl font-black">Community groups</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0006.jpg" alt="People and NWFP coffee table book page 6"><div class="story-label"><h3 class="text-xl font-black">Value addition</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0007.jpg" alt="People and NWFP coffee table book page 7"><div class="story-label"><h3 class="text-xl font-black">Market pathways</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0008.jpg" alt="People and NWFP coffee table book page 8"><div class="story-label"><h3 class="text-xl font-black">Rural enterprise</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0009.jpg" alt="People and NWFP coffee table book page 9"><div class="story-label"><h3 class="text-xl font-black">Sustainable use</h3></div></article>
-        <article class="story-card min-h-[20rem]"><img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0010.jpg" alt="People and NWFP coffee table book page 10"><div class="story-label"><h3 class="text-xl font-black">Bhutan NWFP story</h3></div></article>
-      </section>
-    </main>
-    <div id="siteFooter"></div>
-  </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+    <!-- STORY GRID -->
+    <section class="section-gap anim-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0003.jpg" alt="Local knowledge">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Local knowledge</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0004.jpg" alt="Forest products">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Forest products</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0005.jpg" alt="Community groups">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Community groups</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0006.jpg" alt="Value addition">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Value addition</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0007.jpg" alt="Market pathways">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Market pathways</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0008.jpg" alt="Rural enterprise">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Rural enterprise</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0009.jpg" alt="Sustainable use">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Sustainable use</h3></div>
+      </article>
+      <article class="photo-card min-h-[20rem]">
+        <img src="assets/people_nwfp/COFFEE TABLE BOOK_page-0010.jpg" alt="Bhutan NWFP story">
+        <div class="photo-copy"><h3 class="font-bold text-xl" style="color:white">Bhutan NWFP story</h3></div>
+      </article>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-gap anim-4">
+      <div class="card card-dark p-8 flex flex-col md:flex-row items-center gap-6 justify-between">
+        <div>
+          <p class="kicker kicker-lt mb-2">Connect with the community</p>
+          <h2 class="section-title" style="color:var(--cream)">Support NWFP livelihoods</h2>
+          <p class="text-sm leading-relaxed mt-2" style="color:rgba(243,232,206,0.65)">Buying from certified NWFP groups directly supports forest-dependent communities and incentivises sustainable management.</p>
+        </div>
+        <div class="flex gap-3 flex-shrink-0">
+          <a href="marketplace_sample.html" class="btn btn-amber">View Marketplace</a>
+          <a href="nwfp_groups.html" class="btn btn-outline">View Groups</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>

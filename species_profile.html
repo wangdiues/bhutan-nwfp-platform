@@ -3,24 +3,111 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Species Profiles - Bhutan NWFP Platform</title>
+  <title>Species Profiles — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="NWFP Species Profiles">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero-photo rounded-[2rem] p-6 text-white shadow-2xl md:p-10" style="--hero-image:url('assets/nwfp_images/cordyceps-sinensis.jpg')">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Species profiles</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Searchable profiles for priority NWFP species and product groups.</h1>
-        <input id="speciesSearch" class="mt-7 max-w-md rounded-xl border border-white/20 bg-white/95 px-4 py-3 text-sm font-bold text-emerald-950" placeholder="Search species or category...">
-      </section>
-      <section id="speciesGrid" class="mt-6 grid gap-4"></section>
-    </main>
-    <div id="siteFooter"></div>
+<body>
+<div class="shell">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link active">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
   </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO with photo bg -->
+    <section class="hero-photo anim-1" style="--hero-image:url('assets/nwfp_images/cordyceps-sinensis.jpg')">
+      <div class="hero-inner">
+        <p class="kicker kicker-lt">Species profiles</p>
+        <h1>Searchable profiles for priority NWFP species &amp; product groups.</h1>
+        <p class="lead">Ecological notes, harvest seasons, use categories, value chains, and group linkages for key non-wood forest product species in Bhutan.</p>
+        <div class="mt-6 max-w-md">
+          <label class="field-label" style="color:rgba(255,255,255,0.5)">Search species or category</label>
+          <input id="speciesSearch" class="field mt-1" placeholder="e.g. Cordyceps, mushroom, medicinal…" style="background:rgba(255,255,255,0.95)">
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIES GRID (injected by nwfp_pages.js) -->
+    <section class="section-gap anim-2">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+        <div>
+          <p class="kicker mb-1">Species database</p>
+          <h2 class="section-title">Priority NWFP species</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">Medicinal</span>
+          <span class="chip">Mushroom</span>
+          <span class="chip">Aromatic</span>
+          <span class="chip">Dye plant</span>
+          <span class="chip">Bamboo &amp; cane</span>
+        </div>
+      </div>
+      <div id="speciesGrid" class="grid gap-4 md:grid-cols-2 xl:grid-cols-3"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>

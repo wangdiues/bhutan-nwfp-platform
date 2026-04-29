@@ -3,266 +3,288 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NWFP Marketplace Sample - Bhutan</title>
+  <title>NWFP Marketplace — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root{--forest:#082f1a;--canopy:#14532d;--leaf:#22c55e;--lime:#bef264;--gold:#facc15;--paper:#f6f4ea;--ink:#102116}
-    body{
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 14% 0%, rgba(190,242,100,.25), transparent 25rem),
-        radial-gradient(circle at 86% 6%, rgba(250,204,21,.18), transparent 23rem),
-        linear-gradient(135deg, rgba(8,47,26,.08) 0 30%, transparent 30% 100%),
-        var(--paper);
-    }
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;background-image:repeating-linear-gradient(90deg, rgba(8,47,26,.45) 0 1px, transparent 1px 58px)}
-    .shell{position:relative;z-index:1}
-    .logo-shadow{filter:drop-shadow(0 14px 24px rgba(0,0,0,.26))}
-    .nav-link{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.1)}
-    .nav-link:hover{background:rgba(255,255,255,.18)}
-    .hero{
-      background:
-        linear-gradient(120deg, rgba(8,47,26,.96), rgba(20,83,45,.82)),
-        url("assets/nwfp_images/matsutake.jpg");
-      background-size:cover;
-      background-position:center;
-    }
-    .card{border:1px solid rgba(20,83,45,.14);background:rgba(255,255,255,.93);box-shadow:0 18px 45px rgba(8,47,26,.08)}
-    .kicker{font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#166534}
-    .product{overflow:hidden;border-radius:1.5rem;border:1px solid rgba(20,83,45,.14);background:white;box-shadow:0 18px 45px rgba(8,47,26,.08)}
-    .product img{height:13rem;width:100%;object-fit:cover;transition:transform .45s ease}
-    .product:hover img{transform:scale(1.05)}
-    .chip{border:1px solid rgba(20,83,45,.16);background:#f7fee7}
-    .qty{display:grid;grid-template-columns:2rem 1fr 2rem;align-items:center;border:1px solid rgba(20,83,45,.16);border-radius:.9rem;overflow:hidden}
-    .qty button{height:2.25rem;background:#ecfccb;font-weight:900;color:#14532d}
-    .qty span{text-align:center;font-weight:900}
-  </style>
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
 <body>
-  <div class="shell">
-    <header class="sticky top-0 z-30 border-b border-white/10 bg-emerald-950/95 text-white shadow-xl backdrop-blur">
-      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-        <a href="index.html" class="flex min-w-0 items-center gap-3">
-          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="h-14 w-14 shrink-0 object-contain logo-shadow">
-          <div class="min-w-0">
-            <strong class="block leading-tight">NWFP Marketplace Sample</strong>
-            <small class="block truncate text-xs text-lime-100">Forest Resources Planning and Management Division, Department of Forests and Park Services</small>
-          </div>
-        </a>
-        <nav class="hidden flex-wrap items-center justify-end gap-2 text-sm font-bold md:flex">
-          <a class="nav-link rounded-xl px-3 py-2" href="index.html">Home</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="NWFP_Management_Plans.html">Management Plans</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="data_analytics.html">Data Analytics</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="spatial_resources.html">Spatial Resources</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="nwfp_gallery.html">Gallery</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="marketplace_sample.html">Market</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="about.html">About</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="dzongkhag_directory.html">Dzongkhags</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="product_catalog.html">Products</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="nwfp_groups.html">Groups</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="species_profile.html">Species</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="people_nwfp.html">People &amp; NWFP</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="certification_traceability.html">Traceability</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="training_resources.html">Training</a>
-          <a class="nav-link rounded-xl px-3 py-2" href="buyer_enquiry.html">Enquiry</a>
-        </nav>
-      </div>
-    </header>
+<div class="shell">
 
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero overflow-hidden rounded-[2rem] text-white shadow-2xl">
-        <div class="grid min-h-[32rem] bg-emerald-950/30 lg:grid-cols-[1fr_24rem]">
-          <div class="flex flex-col justify-end p-6 md:p-10">
-            <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Sample market interface</p>
-            <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none tracking-tight md:text-6xl">Traceable Bhutanese NWFP products.</h1>
-            <p class="mt-5 max-w-2xl text-base leading-7 text-emerald-50">A demonstration marketplace page for certified groups, transparent sourcing, processing status, and buyer-ready product listings.</p>
-            <div class="mt-7 flex flex-wrap gap-3">
-              <a href="#products" class="rounded-xl bg-yellow-300 px-5 py-3 text-sm font-black text-emerald-950 hover:bg-yellow-200">Browse Products</a>
-              <a href="#cart" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/20">Sample Cart</a>
-            </div>
-          </div>
-          <aside class="grid content-end gap-3 border-l border-white/10 bg-emerald-950/40 p-6">
-            <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="h-28 w-28 object-contain logo-shadow">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-                <div class="text-4xl font-black">5</div>
-                <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Sample products</div>
-              </div>
-              <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-                <div class="text-4xl font-black">3</div>
-                <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Dzongkhags shown</div>
-              </div>
-            </div>
-          </aside>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
         </div>
-      </section>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link active">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-      <section class="mt-6 grid gap-4 lg:grid-cols-[16rem_1fr_20rem]">
-        <aside class="card rounded-3xl p-5">
-          <p class="kicker">Filters</p>
-          <h2 class="mt-1 text-xl font-black text-emerald-950">Market controls</h2>
-          <div class="mt-5 space-y-5">
-            <div>
-              <label class="text-xs font-black uppercase tracking-wide text-slate-500">Product type</label>
-              <div class="mt-2 grid gap-2 text-sm font-bold text-emerald-950">
-                <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Medicinal</label>
-                <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Mushroom</label>
-                <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Aromatic</label>
-                <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Dye plant</label>
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
+  </div>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO -->
+    <section class="hero-photo anim-1" style="--hero-image:url('assets/nwfp_images/matsutake.jpg'); min-height:26rem">
+      <div class="hero-inner grid gap-8 lg:grid-cols-[1fr_20rem]" style="min-height:26rem;align-items:flex-end">
+        <div>
+          <p class="kicker kicker-lt">Sample market interface</p>
+          <h1>Traceable Bhutanese NWFP products.</h1>
+          <p class="lead">A demonstration marketplace for certified groups, transparent sourcing, processing status, and buyer-ready product listings.</p>
+          <div class="flex flex-wrap gap-3 mt-7">
+            <a href="#products" class="btn btn-amber">Browse products</a>
+            <a href="#cart" class="btn btn-outline">Sample cart</a>
+          </div>
+        </div>
+        <div class="self-end hidden lg:grid grid-cols-2 gap-3 pb-0.5">
+          <div class="hero-stat">
+            <div class="hero-stat-num">5</div>
+            <div class="hero-stat-label">Sample products</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Dzongkhags shown</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKET LAYOUT: Filters | Products | Cart -->
+    <section id="products" class="section-gap anim-2 grid gap-5 lg:grid-cols-[15rem_1fr_19rem]">
+
+      <!-- FILTERS -->
+      <aside class="card p-5 self-start lg:sticky lg:top-24">
+        <p class="kicker mb-1">Filters</p>
+        <h3 class="font-bold text-lg text-emerald-950 mb-4">Market controls</h3>
+
+        <div class="mb-5">
+          <label class="field-label">Product type</label>
+          <div class="flex flex-col gap-2 mt-2 text-sm font-semibold text-emerald-950">
+            <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Medicinal</label>
+            <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Mushroom</label>
+            <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Aromatic</label>
+            <label class="flex items-center gap-2"><input checked type="checkbox" class="h-4 w-4 accent-emerald-700"> Dye plant</label>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label class="field-label">Certification</label>
+          <select class="field mt-2 text-sm">
+            <option>All verified groups</option>
+            <option>Management plan active</option>
+            <option>Processing facility linked</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="field-label">Max price</label>
+          <input type="range" min="0" max="100" value="70" class="mt-3 w-full accent-emerald-700">
+          <div class="flex justify-between text-xs text-slate-400 mt-1"><span>Nu 0</span><span>Nu 5,000</span></div>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS -->
+      <div class="grid gap-4 sm:grid-cols-2 content-start">
+
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img class="product-img" src="assets/nwfp_images/cordyceps-sinensis.jpg" alt="Cordyceps sinensis">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <p class="kicker">Gasa / Laya</p>
+                <h3 class="font-bold text-lg text-emerald-950 mt-1"><em>Cordyceps sinensis</em></h3>
               </div>
+              <span class="badge flex-shrink-0">Premium</span>
             </div>
-            <div>
-              <label class="text-xs font-black uppercase tracking-wide text-slate-500">Certification</label>
-              <select class="mt-2 w-full rounded-xl border border-emerald-900/15 bg-white px-3 py-2 text-sm font-bold text-emerald-950">
-                <option>All verified groups</option>
-                <option>Management plan active</option>
-                <option>Processing facility linked</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-xs font-black uppercase tracking-wide text-slate-500">Price range</label>
-              <input type="range" min="0" max="100" value="70" class="mt-3 w-full accent-emerald-700">
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">Traceable high-altitude medicinal NWFP with group harvest records and permit documentation.</p>
+            <div class="flex items-end justify-between gap-3">
+              <div><span class="text-xs font-bold text-slate-400">Sample price</span><strong class="block text-xl text-emerald-950 font-bold" style="font-family:'Cormorant Garamond',serif;font-size:1.65rem">Nu 4,800<small style="font-size:0.9rem">/g</small></strong></div>
+              <button class="btn btn-forest btn-sm">Add</button>
             </div>
           </div>
-        </aside>
-
-        <section id="products" class="grid gap-4 sm:grid-cols-2">
-          <article class="product">
-            <img src="assets/nwfp_images/cordyceps-sinensis.jpg" alt="Cordyceps sinensis product">
-            <div class="p-5">
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <p class="kicker">Gasa / Laya</p>
-                  <h2 class="mt-1 text-xl font-black text-emerald-950">Cordyceps sinensis</h2>
-                </div>
-                <span class="rounded-full bg-yellow-300 px-3 py-1 text-xs font-black text-emerald-950">Premium</span>
-              </div>
-              <p class="mt-3 text-sm leading-6 text-slate-700">Traceable high-altitude medicinal NWFP with group harvest records and permit documentation.</p>
-              <div class="mt-4 flex items-end justify-between gap-3">
-                <div><span class="text-xs font-bold text-slate-500">Sample price</span><strong class="block text-2xl text-emerald-950">Nu 4,800/g</strong></div>
-                <button class="rounded-xl bg-emerald-950 px-4 py-2 text-sm font-black text-white hover:bg-emerald-900">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="assets/nwfp_images/matsutake.jpg" alt="Matsutake mushroom product">
-            <div class="p-5">
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <p class="kicker">Bumthang / Ura</p>
-                  <h2 class="mt-1 text-xl font-black text-emerald-950">Fresh Matsutake</h2>
-                </div>
-                <span class="rounded-full bg-lime-200 px-3 py-1 text-xs font-black text-emerald-950">Seasonal</span>
-              </div>
-              <p class="mt-3 text-sm leading-6 text-slate-700">Buyer-ready mushroom lot with grading, chilled handling, and dispatch window details.</p>
-              <div class="mt-4 flex items-end justify-between gap-3">
-                <div><span class="text-xs font-bold text-slate-500">Sample price</span><strong class="block text-2xl text-emerald-950">Nu 2,200/kg</strong></div>
-                <button class="rounded-xl bg-emerald-950 px-4 py-2 text-sm font-black text-white hover:bg-emerald-900">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="assets/nwfp_images/paris-polyphylla.jpg" alt="Paris polyphylla product">
-            <div class="p-5">
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <p class="kicker">Trashigang</p>
-                  <h2 class="mt-1 text-xl font-black text-emerald-950">Paris polyphylla</h2>
-                </div>
-                <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-950">Permit</span>
-              </div>
-              <p class="mt-3 text-sm leading-6 text-slate-700">Medicinal herb listing with harvest quota, management plan reference, and source group.</p>
-              <div class="mt-4 flex items-end justify-between gap-3">
-                <div><span class="text-xs font-bold text-slate-500">Sample price</span><strong class="block text-2xl text-emerald-950">Nu 950/kg</strong></div>
-                <button class="rounded-xl bg-emerald-950 px-4 py-2 text-sm font-black text-white hover:bg-emerald-900">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="assets/nwfp_images/rubia-cordifolia.jpg" alt="Rubia cordifolia product">
-            <div class="p-5">
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <p class="kicker">Trashigang</p>
-                  <h2 class="mt-1 text-xl font-black text-emerald-950">Rubia cordifolia</h2>
-                </div>
-                <span class="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-900">Dye</span>
-              </div>
-              <p class="mt-3 text-sm leading-6 text-slate-700">Natural dye and medicinal material for processors, craft groups, and herbal enterprises.</p>
-              <div class="mt-4 flex items-end justify-between gap-3">
-                <div><span class="text-xs font-bold text-slate-500">Sample price</span><strong class="block text-2xl text-emerald-950">Nu 380/kg</strong></div>
-                <button class="rounded-xl bg-emerald-950 px-4 py-2 text-sm font-black text-white hover:bg-emerald-900">Add</button>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <aside id="cart" class="space-y-4">
-          <article class="card rounded-3xl p-5">
-            <p class="kicker">Sample Cart</p>
-            <h2 class="mt-1 text-xl font-black text-emerald-950">Buyer request</h2>
-            <div class="mt-5 space-y-4">
-              <div class="flex items-center justify-between gap-3">
-                <div>
-                  <strong class="block text-sm text-emerald-950">Fresh Matsutake</strong>
-                  <span class="text-xs font-bold text-slate-500">Bumthang / Ura</span>
-                </div>
-                <div class="qty w-28"><button>-</button><span>2</span><button>+</button></div>
-              </div>
-              <div class="flex items-center justify-between gap-3">
-                <div>
-                  <strong class="block text-sm text-emerald-950">Rubia cordifolia</strong>
-                  <span class="text-xs font-bold text-slate-500">Trashigang</span>
-                </div>
-                <div class="qty w-28"><button>-</button><span>5</span><button>+</button></div>
-              </div>
-            </div>
-            <div class="mt-5 rounded-2xl bg-emerald-950 p-4 text-white">
-              <div class="flex justify-between text-sm font-bold text-lime-100"><span>Estimated total</span><span>Sample only</span></div>
-              <div class="mt-1 text-3xl font-black">Nu 6,300</div>
-            </div>
-            <button class="mt-4 w-full rounded-xl bg-yellow-300 px-4 py-3 text-sm font-black text-emerald-950 hover:bg-yellow-200">Create Buyer Enquiry</button>
-          </article>
-
-          <article class="card rounded-3xl p-5">
-            <p class="kicker">Traceability</p>
-            <h2 class="mt-1 text-xl font-black text-emerald-950">Compliance signals</h2>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip rounded-full px-3 py-2 text-xs font-black text-emerald-950">Active plan</span>
-              <span class="chip rounded-full px-3 py-2 text-xs font-black text-emerald-950">Harvest quota</span>
-              <span class="chip rounded-full px-3 py-2 text-xs font-black text-emerald-950">Group verified</span>
-              <span class="chip rounded-full px-3 py-2 text-xs font-black text-emerald-950">DFO/Park office</span>
-            </div>
-          </article>
-        </aside>
-      </section>
-
-      <section class="mt-6 grid gap-4 lg:grid-cols-3">
-        <article class="card rounded-3xl p-5">
-          <p class="kicker">Supplier profile</p>
-          <h2 class="mt-1 text-xl font-black text-emerald-950">Group-led selling</h2>
-          <p class="mt-3 text-sm leading-7 text-slate-700">Each product can connect to an NWFP group profile, approved management plan, Dzongkhag, DFO or park office, and harvest season.</p>
         </article>
-        <article class="card rounded-3xl p-5">
-          <p class="kicker">Quality control</p>
-          <h2 class="mt-1 text-xl font-black text-emerald-950">Processing and grading</h2>
-          <p class="mt-3 text-sm leading-7 text-slate-700">Listings can show drying, sorting, packaging, certification status, storage requirements, and buyer specifications.</p>
+
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img class="product-img" src="assets/nwfp_images/matsutake.jpg" alt="Fresh Matsutake">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <p class="kicker">Bumthang / Ura</p>
+                <h3 class="font-bold text-lg text-emerald-950 mt-1">Fresh Matsutake</h3>
+              </div>
+              <span style="background:rgba(174,212,94,0.2);border:1px solid rgba(174,212,94,0.3);border-radius:999px;padding:0.28rem 0.65rem;font-size:0.62rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--canopy);white-space:nowrap">Seasonal</span>
+            </div>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">Buyer-ready mushroom lot with grading, chilled handling, and dispatch window details.</p>
+            <div class="flex items-end justify-between gap-3">
+              <div><span class="text-xs font-bold text-slate-400">Sample price</span><strong class="block" style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--forest)">Nu 2,200<small style="font-size:0.9rem">/kg</small></strong></div>
+              <button class="btn btn-forest btn-sm">Add</button>
+            </div>
+          </div>
         </article>
-        <article class="card rounded-3xl p-5">
-          <p class="kicker">Connected records</p>
-          <h2 class="mt-1 text-xl font-black text-emerald-950">Plan and spatial links</h2>
-          <p class="mt-3 text-sm leading-7 text-slate-700">Market entries should link back to management plans and spatial resources to keep commercialization aligned with sustainable use.</p>
+
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img class="product-img" src="assets/nwfp_images/paris-polyphylla.jpg" alt="Paris polyphylla">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <p class="kicker">Trashigang</p>
+                <h3 class="font-bold text-lg text-emerald-950 mt-1"><em>Paris polyphylla</em></h3>
+              </div>
+              <span style="background:rgba(100,180,120,0.12);border:1px solid rgba(100,180,120,0.25);border-radius:999px;padding:0.28rem 0.65rem;font-size:0.62rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);white-space:nowrap">Permit</span>
+            </div>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">Medicinal herb listing with harvest quota, management plan reference, and source group.</p>
+            <div class="flex items-end justify-between gap-3">
+              <div><span class="text-xs font-bold text-slate-400">Sample price</span><strong class="block" style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--forest)">Nu 950<small style="font-size:0.9rem">/kg</small></strong></div>
+              <button class="btn btn-forest btn-sm">Add</button>
+            </div>
+          </div>
         </article>
-      </section>
-    </main>
-    <footer class="mx-auto max-w-7xl px-4 pb-8 pt-2">
-      <div class="rounded-2xl border border-emerald-900/10 bg-white/80 px-5 py-4 text-center text-sm font-bold text-emerald-950 shadow-sm">
-        Made by Wangdi · <a class="text-emerald-700 hover:text-emerald-950" href="mailto:wangidues@gmail.com">wangidues@gmail.com</a>
+
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img class="product-img" src="assets/nwfp_images/rubia-cordifolia.jpg" alt="Rubia cordifolia">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <p class="kicker">Trashigang</p>
+                <h3 class="font-bold text-lg text-emerald-950 mt-1"><em>Rubia cordifolia</em></h3>
+              </div>
+              <span style="background:rgba(196,108,53,0.12);border:1px solid rgba(196,108,53,0.25);border-radius:999px;padding:0.28rem 0.65rem;font-size:0.62rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--rust);white-space:nowrap">Dye</span>
+            </div>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">Natural dye and medicinal material for processors, craft groups, and herbal enterprises.</p>
+            <div class="flex items-end justify-between gap-3">
+              <div><span class="text-xs font-bold text-slate-400">Sample price</span><strong class="block" style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--forest)">Nu 380<small style="font-size:0.9rem">/kg</small></strong></div>
+              <button class="btn btn-forest btn-sm">Add</button>
+            </div>
+          </div>
+        </article>
+
       </div>
-    </footer>
-  </div>
+
+      <!-- CART -->
+      <aside id="cart" class="flex flex-col gap-4 self-start lg:sticky lg:top-24">
+
+        <div class="card p-5">
+          <p class="kicker mb-1">Sample cart</p>
+          <h3 class="font-bold text-lg text-emerald-950 mb-5">Buyer request</h3>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <strong class="block text-sm text-emerald-950">Fresh Matsutake</strong>
+                <span class="text-xs font-semibold text-slate-400">Bumthang / Ura</span>
+              </div>
+              <div class="qty-ctrl w-28">
+                <button>−</button><span>2</span><button>+</button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <strong class="block text-sm text-emerald-950"><em>Rubia cordifolia</em></strong>
+                <span class="text-xs font-semibold text-slate-400">Trashigang</span>
+              </div>
+              <div class="qty-ctrl w-28">
+                <button>−</button><span>5</span><button>+</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-total mt-5">
+            <div class="cart-total-label">Estimated total</div>
+            <div class="cart-total-amt">Nu 6,300</div>
+            <div style="font-size:0.7rem;color:rgba(174,212,94,0.6);margin-top:0.25rem">Sample demonstration only</div>
+          </div>
+          <a href="buyer_enquiry.html" class="btn btn-amber w-full mt-4 justify-center">Create Buyer Enquiry</a>
+        </div>
+
+        <div class="card p-5">
+          <p class="kicker mb-3">Traceability signals</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Active plan</span>
+            <span class="chip">Harvest quota</span>
+            <span class="chip">Group verified</span>
+            <span class="chip">DFO / park office</span>
+          </div>
+        </div>
+
+      </aside>
+    </section>
+
+    <!-- INFO CARDS -->
+    <section class="section-gap anim-4 grid gap-4 md:grid-cols-3">
+      <div class="card p-6">
+        <p class="kicker mb-2">Supplier profile</p>
+        <h3 class="font-bold text-lg text-emerald-950 mb-3">Group-led selling</h3>
+        <p class="text-sm leading-relaxed text-slate-600">Each product connects to an NWFP group profile, approved management plan, Dzongkhag, DFO or park office, and harvest season record.</p>
+      </div>
+      <div class="card p-6">
+        <p class="kicker mb-2">Quality control</p>
+        <h3 class="font-bold text-lg text-emerald-950 mb-3">Processing &amp; grading</h3>
+        <p class="text-sm leading-relaxed text-slate-600">Listings show drying, sorting, packaging, certification status, storage requirements, and buyer specifications for every product lot.</p>
+      </div>
+      <div class="card p-6">
+        <p class="kicker mb-2">Connected records</p>
+        <h3 class="font-bold text-lg text-emerald-950 mb-3">Plan &amp; spatial links</h3>
+        <p class="text-sm leading-relaxed text-slate-600">Market entries link to management plans and spatial resources, keeping commercialisation aligned with sustainable use commitments.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>

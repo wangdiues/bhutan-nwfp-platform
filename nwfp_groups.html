@@ -3,35 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NWFP Groups Registry - Bhutan NWFP Platform</title>
+  <title>NWFP Groups Registry — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="NWFP Groups Registry">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero rounded-[2rem] p-6 text-white shadow-2xl md:p-10">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Group registry</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Search NWFP groups by gewog, Dzongkhag, office, status, households, and products.</h1>
-      </section>
-      <section id="stats" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></section>
-      <section class="card mt-6 overflow-hidden rounded-3xl">
-        <div class="flex flex-wrap items-center justify-between gap-3 p-4">
-          <div><p class="kicker">Registry table</p><h2 class="text-2xl font-black text-emerald-950">Group records</h2></div>
-          <input id="groupSearch" class="field max-w-sm" placeholder="Search group, gewog, product, office...">
+<body>
+<div class="shell">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link active">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
+  </div>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO -->
+    <section class="hero anim-1">
+      <div class="hero-inner">
+        <p class="kicker kicker-lt">Group registry</p>
+        <h1>Search NWFP groups by gewog, Dzongkhag, office, status, households &amp; products.</h1>
+        <p class="lead">A searchable registry of all registered NWFP collection and management groups across Bhutan, linked to their management plans, spatial records, and product categories.</p>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" class="section-gap grid gap-4 sm:grid-cols-2 lg:grid-cols-4 anim-2"></section>
+
+    <!-- TABLE SECTION -->
+    <section class="section-gap anim-3">
+      <div class="card overflow-hidden">
+        <div class="flex flex-wrap items-center justify-between gap-4 p-6 border-b border-gray-100">
+          <div>
+            <p class="kicker mb-1">Registry table</p>
+            <h2 class="section-title">Group records</h2>
+          </div>
+          <input id="groupSearch" class="field max-w-sm" placeholder="Search group, gewog, product, office…" style="width:auto;min-width:16rem">
         </div>
         <div class="overflow-x-auto">
           <table class="data-table">
-            <thead><tr><th>Group and Products</th><th>Gewog / Dzongkhag</th><th>Office</th><th>Status</th><th>HH</th><th>Area</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Group and Products</th>
+                <th>Gewog / Dzongkhag</th>
+                <th>Office</th>
+                <th>Status</th>
+                <th>HH</th>
+                <th>Area</th>
+              </tr>
+            </thead>
             <tbody id="groupsBody"></tbody>
           </table>
         </div>
-      </section>
-    </main>
-    <div id="siteFooter"></div>
-  </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>

@@ -3,30 +3,181 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Certification and Traceability - Bhutan NWFP Platform</title>
+  <title>Certification &amp; Traceability — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/nwfp_pages.css">
+  <link rel="stylesheet" href="assets/nwfp_design.css">
 </head>
-<body data-title="Certification and Traceability">
-  <div class="shell">
-    <div id="siteHeader"></div>
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <section class="hero rounded-[2rem] p-6 text-white shadow-2xl md:p-10">
-        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Compliance flow</p>
-        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">From approved management plan to buyer-ready product.</h1>
-        <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50">Traceability connects harvest permits, group records, quotas, quality checks, packaging, and buyer documentation.</p>
-      </section>
-      <section class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <article class="card rounded-3xl p-5"><p class="kicker">Step 1</p><h2 class="mt-1 text-xl font-black text-emerald-950">Plan and allocation</h2><p class="mt-3 text-sm leading-7 text-slate-700">Confirm active PA, CFMP, or FMU-aligned NWFP management plan and permitted product.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Step 2</p><h2 class="mt-1 text-xl font-black text-emerald-950">Harvest record</h2><p class="mt-3 text-sm leading-7 text-slate-700">Record group, collector, location, season, quota, batch, and supervising DFO or park office.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Step 3</p><h2 class="mt-1 text-xl font-black text-emerald-950">Quality control</h2><p class="mt-3 text-sm leading-7 text-slate-700">Check drying, sorting, grading, packaging, contamination, storage, and shelf-life requirements.</p></article>
-        <article class="card rounded-3xl p-5"><p class="kicker">Step 4</p><h2 class="mt-1 text-xl font-black text-emerald-950">Market release</h2><p class="mt-3 text-sm leading-7 text-slate-700">Attach documents, product certification status, transport details, and buyer enquiry records.</p></article>
-      </section>
-      <section class="card mt-6 rounded-3xl p-6"><p class="kicker">Traceability checklist</p><div class="mt-4 grid gap-3 md:grid-cols-3"><span class="chip rounded-2xl p-4 font-black text-emerald-950">Active plan</span><span class="chip rounded-2xl p-4 font-black text-emerald-950">Harvest permit</span><span class="chip rounded-2xl p-4 font-black text-emerald-950">Group verified</span><span class="chip rounded-2xl p-4 font-black text-emerald-950">Batch code</span><span class="chip rounded-2xl p-4 font-black text-emerald-950">Quality grade</span><span class="chip rounded-2xl p-4 font-black text-emerald-950">Buyer record</span></div></section>
-    </main>
-    <div id="siteFooter"></div>
+<body>
+<div class="shell">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <strong>Bhutan NWFP Platform</strong>
+          <small>Forest Resources Planning and Management Division · DoFPS</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
+        <a href="data_analytics.html" class="nav-link">Analytics</a>
+        <a href="spatial_resources.html" class="nav-link">Spatial</a>
+        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
+        <a href="marketplace_sample.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
+        <a href="product_catalog.html" class="nav-link">Products</a>
+        <a href="nwfp_groups.html" class="nav-link">Groups</a>
+        <a href="species_profile.html" class="nav-link">Species</a>
+        <a href="people_nwfp.html" class="nav-link">People</a>
+        <a href="certification_traceability.html" class="nav-link active">Traceability</a>
+        <a href="training_resources.html" class="nav-link">Training</a>
+        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      </div>
+      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-panel">
+      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People &amp; NWFP</a>
+      <a href="certification_traceability.html">Certification &amp; Traceability</a>
+      <a href="training_resources.html">Training Resources</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
+    </div>
   </div>
-  <script src="assets/nwfp_plan_data.js"></script>
-  <script src="assets/nwfp_pages.js"></script>
+
+  <main class="page-main mx-auto max-w-7xl px-5 py-7">
+
+    <!-- HERO -->
+    <section class="hero anim-1">
+      <div class="hero-inner grid gap-8 lg:grid-cols-[1fr_20rem]">
+        <div>
+          <p class="kicker kicker-lt">Compliance flow</p>
+          <h1>From approved management plan to buyer-ready product.</h1>
+          <p class="lead">Traceability connects harvest permits, group records, quotas, quality checks, packaging, and buyer documentation into a single auditable chain.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="buyer_enquiry.html" class="btn btn-amber">Make an Enquiry</a>
+            <a href="NWFP_Management_Plans.html" class="btn btn-outline">View Plans</a>
+          </div>
+        </div>
+        <div class="self-center hidden lg:block">
+          <!-- Decorative chain diagram -->
+          <div class="flex flex-col gap-2 items-center">
+            <div class="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-xs font-bold text-lime-200 tracking-widest uppercase">Management Plan</div>
+            <div class="w-0.5 h-5 bg-lime-400/30"></div>
+            <div class="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-xs font-bold text-amber-200 tracking-widest uppercase">Harvest Permit</div>
+            <div class="w-0.5 h-5 bg-lime-400/30"></div>
+            <div class="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-xs font-bold text-lime-200 tracking-widest uppercase">Quality Control</div>
+            <div class="w-0.5 h-5 bg-lime-400/30"></div>
+            <div class="w-full rounded-xl bg-amber-400/20 border border-amber-400/30 px-4 py-3 text-center text-xs font-bold text-amber-200 tracking-widest uppercase">Market Release</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-STEP FLOW -->
+    <section class="section-gap anim-2">
+      <p class="kicker mb-4">Compliance chain</p>
+      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <p class="kicker mb-2">Step 1</p>
+          <h3 class="font-bold text-lg text-emerald-950 mb-3">Plan &amp; Allocation</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Confirm active PA, CFMP, or FMU-aligned NWFP management plan and permitted product. Verify Dzongkhag, DFO, or park office alignment.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <p class="kicker mb-2">Step 2</p>
+          <h3 class="font-bold text-lg text-emerald-950 mb-3">Harvest Record</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Record group, collector, location, season, quota, batch reference, and supervising DFO or park office for complete chain of custody.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <p class="kicker mb-2">Step 3</p>
+          <h3 class="font-bold text-lg text-emerald-950 mb-3">Quality Control</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Check drying, sorting, grading, packaging, contamination, storage, and shelf-life requirements to buyer specification.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">04</span>
+          <p class="kicker mb-2">Step 4</p>
+          <h3 class="font-bold text-lg text-emerald-950 mb-3">Market Release</h3>
+          <p class="text-sm leading-relaxed text-slate-600">Attach all documents, certification status, transport details, and buyer enquiry records for full compliance at point of sale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACEABILITY CHECKLIST -->
+    <section class="section-gap anim-3">
+      <div class="card p-7">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+          <div>
+            <p class="kicker mb-1">Documentation checklist</p>
+            <h2 class="section-title">Complete traceability requirements</h2>
+          </div>
+          <a href="buyer_enquiry.html" class="btn btn-forest btn-sm">Request a product</a>
+        </div>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <div class="check-item"><span class="check-dot"></span>Active management plan</div>
+          <div class="check-item"><span class="check-dot"></span>Harvest permit issued</div>
+          <div class="check-item"><span class="check-dot"></span>Group record verified</div>
+          <div class="check-item"><span class="check-dot"></span>Batch code assigned</div>
+          <div class="check-item"><span class="check-dot"></span>Quality grade confirmed</div>
+          <div class="check-item"><span class="check-dot"></span>Buyer record attached</div>
+          <div class="check-item"><span class="check-dot"></span>DFO / park office sign-off</div>
+          <div class="check-item"><span class="check-dot"></span>Transport documentation</div>
+          <div class="check-item"><span class="check-dot"></span>Storage compliance</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORTING INFO -->
+    <section class="section-gap anim-4 grid gap-4 md:grid-cols-3">
+      <div class="card p-6">
+        <p class="kicker mb-2">Record keeping</p>
+        <h3 class="font-bold text-lg text-emerald-950 mb-3">Audit-ready documentation</h3>
+        <p class="text-sm leading-relaxed text-slate-600">All records are structured for internal audit and external buyer verification. Batch codes link to original harvest records and plans.</p>
+      </div>
+      <div class="card card-dark p-6">
+        <p class="kicker kicker-lt mb-2">Quality</p>
+        <h3 class="font-bold text-lg mb-3" style="color:var(--cream)">Grading standards</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(243,232,206,0.65)">Products are graded against species-specific standards for moisture, sorting, size, and contamination before market release.</p>
+      </div>
+      <div class="card p-6">
+        <p class="kicker mb-2">Platform linkage</p>
+        <h3 class="font-bold text-lg text-emerald-950 mb-3">Connected records</h3>
+        <p class="text-sm leading-relaxed text-slate-600">Market entries link to management plans, spatial resources, and group profiles to keep commercialisation aligned with sustainable use.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
+      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangidues@gmail.com">wangidues@gmail.com</a></p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/nwfp_plan_data.js"></script>
+<script src="assets/nwfp_pages.js"></script>
 </body>
 </html>
