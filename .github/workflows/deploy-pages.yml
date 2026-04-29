@@ -29,24 +29,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p public
-          cp -R prototype public/prototype
+          cp *.html public/
+          cp DoFPS_Bhutan_Logo.png public/
+          cp "Overview of NWFPs in Bhutan.pdf" public/
+          cp "COFFEE TABLE BOOK.pdf" public/
+          cp national-nwfp-groups.csv public/
+          cp "NWFP Group-National Data.xlsx" public/
+          cp -R assets public/assets
           cp -R management_plans_nwfp public/management_plans_nwfp
-          cp EXECUTION_PLAN.md public/EXECUTION_PLAN.md
           touch public/.nojekyll
-          cat > public/index.html <<'HTML'
-          <!doctype html>
-          <html lang="en">
-          <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta http-equiv="refresh" content="0; url=prototype/">
-            <title>Bhutan NWFP Platform</title>
-          </head>
-          <body>
-            <p><a href="prototype/">Open Bhutan NWFP Marketplace Prototype</a></p>
-          </body>
-          </html>
-          HTML
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
