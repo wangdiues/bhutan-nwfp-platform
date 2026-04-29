@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NWFP Spatial Resources - Bhutan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--forest:#082f1a;--canopy:#14532d;--lime:#bef264;--gold:#facc15;--paper:#f6f4ea;--ink:#102116}
+    body{color:var(--ink);background:radial-gradient(circle at 12% 0%, rgba(190,242,100,.24), transparent 26rem),linear-gradient(135deg, rgba(8,47,26,.08) 0 28%, transparent 28% 100%),var(--paper)}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:repeating-linear-gradient(90deg, rgba(8,47,26,.45) 0 1px, transparent 1px 56px)}
+    .shell{position:relative;z-index:1}
+    .logo-shadow{filter:drop-shadow(0 14px 22px rgba(0,0,0,.26))}
+    .card{border:1px solid rgba(20,83,45,.14);background:rgba(255,255,255,.92);box-shadow:0 18px 45px rgba(8,47,26,.08)}
+    .hero{background:linear-gradient(120deg, rgba(8,47,26,.96), rgba(20,83,45,.86))}
+    .kicker{font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#166534}
+    .chip{border:1px solid rgba(20,83,45,.18);background:#f7fee7}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="sticky top-0 z-30 border-b border-white/10 bg-emerald-950/95 text-white shadow-xl backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="h-14 w-14 object-contain logo-shadow">
+          <div>
+            <strong class="block leading-tight">NWFP Spatial Resources</strong>
+            <small class="text-xs text-lime-100">Forest Resources Planning and Management Division, Department of Forests and Park Services</small>
+          </div>
+        </a>
+        <nav class="hidden flex-wrap items-center justify-end gap-2 text-sm font-bold md:flex">
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="index.html">Home</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="NWFP_Management_Plans.html">Management Plans</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="data_analytics.html">Data Analytics</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="spatial_resources.html">Spatial Resources</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="nwfp_gallery.html">Gallery</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="marketplace_sample.html">Market</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="about.html">About</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="dzongkhag_directory.html">Dzongkhags</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="product_catalog.html">Products</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="nwfp_groups.html">Groups</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="species_profile.html">Species</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="people_nwfp.html">People &amp; NWFP</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="certification_traceability.html">Traceability</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="training_resources.html">Training</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="buyer_enquiry.html">Enquiry</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <section class="hero overflow-hidden rounded-[2rem] p-6 text-white shadow-2xl md:p-8">
+        <div class="grid gap-6 lg:grid-cols-[1fr_24rem]">
+          <div>
+            <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">GIS and map resources</p>
+            <h1 class="mt-3 max-w-3xl text-4xl font-black leading-none tracking-tight md:text-6xl">NWFP group spatial datasets.</h1>
+            <p class="mt-5 max-w-2xl text-sm leading-7 text-emerald-50">This page keeps spatial resources separate from the management plan browser: merged GeoPackage data, original shapefile layer folders, inventory tables, and publication-ready map outputs.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <a href="nwfp_groups_gpkeg_files/NWFP_groups_merged.gpkg" class="rounded-xl bg-yellow-300 px-4 py-2 text-sm font-black text-emerald-950 hover:bg-yellow-200">Open Merged GeoPackage</a>
+              <a href="NWFP Groups Shp Files/National_NWFP_Groups.csv" class="rounded-xl bg-white/10 px-4 py-2 text-sm font-bold text-white ring-1 ring-white/15 hover:bg-white/20">Open National CSV</a>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <div class="text-4xl font-black">104</div>
+              <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Shapefile layers</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <div class="text-4xl font-black">1</div>
+              <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Merged GPKG</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <div class="text-4xl font-black">24</div>
+              <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Top folders</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <div class="text-4xl font-black">2</div>
+              <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Map PNGs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-[.9fr_1.1fr]">
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Primary GIS Package</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Merged GeoPackage</h2>
+          <p class="mt-3 text-sm leading-7 text-slate-700">Use this consolidated file for GIS workflows where a single packaged dataset is preferred.</p>
+          <a href="nwfp_groups_gpkeg_files/NWFP_groups_merged.gpkg" class="mt-5 block rounded-2xl bg-emerald-950 p-4 text-white transition hover:bg-emerald-900">
+            <span class="block text-xs font-black uppercase tracking-wide text-yellow-300">GeoPackage</span>
+            <strong class="mt-1 block break-all">nwfp_groups_gpkeg_files/NWFP_groups_merged.gpkg</strong>
+            <span class="mt-2 block text-xs text-emerald-100">1.48 MB</span>
+          </a>
+        </article>
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Original Source Folder</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">NWFP Groups Shp Files</h2>
+          <p class="mt-3 text-sm leading-7 text-slate-700">The source folder includes administrative boundary layers, DFO and protected-area folders, 104 shapefile component sets, metadata, CSV files, and map outputs.</p>
+          <div class="mt-5 grid gap-2 sm:grid-cols-4">
+            <div class="chip rounded-2xl p-3"><strong class="block text-emerald-900">104</strong><span class="text-xs text-slate-600">.shp</span></div>
+            <div class="chip rounded-2xl p-3"><strong class="block text-emerald-900">104</strong><span class="text-xs text-slate-600">.dbf</span></div>
+            <div class="chip rounded-2xl p-3"><strong class="block text-emerald-900">104</strong><span class="text-xs text-slate-600">.prj</span></div>
+            <div class="chip rounded-2xl p-3"><strong class="block text-emerald-900">97</strong><span class="text-xs text-slate-600">.qmd</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-6 card rounded-3xl p-5">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <p class="kicker">Map Outputs</p>
+            <h2 class="mt-1 text-2xl font-black text-emerald-950">Publication and forest-admin reference maps</h2>
+          </div>
+          <a href="NWFP Groups Shp Files/outputs/figures/bhutan_nwfp_management_groups_publication_vector.pdf" class="rounded-xl bg-emerald-950 px-4 py-2 text-sm font-bold text-white hover:bg-emerald-900">Open vector PDF</a>
+        </div>
+        <div class="mt-5 grid gap-4 lg:grid-cols-2">
+          <a href="NWFP Groups Shp Files/outputs/figures/bhutan_nwfp_management_groups_publication_600dpi.png" class="group overflow-hidden rounded-3xl border border-emerald-900/10 bg-white">
+            <img src="NWFP Groups Shp Files/outputs/figures/bhutan_nwfp_management_groups_publication_600dpi.png" alt="Bhutan NWFP management groups publication map" class="aspect-[4/3] w-full object-cover transition group-hover:scale-[1.02]">
+            <div class="p-4"><strong>Publication map PNG</strong><p class="mt-1 text-xs text-slate-500">600 dpi PNG output</p></div>
+          </a>
+          <a href="NWFP Groups Shp Files/outputs/figures/bhutan_nwfp_management_groups_forest_admin_reference_600dpi.png" class="group overflow-hidden rounded-3xl border border-emerald-900/10 bg-white">
+            <img src="NWFP Groups Shp Files/outputs/figures/bhutan_nwfp_management_groups_forest_admin_reference_600dpi.png" alt="Bhutan NWFP management groups forest administration reference map" class="aspect-[4/3] w-full object-cover transition group-hover:scale-[1.02]">
+            <div class="p-4"><strong>Forest administration reference PNG</strong><p class="mt-1 text-xs text-slate-500">600 dpi PNG output</p></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-[1.1fr_.9fr]">
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Source Folders</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Administrative and field collection groups</h2>
+          <div class="mt-5 grid gap-2 sm:grid-cols-2">
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/00_merged_output/">00_merged_output</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/Administrative Zones FR/">Administrative Zones FR</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/Bumdelling Wildlife Sanctuary/">Bumdelling Wildlife Sanctuary</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Bumthang/">DFO Bumthang</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Dagana/">DFO Dagana</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Gedu/">DFO Gedu</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Mongar/">DFO Mongar</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Paro/">DFO Paro</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Pemagatshel/">DFO Pemagatshel</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Samdrup Jongkhar/">DFO Samdrup Jongkhar</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Sarpang/">DFO Sarpang</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Trashigang/">DFO Trashigang</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Tsirang/">DFO Tsirang</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/DFO Zhemgang/">DFO Zhemgang</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/Dzongkhag Boundary/">Dzongkhag Boundary</a>
+            <a class="rounded-2xl bg-lime-50 p-3 font-bold text-emerald-950 hover:bg-lime-100" href="NWFP Groups Shp Files/outputs/">outputs</a>
+          </div>
+        </article>
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Tabular and Index Files</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Inventory references</h2>
+          <div class="mt-5 space-y-3">
+            <a href="NWFP Groups Shp Files/National_NWFP_Groups.csv" class="block rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10 hover:bg-lime-50">
+              <strong>National_NWFP_Groups.csv</strong>
+              <span class="mt-1 block text-xs text-slate-500">National group table</span>
+            </a>
+            <a href="NWFP Groups Shp Files/National_NWFP_Groups_tree.txt" class="block rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10 hover:bg-lime-50">
+              <strong>National_NWFP_Groups_tree.txt</strong>
+              <span class="mt-1 block text-xs text-slate-500">Folder tree / source index</span>
+            </a>
+            <a href="NWFP Groups Shp Files/outputs/data/nwfp_tree_inventory.csv" class="block rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10 hover:bg-lime-50">
+              <strong>outputs/data/nwfp_tree_inventory.csv</strong>
+              <span class="mt-1 block text-xs text-slate-500">Processed tree inventory</span>
+            </a>
+            <a href="NWFP Groups Shp Files/outputs/data/nwfp_management_groups_bhutan.gpkg" class="block rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10 hover:bg-lime-50">
+              <strong>outputs/data/nwfp_management_groups_bhutan.gpkg</strong>
+              <span class="mt-1 block text-xs text-slate-500">Output GeoPackage</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="mx-auto max-w-7xl px-4 pb-8 pt-2">
+      <div class="rounded-2xl border border-emerald-900/10 bg-white/80 px-5 py-4 text-center text-sm font-bold text-emerald-950 shadow-sm">
+        Made by Wangdi · <a class="text-emerald-700 hover:text-emerald-950" href="mailto:wangidues@gmail.com">wangidues@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

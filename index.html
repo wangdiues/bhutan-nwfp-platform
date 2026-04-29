@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Non-Wood Forest Products of Bhutan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--forest:#082f1a;--canopy:#14532d;--leaf:#22c55e;--lime:#bef264;--gold:#facc15;--paper:#f6f4ea;--ink:#102116}
+    body{
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(190,242,100,.28), transparent 25rem),
+        radial-gradient(circle at 88% 8%, rgba(250,204,21,.14), transparent 24rem),
+        linear-gradient(135deg, rgba(8,47,26,.08) 0 28%, transparent 28% 100%),
+        var(--paper);
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.08;
+      background-image:
+        linear-gradient(120deg, transparent 0 46%, rgba(20,83,45,.7) 46% 48%, transparent 48% 100%),
+        repeating-linear-gradient(90deg, rgba(8,47,26,.45) 0 1px, transparent 1px 56px);
+    }
+    .shell{position:relative;z-index:1}
+    .forest-panel{
+      background:
+        linear-gradient(90deg, rgba(8,47,26,.94), rgba(20,83,45,.82)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1100' height='620' viewBox='0 0 1100 620'%3E%3Cg fill='none' stroke='%23bef264' stroke-opacity='.28'%3E%3Cpath d='M-40 470C170 290 310 250 520 252c270 3 350-170 600-220' stroke-width='34'/%3E%3Cpath d='M-70 170C120 330 310 370 505 320c250-64 390 50 655 154' stroke-width='25'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='.08'%3E%3Cellipse cx='815' cy='145' rx='155' ry='55' transform='rotate(-24 815 145)'/%3E%3Cellipse cx='545' cy='410' rx='230' ry='62' transform='rotate(-9 545 410)'/%3E%3C/g%3E%3C/svg%3E");
+      background-size:cover;
+      background-position:center;
+    }
+    .logo-shadow{filter:drop-shadow(0 18px 28px rgba(0,0,0,.28))}
+    .card{border:1px solid rgba(20,83,45,.14);background:rgba(255,255,255,.9);box-shadow:0 18px 45px rgba(8,47,26,.08)}
+    .kicker{font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#166534}
+    .nav-link{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1)}
+    .nav-link:hover{background:rgba(255,255,255,.18)}
+    .list-dot li{position:relative;padding-left:1.35rem}
+    .list-dot li:before{content:"";position:absolute;left:0;top:.58rem;width:.45rem;height:.45rem;border-radius:999px;background:var(--gold);box-shadow:0 0 0 4px rgba(250,204,21,.16)}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="sticky top-0 z-30 border-b border-white/10 bg-emerald-950/95 text-white shadow-xl backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="h-14 w-14 object-contain logo-shadow">
+          <div>
+            <strong class="block leading-tight">Non-Wood Forest Products of Bhutan</strong>
+            <small class="text-xs text-lime-100">Forest Resources Planning and Management Division, Department of Forests and Park Services</small>
+          </div>
+        </a>
+        <nav class="hidden flex-wrap items-center justify-end gap-2 text-sm font-bold md:flex">
+          <a class="nav-link rounded-xl px-3 py-2" href="index.html">Home</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="NWFP_Management_Plans.html">Management Plans</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="data_analytics.html">Data Analytics</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="spatial_resources.html">Spatial Resources</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="nwfp_gallery.html">Gallery</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="marketplace_sample.html">Market</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="about.html">About</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="dzongkhag_directory.html">Dzongkhags</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="product_catalog.html">Products</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="nwfp_groups.html">Groups</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="species_profile.html">Species</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="people_nwfp.html">People &amp; NWFP</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="certification_traceability.html">Traceability</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="training_resources.html">Training</a>
+          <a class="nav-link rounded-xl px-3 py-2" href="buyer_enquiry.html">Enquiry</a>
+          <a class="rounded-xl bg-yellow-300 px-3 py-2 text-emerald-950" href="Overview of NWFPs in Bhutan.pdf" target="_blank">Overview PDF</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <section class="forest-panel overflow-hidden rounded-[2rem] text-white shadow-2xl">
+        <div class="grid min-h-[34rem] lg:grid-cols-[1fr_25rem]">
+          <div class="p-6 md:p-10">
+            <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="mb-6 h-28 w-28 object-contain logo-shadow md:h-36 md:w-36">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Non-Wood Forest Products of Bhutan</p>
+            <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none tracking-tight md:text-6xl">Conservation-first forest product stewardship.</h1>
+            <p class="mt-5 max-w-2xl text-base leading-7 text-emerald-50">Bhutan's NWFP sector can support rural livelihoods and green economic development, but sustainable growth depends on better inventories, stronger institutions, value addition, certification, and reliable market access.</p>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="NWFP_Management_Plans.html" class="rounded-xl bg-yellow-300 px-5 py-3 text-sm font-black text-emerald-950 hover:bg-yellow-200">Explore Management Plans</a>
+              <a href="data_analytics.html" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/20">View Analytics</a>
+              <a href="spatial_resources.html" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/20">Spatial Resources</a>
+              <a href="nwfp_gallery.html" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/20">Image Gallery</a>
+              <a href="marketplace_sample.html" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/20">Sample Market</a>
+            </div>
+          </div>
+          <aside class="border-l border-white/10 bg-emerald-950/35 p-6">
+            <div class="mt-4 space-y-4">
+              <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+                <div class="text-4xl font-black">119</div>
+                <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Management plan records</div>
+              </div>
+              <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+                <div class="text-4xl font-black">17</div>
+                <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Dzongkhags represented</div>
+              </div>
+              <div class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+                <div class="text-4xl font-black">112</div>
+                <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Linked documents</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-[.85fr_1.15fr]">
+        <article class="card rounded-3xl p-6">
+          <p class="kicker">Legal Status</p>
+          <h2 class="mt-2 text-2xl font-black text-emerald-950">Forest Policy, 2011 and Conservation Act, 2023</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-700">Bhutan's forest policy places conservation above all other considerations. Harvesting or commercial use of forests is permitted only after conservation goals have been met and only when management policies ensure sustainable use.</p>
+          <p class="mt-4 text-sm leading-7 text-slate-700">The use and management of NWFPs are primarily governed by the Forest and Nature Conservation Act of Bhutan 2023. Harvesting activities must be integrated into PA, CFMP, or FMU plans in compliance with DoFPS technical guidelines.</p>
+        </article>
+        <article class="card rounded-3xl p-6">
+          <p class="kicker">Institutional Roles</p>
+          <h2 class="mt-2 text-2xl font-black text-emerald-950">DFOs, Park Offices, and FRPMD</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-700">DFOs and Park Offices facilitate NWFP allocation and utilization, assist community-based forest enterprise establishment, and monitor operations. FRPMD oversees NWFP management and provides technical support for preparing and implementing NWFP plans.</p>
+          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl bg-lime-50 p-4"><strong class="block text-emerald-900">Planning</strong><span class="text-xs text-slate-600">PA, CFMP, and FMU integration</span></div>
+            <div class="rounded-2xl bg-lime-50 p-4"><strong class="block text-emerald-900">Monitoring</strong><span class="text-xs text-slate-600">Operations and allocation</span></div>
+            <div class="rounded-2xl bg-lime-50 p-4"><strong class="block text-emerald-900">Support</strong><span class="text-xs text-slate-600">Technical plan guidance</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-3">
+        <article class="card rounded-3xl p-6 lg:col-span-2">
+          <p class="kicker">Problems and Constraints</p>
+          <h2 class="mt-2 text-2xl font-black text-emerald-950">Why NWFP development remains difficult</h2>
+          <div class="mt-5 grid gap-3 md:grid-cols-2">
+            <div class="rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10"><strong class="text-emerald-900">Resource knowledge gaps</strong><p class="mt-2 text-sm leading-6 text-slate-700">Too little is known about resources, management strategies, harvesting practices, and markets.</p></div>
+            <div class="rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10"><strong class="text-emerald-900">Weak inventory data</strong><p class="mt-2 text-sm leading-6 text-slate-700">Species, locations, and quantities remain insufficiently documented.</p></div>
+            <div class="rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10"><strong class="text-emerald-900">Limited training</strong><p class="mt-2 text-sm leading-6 text-slate-700">Technical, processing, management, and enterprise capabilities need investment.</p></div>
+            <div class="rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10"><strong class="text-emerald-900">Mountain logistics</strong><p class="mt-2 text-sm leading-6 text-slate-700">Rugged terrain, narrow roads, rainfall, landslides, ice, and snow limit reliable transport.</p></div>
+          </div>
+        </article>
+        <article class="card rounded-3xl p-6">
+          <p class="kicker">Market Reality</p>
+          <h2 class="mt-2 text-2xl font-black text-emerald-950">Cordyceps dominates revenue</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-700">Cordyceps sinensis is the most economically significant NWFP in Bhutan and accounts for the bulk of NWFP revenue, despite the country's broader NWFP diversity.</p>
+          <ul class="list-dot mt-5 space-y-3 text-sm leading-6 text-slate-700">
+            <li>Fragmented value chains</li>
+            <li>Lack of processing facilities</li>
+            <li>Limited certification and quality assurance</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="mt-6 card rounded-3xl p-6">
+        <p class="kicker">Long-Term Priorities</p>
+        <h2 class="mt-2 text-2xl font-black text-emerald-950">Recommendations for developing NWFPs</h2>
+        <div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-2xl bg-lime-50 p-4"><strong class="text-emerald-900">Prioritize commodities</strong><p class="mt-2 text-sm text-slate-700">Establish national priorities using agreed criteria.</p></div>
+          <div class="rounded-2xl bg-lime-50 p-4"><strong class="text-emerald-900">Complete inventories</strong><p class="mt-2 text-sm text-slate-700">Document species, locations, and quantities.</p></div>
+          <div class="rounded-2xl bg-lime-50 p-4"><strong class="text-emerald-900">Train personnel</strong><p class="mt-2 text-sm text-slate-700">Improve collection, processing, manufacturing, quality control, and design skills.</p></div>
+          <div class="rounded-2xl bg-lime-50 p-4"><strong class="text-emerald-900">Build markets</strong><p class="mt-2 text-sm text-slate-700">Create clearing-house functions, certification pathways, and annual review mechanisms.</p></div>
+        </div>
+      </section>
+    </main>
+    <footer class="mx-auto max-w-7xl px-4 pb-8 pt-2">
+      <div class="rounded-2xl border border-emerald-900/10 bg-white/80 px-5 py-4 text-center text-sm font-bold text-emerald-950 shadow-sm">
+        Made by Wangdi · <a class="text-emerald-700 hover:text-emerald-950" href="mailto:wangidues@gmail.com">wangidues@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

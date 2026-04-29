@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NWFP Management Plans — Bhutan DoFPS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+  [x-cloak]{display:none!important}
+  :root{
+    --forest:#0b2f1d;
+    --canopy:#14532d;
+    --leaf:#22c55e;
+    --lime:#a3e635;
+    --gold:#facc15;
+    --paper:#f4f2e8;
+    --ink:#102116;
+  }
+  body{
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 20% 0%, rgba(163,230,53,.18), transparent 28rem),
+      linear-gradient(135deg, rgba(11,47,29,.08) 0 25%, transparent 25% 100%),
+      var(--paper);
+  }
+  body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+      linear-gradient(120deg, transparent 0 46%, rgba(20,83,45,.55) 46% 48%, transparent 48% 100%),
+      repeating-linear-gradient(90deg, rgba(11,47,29,.5) 0 1px, transparent 1px 52px);
+  }
+  .forest-header{
+    background:
+      linear-gradient(90deg, rgba(250,204,21,.95) 0 5.75rem, transparent 5.75rem),
+      linear-gradient(135deg, rgba(11,47,29,.98), rgba(20,83,45,.96));
+  }
+  .brand-mark{
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.28));
+  }
+  .hero-logo{
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.3));
+  }
+  .hero-panel{
+    background:
+      linear-gradient(90deg, rgba(11,47,29,.88), rgba(20,83,45,.74)),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='420' viewBox='0 0 900 420'%3E%3Cg fill='none' stroke='%23b7e75c' stroke-opacity='.32'%3E%3Cpath d='M60 360C180 250 270 210 420 205c190-7 240-130 410-143' stroke-width='26'/%3E%3Cpath d='M-20 130C130 230 220 260 370 232c190-36 282 18 470 103' stroke-width='20'/%3E%3C/g%3E%3Cg fill='%23fff' fill-opacity='.09'%3E%3Cellipse cx='690' cy='112' rx='124' ry='44' transform='rotate(-29 690 112)'/%3E%3Cellipse cx='455' cy='275' rx='180' ry='54' transform='rotate(-11 455 275)'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:cover;
+    background-position:center;
+  }
+  .vertical-title{
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    letter-spacing:.08em;
+  }
+  .eco-card{
+    border:1px solid rgba(20,83,45,.16);
+    background:rgba(255,255,255,.88);
+    box-shadow:0 18px 45px rgba(11,47,29,.08);
+  }
+  .metric-card{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg, #fff 0%, #f8f7ef 100%);
+  }
+  .metric-card:after{
+    content:"";
+    position:absolute;
+    right:-2.5rem;
+    top:-2.5rem;
+    width:8rem;
+    height:8rem;
+    border-radius:999px;
+    background:rgba(163,230,53,.2);
+  }
+  .ribbon-tab{
+    clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  }
+  .table-shell table{border-collapse:separate;border-spacing:0}
+  .table-shell tbody tr:nth-child(even){background:rgba(244,242,232,.48)}
+  .table-shell tbody tr:hover{background:rgba(220,252,231,.8)!important}
+  .status-dot{box-shadow:0 0 0 4px rgba(34,197,94,.14)}
+  .feature-tile{
+    position:relative;
+    overflow:hidden;
+    min-height:12rem;
+    background:linear-gradient(145deg, rgba(11,47,29,.96), rgba(20,83,45,.86));
+  }
+  .feature-tile:after{
+    content:"";
+    position:absolute;
+    inset:auto -4rem -5rem auto;
+    width:13rem;
+    height:13rem;
+    border-radius:999px;
+    background:rgba(250,204,21,.18);
+  }
+  .page-button[disabled]{opacity:.45;cursor:not-allowed}
+  .home-section{
+    border:1px solid rgba(20,83,45,.14);
+    background:rgba(255,255,255,.9);
+    box-shadow:0 18px 45px rgba(11,47,29,.07);
+  }
+  .home-kicker{
+    color:#166534;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .home-list li{
+    position:relative;
+    padding-left:1.35rem;
+  }
+  .home-list li:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.58rem;
+    width:.45rem;
+    height:.45rem;
+    border-radius:999px;
+    background:var(--gold);
+    box-shadow:0 0 0 4px rgba(250,204,21,.16);
+  }
+  @media print{.no-print{display:none!important}.print-full{max-width:100%!important}body{background:#fff!important}body:before{display:none!important}}
+</style>
+</head>
+<body class="min-h-screen" x-data="plansApp()">
+
+<!-- HEADER -->
+<header class="forest-header text-white sticky top-0 z-30 shadow-xl no-print">
+  <div class="max-w-screen-2xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+    <div class="flex min-w-0 items-center gap-3">
+      <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="brand-mark h-14 w-14 object-contain shrink-0">
+      <div class="min-w-0">
+        <strong class="block text-base leading-tight tracking-wide">Bhutan NWFP Management Plans</strong>
+        <small class="block truncate text-lime-100 text-xs">Forest Resources Planning and Management Division, Department of Forests and Park Services</small>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-end gap-2 text-sm">
+      <span class="hidden sm:block bg-white/10 px-3 py-1 rounded-full text-xs ring-1 ring-white/15">
+        <span x-text="filtered.length"></span>/<span x-text="plans.length"></span> plans shown
+      </span>
+      <nav class="hidden flex-wrap items-center justify-end gap-2 lg:flex">
+        <a href="index.html" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-medium ring-1 ring-white/15 transition-colors">Home</a>
+        <a href="NWFP_Management_Plans.html" class="bg-yellow-300 text-emerald-950 hover:bg-yellow-200 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">Plans</a>
+        <a href="data_analytics.html" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-medium ring-1 ring-white/15 transition-colors">Analytics</a>
+        <a href="spatial_resources.html" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-medium ring-1 ring-white/15 transition-colors">Spatial</a>
+        <a href="nwfp_gallery.html" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-medium ring-1 ring-white/15 transition-colors">Gallery</a>
+        <a href="marketplace_sample.html" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-medium ring-1 ring-white/15 transition-colors">Market</a>
+      </nav>
+      <details class="relative">
+        <summary class="list-none cursor-pointer bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-bold ring-1 ring-white/15 transition-colors">More</summary>
+        <div class="absolute right-0 mt-2 grid w-56 gap-1 rounded-2xl bg-emerald-950/98 p-2 text-xs font-bold shadow-2xl ring-1 ring-white/15">
+          <a href="about.html" class="rounded-xl px-3 py-2 hover:bg-white/10">About</a>
+          <a href="dzongkhag_directory.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Dzongkhags</a>
+          <a href="product_catalog.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Products</a>
+          <a href="nwfp_groups.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Groups</a>
+          <a href="species_profile.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Species</a>
+          <a href="people_nwfp.html" class="rounded-xl px-3 py-2 hover:bg-white/10">People &amp; NWFP</a>
+          <a href="certification_traceability.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Traceability</a>
+          <a href="training_resources.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Training</a>
+          <a href="buyer_enquiry.html" class="rounded-xl px-3 py-2 hover:bg-white/10">Enquiry</a>
+        </div>
+      </details>
+      <a href="Overview of NWFPs in Bhutan.pdf" target="_blank"
+         class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-medium ring-1 ring-white/15 transition-colors">
+        Overview PDF
+      </a>
+      <button onclick="window.print()" class="bg-yellow-300 text-emerald-950 hover:bg-yellow-200 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">
+        Print
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-screen-2xl mx-auto px-4 py-5 print-full">
+
+  <!-- HERO -->
+  <section class="hero-panel mb-5 overflow-hidden rounded-[1.75rem] border border-emerald-950/10 text-white shadow-2xl">
+    <div class="grid min-h-[19rem] md:grid-cols-[5.5rem_1fr_25rem]">
+      <div class="hidden bg-yellow-300/90 text-emerald-950 md:grid place-items-center">
+        <div class="vertical-title text-5xl font-black">NWFP</div>
+      </div>
+      <div class="px-5 py-7 md:px-8 md:py-9">
+        <div class="mb-8 inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-1 text-xs font-bold uppercase tracking-wide text-lime-100 ring-1 ring-white/15">
+          <span class="h-2 w-2 rounded-full bg-lime-300"></span>
+          Verified group management records
+        </div>
+        <h1 class="max-w-4xl text-4xl font-black leading-none tracking-tight md:text-6xl">Forest product stewardship across Bhutan</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-emerald-50 md:text-base">Search management groups, plan periods, species, divisions, parks, and linked PDF plans from one field-ready dashboard.</p>
+      </div>
+      <div class="relative hidden border-l border-white/10 bg-emerald-950/30 p-6 md:block">
+        <div class="absolute right-0 top-6 h-14 w-64 -skew-x-12 bg-lime-400/45"></div>
+        <div class="relative mt-16 space-y-4">
+          <div class="border-l-4 border-yellow-300 pl-4">
+            <div class="text-5xl font-black" x-text="plans.length"></div>
+            <div class="text-xs font-bold uppercase tracking-wide text-lime-100">Management plans</div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-white/10 p-3 ring-1 ring-white/10">
+              <div class="text-2xl font-black" x-text="divisions.length"></div>
+              <div class="text-xs text-emerald-100">Divisions / parks</div>
+            </div>
+            <div class="rounded-xl bg-white/10 p-3 ring-1 ring-white/10">
+              <div class="text-2xl font-black" x-text="filteredDocs.length"></div>
+              <div class="text-xs text-emerald-100">PDF documents</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+    <div class="metric-card rounded-2xl border p-4">
+      <div class="text-xs font-bold uppercase text-slate-500 mb-1">Total Plans</div>
+      <div class="text-3xl font-bold text-emerald-700" x-text="plans.length"></div>
+      <div class="text-xs text-slate-400 mt-1">management regimes</div>
+    </div>
+    <div class="metric-card rounded-2xl border p-4">
+      <div class="text-xs font-bold uppercase text-slate-500 mb-1">Active Groups</div>
+      <div class="text-3xl font-bold text-emerald-700" x-text="plans.filter(p=>p.status==='active').length"></div>
+      <div class="text-xs text-slate-400 mt-1">functional groups</div>
+    </div>
+    <div class="metric-card rounded-2xl border p-4">
+      <div class="text-xs font-bold uppercase text-slate-500 mb-1">Area Managed</div>
+      <div class="text-3xl font-bold text-emerald-700" x-text="totalAreaLabel"></div>
+      <div class="text-xs text-slate-400 mt-1">hectares (known plans)</div>
+    </div>
+    <div class="metric-card rounded-2xl border p-4">
+      <div class="text-xs font-bold uppercase text-slate-500 mb-1">Divisions / Parks</div>
+      <div class="text-3xl font-bold text-emerald-700" x-text="divisions.length"></div>
+      <div class="text-xs text-slate-400 mt-1">DFOs &amp; protected areas</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="flex flex-wrap gap-1 mb-4 eco-card rounded-2xl p-1 w-full no-print">
+    <button @click="tab='home'"
+      :class="tab==='home'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
+      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Home</button>
+    <button @click="tab='list'"
+      :class="tab==='list'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
+      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Plans</button>
+    <button @click="tab='dzongkhag'"
+      :class="tab==='dzongkhag'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
+      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">By Dzongkhag</button>
+    <button @click="tab='division'"
+      :class="tab==='division'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
+      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">By Division / Park</button>
+    <button @click="tab='docs'"
+      :class="tab==='docs'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
+      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Documents</button>
+  </div>
+
+  <!-- ===== HOME PAGE ===== -->
+  <div x-show="tab==='home'" class="space-y-5">
+    <section class="grid gap-4 lg:grid-cols-[1.35fr_.65fr]">
+      <div class="feature-tile rounded-3xl p-6 text-white shadow-2xl">
+        <div class="relative z-10">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="hero-logo mb-5 h-24 w-24 object-contain md:h-32 md:w-32">
+          <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Non-Wood Forest Products of Bhutan</p>
+          <h2 class="mt-3 max-w-3xl text-3xl font-black leading-tight md:text-5xl">Conservation-first management, rural livelihoods, and green value chains.</h2>
+          <p class="mt-4 max-w-2xl text-sm leading-6 text-emerald-50">Bhutan's NWFP sector has considerable potential, but sustainable development depends on stronger inventories, technical capacity, processing infrastructure, certification, and market access.</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <button @click="tab='dzongkhag'" class="rounded-xl bg-yellow-300 px-4 py-2 text-sm font-black text-emerald-950 hover:bg-yellow-200">Open Dzongkhag View</button>
+            <button @click="tab='list'" class="rounded-xl bg-white/10 px-4 py-2 text-sm font-bold text-white ring-1 ring-white/15 hover:bg-white/20">Search Plans</button>
+          </div>
+        </div>
+      </div>
+      <div class="eco-card rounded-3xl p-5">
+        <p class="text-xs font-black uppercase tracking-wide text-emerald-800">Top Dzongkhags</p>
+        <div class="mt-4 space-y-3">
+          <template x-for="dg in dzongGroups.slice(0,5)" :key="dg.name">
+            <button @click="selectDzong(dg.name);tab='dzongkhag'" class="w-full rounded-2xl border border-emerald-900/10 bg-white p-3 text-left transition hover:border-emerald-500 hover:bg-lime-50">
+              <div class="flex items-center justify-between gap-3">
+                <strong class="text-sm text-slate-900" x-text="dg.name"></strong>
+                <span class="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-800" x-text="dg.plans.length+' plans'"></span>
+              </div>
+              <div class="mt-2 h-1.5 rounded-full bg-slate-100">
+                <div class="h-1.5 rounded-full bg-yellow-300" :style="'width:'+Math.max(8,Math.round((dg.plans.length/dzongGroups[0].plans.length)*100))+'%'"></div>
+              </div>
+            </button>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid gap-4 lg:grid-cols-[.85fr_1.15fr]">
+      <article class="home-section rounded-3xl p-5">
+        <p class="home-kicker">Legal Status of NWFPs in Bhutan</p>
+        <h2 class="mt-2 text-2xl font-black text-emerald-950">Forest Policy, 2011</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">Bhutan's forest policy places conservation above all other considerations. Harvesting or commercial use of the forest is only permitted after conservation goals have been met and only if management policies ensure sustainable use.</p>
+        <div class="mt-5 rounded-2xl bg-emerald-950 p-4 text-white">
+          <p class="text-xs font-black uppercase tracking-wide text-yellow-300">Current governance</p>
+          <p class="mt-2 text-sm leading-6 text-emerald-50">The use and management of NWFPs in Bhutan are primarily governed by the Forest and Nature Conservation Act of Bhutan 2023.</p>
+        </div>
+      </article>
+
+      <article class="home-section rounded-3xl p-5">
+        <p class="home-kicker">Planning and Institutional Roles</p>
+        <h2 class="mt-2 text-2xl font-black text-emerald-950">DFOs, Park Offices, and FRPMD</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">The concerned DFOs and Park Offices are responsible for facilitating NWFP allocation and utilization and assisting community-based forest enterprise establishment through planning and monitoring of operations. Forest Resource Planning &amp; Management Division (FRPMD) oversees NWFP management and provides technical support for the preparation and implementation of NWFP plans.</p>
+        <p class="mt-3 text-sm leading-7 text-slate-700">Under the Conservation Act, all NWFP harvesting activities must be formally integrated into either PA, Community Forest Management Plans (CFMPs), or FMU plans in compliance with the technical guidelines provided by DoFPS.</p>
+      </article>
+    </section>
+
+    <section class="home-section rounded-3xl p-5">
+      <p class="home-kicker">Problems and Constraints</p>
+      <h2 class="mt-2 text-2xl font-black text-emerald-950">Developing Non-Wood Forest Products</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div class="rounded-2xl bg-lime-50 p-4">
+          <h3 class="font-black text-emerald-900">Knowledge and management gaps</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">Too little is known about existing NWFP resources, management strategies, best harvesting practices, and marketing opportunities. Professionals in the sector remain few, and institutional support is weak.</p>
+        </div>
+        <div class="rounded-2xl bg-lime-50 p-4">
+          <h3 class="font-black text-emerald-900">Inventory and financial constraints</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">There is an acute lack of inventory data. Identifying resources and their locations requires funding, while public financial resources must cover many competing development needs.</p>
+        </div>
+        <div class="rounded-2xl bg-lime-50 p-4">
+          <h3 class="font-black text-emerald-900">Training and enforcement gaps</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">The shortage of quality training institutes limits development. Forestry laws and codes remain inadequate in some areas, and comprehensive enforcement would require more field officers.</p>
+        </div>
+        <div class="rounded-2xl bg-lime-50 p-4">
+          <h3 class="font-black text-emerald-900">Mountain geography</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">Bhutan's rugged Eastern Himalayan terrain makes road construction expensive and transport slow, costly, and sometimes dangerous.</p>
+        </div>
+        <div class="rounded-2xl bg-lime-50 p-4">
+          <h3 class="font-black text-emerald-900">Seasonal access barriers</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">During rainy seasons and winters, roads can become impassable from landslides, washouts, ice, and snow, creating a major obstacle to development.</p>
+        </div>
+        <div class="rounded-2xl bg-lime-50 p-4">
+          <h3 class="font-black text-emerald-900">Sector-wide impact</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">These constraints affect social and economic advancement, including Bhutan's emerging non-wood forest products industry.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid gap-4 lg:grid-cols-2">
+      <article class="home-section rounded-3xl p-5">
+        <p class="home-kicker">Long-Term Activities</p>
+        <h2 class="mt-2 text-2xl font-black text-emerald-950">General Recommendations</h2>
+        <ul class="home-list mt-4 space-y-3 text-sm leading-6 text-slate-700">
+          <li>Establish national priorities based on all known NWFPs and rank them using agreed criteria.</li>
+          <li>Build a more complete inventory of priority commodities, including species, locations, and quantities.</li>
+          <li>Train personnel in plant identification, collection methods, processing, manufacturing, quality control, and design.</li>
+          <li>Maintain gene banks, tissue culture, seed storage, voucher herbarium specimens, and extension centres.</li>
+          <li>Set up post-harvest facilities close to commodity sources for drying, sifting, deep freezing, and controlled atmosphere handling.</li>
+          <li>Initiate scholarships and grants for related degree programmes and short-term technology training.</li>
+          <li>Create a national clearing house for NWFP matters, including marketing and independent annual reviews.</li>
+        </ul>
+      </article>
+
+      <article class="home-section rounded-3xl p-5">
+        <p class="home-kicker">Commercialization and Value Chains</p>
+        <h2 class="mt-2 text-2xl font-black text-emerald-950">Current Market Reality</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">Despite the potential of NWFPs to contribute to rural livelihoods and green economic development, their current use in Bhutan remains largely at subsistence levels, with minimal commercialization.</p>
+        <p class="mt-3 text-sm leading-7 text-slate-700">Today, Cordyceps sinensis represents the most economically significant NWFP in Bhutan, accounting for the bulk of NWFP revenue despite the diverse variety of NWFPs available in the country.</p>
+        <div class="mt-4 rounded-2xl bg-emerald-950 p-4 text-white">
+          <p class="text-xs font-black uppercase tracking-wide text-yellow-300">Monetization constraints</p>
+          <ul class="mt-3 space-y-2 text-sm text-emerald-50">
+            <li>Fragmented value chains</li>
+            <li>Lack of processing facilities</li>
+            <li>Absence of product certification or quality assurance standards</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="home-section rounded-3xl p-5">
+      <p class="home-kicker">Export and Enterprise Challenges</p>
+      <h2 class="mt-2 text-2xl font-black text-emerald-950">Why NWFP exports remain limited</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div class="rounded-2xl border border-emerald-900/10 bg-white p-4">
+          <h3 class="font-black text-emerald-900">Limited value addition</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">Many NWFPs, including bamboo and mushrooms, are sold raw at local markets or auction yards without branding or processing.</p>
+        </div>
+        <div class="rounded-2xl border border-emerald-900/10 bg-white p-4">
+          <h3 class="font-black text-emerald-900">Weak market access</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">Limited certification makes it difficult for producers to access premium markets or meet export standards.</p>
+        </div>
+        <div class="rounded-2xl border border-emerald-900/10 bg-white p-4">
+          <h3 class="font-black text-emerald-900">Capability gaps</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">NWFP enterprises often lack technical, financial, and digital capabilities, including business management, packaging, and production skills.</p>
+        </div>
+        <div class="rounded-2xl border border-emerald-900/10 bg-white p-4">
+          <h3 class="font-black text-emerald-900">Limited scalability</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700">Seasonal availability and weather fluctuations make raw material supply unreliable, limiting consistent large-scale operations.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== ALL PLANS TAB ===== -->
+  <div x-show="tab==='list'">
+    <!-- Filter bar -->
+    <div class="eco-card rounded-2xl p-3 mb-4 grid gap-2 md:grid-cols-5 no-print">
+      <input x-model="search" @input="page=1" placeholder="Search group, gewog, species…"
+        class="md:col-span-2 rounded-lg border border-slate-200 px-3 py-2 text-sm">
+      <select x-model="filterDiv" @change="page=1" class="rounded-lg border border-slate-200 px-3 py-2 text-sm">
+        <option value="">All Divisions / Parks</option>
+        <template x-for="d in divisions" :key="d">
+          <option :value="d" x-text="d"></option>
+        </template>
+      </select>
+      <select x-model="filterDzong" @change="page=1" class="rounded-lg border border-slate-200 px-3 py-2 text-sm">
+        <option value="">All Dzongkhags</option>
+        <template x-for="d in dzongkhags" :key="d">
+          <option :value="d" x-text="d"></option>
+        </template>
+      </select>
+      <div class="flex gap-2">
+        <select x-model="filterStatus" @change="page=1" class="flex-1 rounded-lg border border-slate-200 px-3 py-2 text-sm">
+          <option value="">All Status</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="dissolved">Dissolved</option>
+        </select>
+        <button @click="search='';filterDiv='';filterDzong='';filterStatus='';page=1"
+          class="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-500 hover:bg-slate-50">✕</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-shell eco-card rounded-2xl overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-emerald-950 text-white border-b">
+            <tr>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100 w-9">SN</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100">Group Name</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100">Division / Park</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100">Dzongkhag</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100">Gewog</th>
+              <th class="text-right px-3 py-3 text-xs font-bold uppercase text-lime-100">HH</th>
+              <th class="text-right px-3 py-3 text-xs font-bold uppercase text-lime-100">Area (ha)</th>
+              <th class="text-right px-3 py-3 text-xs font-bold uppercase text-lime-100">Est.</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100">Plan Period</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100">Status</th>
+              <th class="text-left px-3 py-3 text-xs font-bold uppercase text-lime-100 no-print">Doc</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <template x-for="(p,i) in pagedPlans" :key="p.id">
+              <tr @click="sel=p" class="cursor-pointer transition-colors">
+                <td class="px-3 py-2.5 text-slate-400 text-xs" x-text="(page-1)*pageSize+i+1"></td>
+                <td class="px-3 py-2.5">
+                  <span class="font-medium text-slate-800" x-text="p.group"></span>
+                  <span x-show="p.ptype==='new'" class="ml-1 text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-semibold">New</span>
+                  <span x-show="p.ptype==='revised'" class="ml-1 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-semibold">Revised</span>
+                </td>
+                <td class="px-3 py-2.5 text-slate-500 text-xs whitespace-nowrap" x-text="p.div"></td>
+                <td class="px-3 py-2.5 text-slate-500 text-xs" x-text="p.dzong"></td>
+                <td class="px-3 py-2.5 text-slate-500 text-xs" x-text="p.gewog"></td>
+                <td class="px-3 py-2.5 text-right text-slate-600 text-xs" x-text="p.hh||'—'"></td>
+                <td class="px-3 py-2.5 text-right text-slate-600 text-xs" x-text="p.area?Number(p.area).toLocaleString():'—'"></td>
+                <td class="px-3 py-2.5 text-right text-slate-500 text-xs" x-text="p.est||'—'"></td>
+                <td class="px-3 py-2.5 text-slate-600 text-xs whitespace-nowrap" x-text="p.plan||'—'"></td>
+                <td class="px-3 py-2.5">
+                  <span x-show="p.status==='active'" class="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-0.5 rounded-full"><span class="status-dot h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Active</span>
+                  <span x-show="p.status==='inactive'" class="bg-slate-100 text-slate-600 text-xs font-semibold px-2 py-0.5 rounded-full">Inactive</span>
+                  <span x-show="p.status==='dissolved'" class="bg-red-100 text-red-700 text-xs font-semibold px-2 py-0.5 rounded-full">Dissolved</span>
+                </td>
+                <td class="px-3 py-2.5 no-print">
+                  <a x-show="p.pdf" :href="'management_plans_nwfp/'+p.pdf" target="_blank" @click.stop
+                    class="inline-flex items-center gap-1 text-xs text-emerald-700 hover:underline font-medium">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF
+                  </a>
+                  <span x-show="!p.pdf" class="text-xs text-slate-300">—</span>
+                </td>
+              </tr>
+            </template>
+            <tr x-show="filtered.length===0">
+              <td colspan="11" class="px-4 py-10 text-center text-slate-400 text-sm">No plans match your filters.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-3 border-t border-emerald-950/10 bg-white/75 px-4 py-3 text-sm no-print">
+        <span class="text-slate-500" x-text="'Showing '+pageStart+'-'+pageEnd+' of '+filtered.length"></span>
+        <div class="flex items-center gap-2">
+          <button class="page-button rounded-lg border px-3 py-1.5 font-semibold text-slate-600 hover:bg-lime-50" @click="page=Math.max(1,currentPage-1)" :disabled="currentPage===1">Previous</button>
+          <span class="rounded-lg bg-emerald-950 px-3 py-1.5 text-xs font-bold text-white" x-text="currentPage+' / '+totalPages"></span>
+          <button class="page-button rounded-lg border px-3 py-1.5 font-semibold text-slate-600 hover:bg-lime-50" @click="page=Math.min(totalPages,currentPage+1)" :disabled="currentPage===totalPages">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BY DZONGKHAG TAB ===== -->
+  <div x-show="tab==='dzongkhag'" class="grid gap-4 lg:grid-cols-[20rem_1fr]">
+    <aside class="eco-card rounded-2xl p-3 no-print">
+      <div class="mb-3 px-2">
+        <p class="text-xs font-black uppercase tracking-wide text-emerald-800">Dzongkhags</p>
+        <p class="text-xs text-slate-500">Select a district to view its plan groups.</p>
+      </div>
+      <div class="max-h-[38rem] space-y-1 overflow-y-auto pr-1">
+        <template x-for="dg in dzongGroups" :key="dg.name">
+          <button @click="selectDzong(dg.name)"
+            :class="selectedDzong===dg.name?'bg-emerald-900 text-white':'bg-white text-slate-700 hover:bg-lime-50'"
+            class="w-full rounded-xl border border-emerald-950/10 px-3 py-2 text-left transition">
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-sm font-bold" x-text="dg.name"></span>
+              <span class="rounded-full px-2 py-0.5 text-xs font-bold" :class="selectedDzong===dg.name?'bg-white/15 text-lime-100':'bg-emerald-100 text-emerald-800'" x-text="dg.plans.length"></span>
+            </div>
+            <div class="mt-1 text-xs" :class="selectedDzong===dg.name?'text-emerald-100':'text-slate-500'">
+              <span x-text="dg.divisions.length+' divisions / parks'"></span>
+              <span x-show="dg.area>0"> / <span x-text="dg.area.toLocaleString()+' ha'"></span></span>
+            </div>
+          </button>
+        </template>
+      </div>
+    </aside>
+    <section class="space-y-4">
+      <div class="hero-panel rounded-3xl p-6 text-white shadow-xl">
+        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Dzongkhag</p>
+        <div class="mt-2 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 class="text-4xl font-black" x-text="selectedDzongGroup?.name"></h2>
+            <p class="mt-2 text-sm text-emerald-50" x-text="(selectedDzongGroup?.plans.length||0)+' management plans across '+(selectedDzongGroup?.divisions.length||0)+' divisions / parks'"></p>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <div class="rounded-xl bg-white/10 p-3 ring-1 ring-white/10">
+              <div class="text-2xl font-black" x-text="selectedDzongGroup?.plans.length||0"></div>
+              <div class="text-[11px] text-emerald-100">Plans</div>
+            </div>
+            <div class="rounded-xl bg-white/10 p-3 ring-1 ring-white/10">
+              <div class="text-2xl font-black" x-text="selectedDzongGroup?.hh?selectedDzongGroup.hh.toLocaleString():'-'"></div>
+              <div class="text-[11px] text-emerald-100">HH</div>
+            </div>
+            <div class="rounded-xl bg-white/10 p-3 ring-1 ring-white/10">
+              <div class="text-2xl font-black" x-text="selectedDzongGroup?.area?selectedDzongGroup.area.toLocaleString():'-'"></div>
+              <div class="text-[11px] text-emerald-100">ha</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <template x-for="p in selectedDzongPlans" :key="p.id">
+          <article @click="sel=p" class="eco-card cursor-pointer rounded-2xl p-4 transition hover:-translate-y-0.5 hover:border-emerald-400">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-xs font-bold uppercase text-emerald-700" x-text="p.div"></p>
+                <h3 class="mt-1 font-black leading-snug text-slate-900" x-text="p.group"></h3>
+              </div>
+              <span x-show="p.pdf" class="rounded-full bg-red-100 px-2 py-0.5 text-xs font-bold text-red-700">PDF</span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2 text-xs">
+              <div class="rounded-xl bg-lime-50 p-2"><span class="block text-slate-500">Gewog</span><strong x-text="p.gewog||'-'"></strong></div>
+              <div class="rounded-xl bg-lime-50 p-2"><span class="block text-slate-500">Period</span><strong x-text="p.plan||'-'"></strong></div>
+            </div>
+            <p class="mt-3 line-clamp-2 text-xs leading-5 text-slate-600" x-text="p.species||'Species not recorded'"></p>
+          </article>
+        </template>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== BY DIVISION TAB ===== -->
+  <div x-show="tab==='division'" class="space-y-4">
+    <template x-for="dg in divGroups" :key="dg.name">
+      <div class="eco-card rounded-2xl overflow-hidden">
+        <div class="bg-emerald-950 text-white border-b px-4 py-3 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-3">
+            <strong x-text="dg.name"></strong>
+            <span class="text-xs bg-emerald-100 text-emerald-700 font-semibold px-2 py-0.5 rounded-full"
+              x-text="dg.plans.length+' group'+(dg.plans.length!==1?'s':'')"></span>
+          </div>
+          <div class="flex items-center gap-4 text-xs text-slate-500">
+            <span x-show="dg.hh>0" class="text-emerald-100">HH: <strong class="text-white" x-text="dg.hh.toLocaleString()"></strong></span>
+            <span x-show="dg.area>0" class="text-emerald-100">Area: <strong class="text-white" x-text="dg.area.toLocaleString()+' ha'"></strong></span>
+          </div>
+        </div>
+        <div class="divide-y divide-slate-100">
+          <template x-for="(p,i) in dg.plans" :key="p.id">
+            <div @click="sel=p;tab='list'" class="px-4 py-3 flex items-center justify-between hover:bg-emerald-50 cursor-pointer gap-3">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs text-slate-400 shrink-0" x-text="i+1+'.'"></span>
+                <span class="font-medium text-sm text-slate-800 truncate" x-text="p.group"></span>
+                <span class="text-xs text-slate-400 hidden sm:block shrink-0" x-text="p.gewog?'· '+p.gewog+', '+p.dzong:''"></span>
+              </div>
+              <div class="flex items-center gap-3 shrink-0">
+                <span class="text-xs text-slate-500 hidden sm:block" x-text="p.plan||'—'"></span>
+                <span x-show="p.status==='active'" class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-0.5 rounded-full">Active</span>
+                <span x-show="p.status==='inactive'" class="bg-slate-100 text-slate-600 text-xs font-semibold px-2 py-0.5 rounded-full">Inactive</span>
+                <a x-show="p.pdf" :href="'management_plans_nwfp/'+p.pdf" target="_blank" @click.stop
+                   class="text-xs text-emerald-700 hover:underline font-medium">PDF</a>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- ===== DOCUMENTS TAB ===== -->
+  <div x-show="tab==='docs'">
+    <div class="mb-3 flex items-center gap-2">
+      <input x-model="docSearch" @input="docPage=1" placeholder="Search documents…" class="rounded-lg border border-slate-200 px-3 py-2 text-sm w-72">
+      <span class="text-xs text-slate-500" x-text="filteredDocs.length+' documents'"></span>
+    </div>
+    <div class="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+      <template x-for="p in pagedDocs" :key="p.id">
+        <a :href="'management_plans_nwfp/'+p.pdf" target="_blank"
+           class="eco-card rounded-2xl p-4 flex items-center gap-4 hover:border-emerald-400 hover:bg-lime-50 transition-colors group">
+          <div class="h-10 w-10 rounded-lg bg-red-100 grid place-items-center shrink-0">
+            <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="font-medium text-slate-800 text-sm" x-text="p.group"></div>
+            <div class="text-xs text-slate-500 mt-0.5">
+              <span x-text="p.div"></span> · <span x-text="p.gewog+', '+p.dzong"></span>
+              <span x-show="p.plan"> · <span x-text="p.plan"></span></span>
+            </div>
+            <div class="text-xs text-slate-400 mt-0.5 truncate" x-text="p.pdf"></div>
+          </div>
+          <div class="text-xs text-emerald-700 font-semibold shrink-0 group-hover:underline">Open PDF →</div>
+        </a>
+      </template>
+    </div>
+    <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm no-print">
+      <span class="text-slate-500" x-text="'Showing '+docPageStart+'-'+docPageEnd+' of '+filteredDocs.length"></span>
+      <div class="flex items-center gap-2">
+        <button class="page-button rounded-lg border bg-white px-3 py-1.5 font-semibold text-slate-600 hover:bg-lime-50" @click="docPage=Math.max(1,docCurrentPage-1)" :disabled="docCurrentPage===1">Previous</button>
+        <span class="rounded-lg bg-emerald-950 px-3 py-1.5 text-xs font-bold text-white" x-text="docCurrentPage+' / '+docTotalPages"></span>
+        <button class="page-button rounded-lg border bg-white px-3 py-1.5 font-semibold text-slate-600 hover:bg-lime-50" @click="docPage=Math.min(docTotalPages,docCurrentPage+1)" :disabled="docCurrentPage===docTotalPages">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="no-print mt-6 pb-3">
+    <div class="rounded-2xl border border-emerald-900/10 bg-white/80 px-5 py-4 text-center text-sm font-bold text-emerald-950 shadow-sm">
+      Made by Wangdi · <a class="text-emerald-700 hover:text-emerald-950" href="mailto:wangidues@gmail.com">wangidues@gmail.com</a>
+    </div>
+  </footer>
+</main>
+
+<!-- ===== DETAIL SLIDE-OVER ===== -->
+<div x-show="sel" @keydown.escape.window="sel=null" class="fixed inset-0 z-50 flex justify-end no-print">
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="sel=null"></div>
+  <div class="relative bg-[#f8f7ef] w-full max-w-lg h-full overflow-y-auto shadow-2xl flex flex-col">
+    <!-- Panel header -->
+    <div class="hero-panel text-white px-5 pt-5 pb-4 shrink-0">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wide" x-text="sel?.div"></p>
+          <h2 class="text-xl font-bold mt-1 leading-tight" x-text="sel?.group"></h2>
+        </div>
+        <button @click="sel=null" class="text-white/60 hover:text-white text-3xl leading-none shrink-0 mt-0.5">×</button>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span x-show="sel?.status==='active'"
+          class="inline-flex items-center gap-1 bg-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>Active
+        </span>
+        <span x-show="sel?.status==='inactive'" class="bg-white/10 text-white/70 text-xs font-semibold px-2.5 py-1 rounded-full">Inactive</span>
+        <span x-show="sel?.ptype==='new'" class="bg-blue-400/40 text-white text-xs font-semibold px-2.5 py-1 rounded-full">New Plan</span>
+        <span x-show="sel?.ptype==='revised'" class="bg-amber-400/40 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Revised Plan</span>
+      </div>
+    </div>
+
+    <!-- Panel body -->
+    <div class="flex-1 p-5 space-y-6 overflow-y-auto">
+
+      <!-- Location -->
+      <div>
+        <h3 class="text-xs font-bold uppercase text-slate-400 mb-3 tracking-wide">Location</h3>
+        <dl class="grid grid-cols-2 gap-2">
+          <div class="bg-slate-50 rounded-lg p-3">
+            <dt class="text-xs text-slate-400 mb-0.5">Dzongkhag</dt>
+            <dd class="font-semibold text-sm" x-text="sel?.dzong||'—'"></dd>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3">
+            <dt class="text-xs text-slate-400 mb-0.5">Gewog</dt>
+            <dd class="font-semibold text-sm" x-text="sel?.gewog||'—'"></dd>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3 col-span-2" x-show="sel?.villages">
+            <dt class="text-xs text-slate-400 mb-0.5">Villages</dt>
+            <dd class="font-medium text-sm" x-text="sel?.villages"></dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Group details -->
+      <div>
+        <h3 class="text-xs font-bold uppercase text-slate-400 mb-3 tracking-wide">Group Details</h3>
+        <dl class="grid grid-cols-2 gap-2">
+          <div class="bg-slate-50 rounded-lg p-3">
+            <dt class="text-xs text-slate-400 mb-1">Member Households</dt>
+            <dd class="font-bold text-2xl text-emerald-700" x-text="sel?.hh?Number(sel.hh).toLocaleString()+'  HH':'—'"></dd>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3">
+            <dt class="text-xs text-slate-400 mb-1">Area Managed</dt>
+            <dd class="font-bold text-2xl text-emerald-700" x-text="sel?.area?Number(sel.area).toLocaleString()+' ha':'—'"></dd>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3">
+            <dt class="text-xs text-slate-400 mb-0.5">Established</dt>
+            <dd class="font-semibold text-sm" x-text="sel?.est||'—'"></dd>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3">
+            <dt class="text-xs text-slate-400 mb-0.5">Plan Period</dt>
+            <dd class="font-semibold text-sm" x-text="sel?.plan||'—'"></dd>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3" x-show="sel?.revision">
+            <dt class="text-xs text-slate-400 mb-0.5">Revision Year(s)</dt>
+            <dd class="font-semibold text-sm" x-text="sel?.revision"></dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Species -->
+      <div>
+        <h3 class="text-xs font-bold uppercase text-slate-400 mb-3 tracking-wide">NWFP Species</h3>
+        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-sm text-slate-700 leading-relaxed italic" x-text="sel?.species||'Not recorded'"></div>
+      </div>
+
+      <!-- Document -->
+      <div x-show="sel?.pdf">
+        <h3 class="text-xs font-bold uppercase text-slate-400 mb-3 tracking-wide">Management Plan Document</h3>
+        <a :href="'management_plans_nwfp/'+sel?.pdf" target="_blank"
+          class="flex items-center gap-3 bg-slate-50 border rounded-xl p-4 hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+          <div class="h-12 w-12 rounded-xl bg-red-100 grid place-items-center shrink-0">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <div class="font-medium text-sm text-slate-800 truncate" x-text="sel?.pdf"></div>
+            <div class="text-xs text-emerald-600 font-semibold mt-1">Click to open PDF →</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function plansApp() {
+  const plans = [
+    // ── DFO BUMTHANG ──────────────────────────────────────────────────────
+    {id:1,group:"Namther Throgmen Tshogpa",div:"DFO Bumthang",dzong:"Trongsa",gewog:"Langthel",hh:18,area:1503,est:2014,plan:"2021–2026",revision:null,ptype:"unknown",status:"active",species:"Acorus calamus, Bombax ceiba, Tinospora sinensis, Phyllanthus emblica, Rubia cordifolia, Pouzolzia spp, Symplocus spp",villages:null,pdf:"DFO-Bumthang_Namther Throgmen Tshogpa/Namther Throgmen Tshogpa.shp"},
+
+    // ── BUMEDLING WILDLIFE SANCTUARY ─────────────────────────────────────
+    {id:2,group:"Aja Illicium griffithii Management Group",div:"BWS",dzong:"Mongar",gewog:"Shelrimuhung",hh:17,area:302,est:2008,plan:"2020–2023",revision:"2020, 2025",ptype:"revised",status:"active",species:"Illicium griffithii, Elatostema spp, Diplazium spp",villages:null,pdf:"BWS_Aja_illicium griffithii_NWFP .pdf"},
+    {id:3,group:"Bumdir Herbal Tea Management Group",div:"BWS",dzong:"Mongar",gewog:"Sherimuhung",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Herbal plants, medicinal herbs",villages:null,pdf:"BWS_Bamdir NWFP.pdf"},
+    {id:4,group:"Cheng NWFP Management Group",div:"BWS",dzong:"Mongar",gewog:"Chengkhar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"revised",status:"active",species:"Mixed NWFPs",villages:null,pdf:"BWS_Cheng NWFPG Plan.pdf"},
+    {id:5,group:"Jabgang Cane (Plectocomia himalayana) NWFP Group",div:"BWS",dzong:"Mongar",gewog:"Jabgang",hh:null,area:null,est:null,plan:null,revision:"3rd revision",ptype:"revised",status:"active",species:"Plectocomia himalayana",villages:null,pdf:"BWS_Jabgang Cane Mgt Plan 3rd revision.pdf"},
+    {id:6,group:"Longkhar NWFP Management Group",div:"BWS",dzong:"Mongar",gewog:"Longkhar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"BWS_LONGKHAR-NWFP Mgt and Mkt Plan_FINAL.pdf"},
+    {id:7,group:"Singyedzong Sangzey Management Group",div:"BWS",dzong:"Mongar",gewog:"Singyedzong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:null},
+
+    // ── DFO DAGANA ───────────────────────────────────────────────────────
+    {id:8,group:"Balung NWFP Management and Marketing Group",div:"DFO Dagana",dzong:"Dagana",gewog:"Balung",hh:30,area:24.9,est:2021,plan:"2022–2027",revision:null,ptype:"new",status:"active",species:"Plectocomia himalayana",villages:null,pdf:"DFO-Dagana_Balung NWFP management plan.pdf"},
+    {id:9,group:"Bana NWFP Management Group",div:"DFO Dagana",dzong:"Dagana",gewog:"Bana",hh:null,area:null,est:null,plan:null,revision:null,ptype:"revised",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Dagana_Bana NWFP management plan reviewed.pdf"},
+    {id:10,group:"Devitar Nagtshel Shingmen Tshogpa",div:"DFO Dagana",dzong:"Dagana",gewog:"Tshangkha",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Dagana_Devitar NWFP Management Plan.pdf"},
+    {id:11,group:"Dorjiphu Nagtshel Shingmen Tshogpa",div:"DFO Dagana",dzong:"Dagana",gewog:"Kana",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Dagana_Dorjiphu-cross-cutting-management-regime.pdf"},
+
+    // ── DFO GEDU ─────────────────────────────────────────────────────────
+    {id:12,group:"Betar NWFP Group",div:"DFO Gedu",dzong:"Chukha",gewog:"Sampheling",hh:16,area:2.023,est:2018,plan:"2023–2028",revision:"2023",ptype:"revised",status:"active",species:"Thysanolaena spp., Bamboo",villages:null,pdf:"DFO-Gedu_Betar NWFP Management Plan.pdf"},
+    {id:13,group:"Sarphu Broom Grass Management Group",div:"DFO Gedu",dzong:"Chukha",gewog:"Sarphu",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Thysanolaena latifolia (Broom grass)",villages:null,pdf:"DFO-Gedu_Sarphu Broom Grass Management & Marketing Plan.pdf"},
+
+    // ── DFO MONGAR ───────────────────────────────────────────────────────
+    {id:14,group:"Balam Shingmen Detshen",div:"DFO Mongar",dzong:"Mongar",gewog:"Balam",hh:109,area:200,est:2016,plan:"2025–2035",revision:"2020, 2025",ptype:"revised",status:"active",species:"Rubia cordifolia, Paris polyphylla, Daphne spp, Diplazium spp, Elatostema lineolatum",villages:null,pdf:"DFO-Mongar_Balam NWFP Management Plan.pdf"},
+    {id:15,group:"Broksar Shingmen Thuenkhen Detshen",div:"DFO Mongar",dzong:"Mongar",gewog:"Broksar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Broksar NWFP Plan.pdf"},
+    {id:16,group:"Goney-Wambur NWFP Management Group",div:"DFO Mongar",dzong:"Mongar",gewog:"Gongdue",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Goney-Wambur NWFP Mangement Plan.pdf"},
+    {id:17,group:"Mangling Ragwang Chithuen Shingmen Detshen",div:"DFO Mongar",dzong:"Mongar",gewog:"Mangling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Mangling NWFP Plan.pdf"},
+    {id:18,group:"Ngatshang NWFP Management and Marketing Group",div:"DFO Mongar",dzong:"Mongar",gewog:"Ngatshang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Ngatshang NWFP Management and Marketing Plan.pdf"},
+    {id:19,group:"Tsakaling NWFP Group",div:"DFO Mongar",dzong:"Mongar",gewog:"Tsakaling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Tsakaling NWFP.pdf"},
+    {id:20,group:"Tsangkhar Shingmen Detshen",div:"DFO Mongar",dzong:"Mongar",gewog:"Tsangkhar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Tshangkhar NWFP management Plan_Final.pdf"},
+    {id:21,group:"Yengkhartseng NWFP Management Group",div:"DFO Mongar",dzong:"Mongar",gewog:"Yengkhar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Mongar_Yengkhartseng NWFP Mangt Plan.pdf"},
+
+    // ── DFO PARO ─────────────────────────────────────────────────────────
+    {id:22,group:"Drakey Chinto Ngomen Tshogpa",div:"DFO Paro",dzong:"Paro",gewog:"Doteng",hh:22,area:14400,est:2011,plan:"2021–2026",revision:"2021",ptype:"revised",status:"active",species:"Nardostachys jatamansi, Rhododendron anthopogon, R. setosum, Juniperus spp, Neopicrorhiza scrophulariiflora",villages:null,pdf:"DFO-Paro_Drakay-Chinto NWFP management and marketing plan.pdf"},
+    {id:23,group:"Luchu Shamong Tshogpa",div:"DFO Paro",dzong:"Paro",gewog:"Doteng",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Paro_Luchu Shamong Tshogpa_Doteng.pdf"},
+
+    // ── DFO PEMAGATSHEL ──────────────────────────────────────────────────
+    {id:24,group:"Bongman NWFP Management and Marketing Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Khar",hh:13,area:554,est:2011,plan:"2021–2026",revision:"2021",ptype:"revised",status:"active",species:"Thysanolaena latifolia, Pouzolzia spp",villages:null,pdf:"DFO-Pemagatshel_Bongman NWFP Mgt Plan.pdf"},
+    {id:25,group:"Chimong Gongphel Shingmen Thoenkey Detshen",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Chimong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Chimong NWFP plan.pdf"},
+    {id:26,group:"Dagore Shingmen Gongphel Detshen",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Dagor",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Dagor Plan.pdf"},
+    {id:27,group:"Dezema NWFP Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Chongshing",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemgatshel_Dezema NWFP.pdf"},
+    {id:28,group:"Dhrupthob Shingmein Detshen",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Chhimong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Dhrupthob_Shingmein_Detshen_NWFP.pdf"},
+    {id:29,group:"Gamung NWFP",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Gamung",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Gamung NWFP plan.pdf"},
+    {id:30,group:"Gashari NWFP Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Gashari",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Gashari NWFP.pdf"},
+    {id:31,group:"Gonpung Shingmen Detshen",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Gonpung",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Gonpung NWFP_plan.pdf"},
+    {id:32,group:"Kerong NWFP Management Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Kerong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Kerong NWFP Management Plan.pdf"},
+    {id:33,group:"Khengzor NWFP",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Khengzor",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Khengzore NWFP Management plan.pdf"},
+    {id:34,group:"Labar Chithuen NWFP",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Labar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Labar NWFP group Management plan.pdf"},
+    {id:35,group:"Ngangray NWFP Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Ngangray",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Ngangray NWFP Management Plan.pdf"},
+    {id:36,group:"Norbugang NWFP Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Norbugang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Norbugang Plan.pdf"},
+    {id:37,group:"Tokari Shingmen Detshen",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Tokari",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Tokari_Plan.pdf"},
+    {id:38,group:"Tomi-Zimzore NWFP Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Tomi",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Tomay Zimzore.pdf"},
+    {id:39,group:"Tshelingore NWFP Management and Marketing Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Tshelingore",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Tshelingore NWFP.pdf"},
+    {id:40,group:"Wongborang NWFP Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Wongborang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:null},
+    {id:41,group:"Wongchelo Chigthuen Tshogpa",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Wongchelo",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Wongchelo_Plan.pdf"},
+    {id:42,group:"Yangmalashing NWFP Management Group",div:"DFO Pemagatshel",dzong:"Pemagatshel",gewog:"Yangmalashing",hh:null,area:null,est:2024,plan:"2024–2029",revision:null,ptype:"new",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Pemagatshel_Yangmalashing Management Plan 2024-2029.pdf"},
+
+    // ── DFO SAMDRUP JONGKHAR ─────────────────────────────────────────────
+    {id:43,group:"Perung-Bargoenpa NWFP Group",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Gomdar",hh:19,area:287,est:2018,plan:"2024–2034",revision:"2024",ptype:"revised",status:"active",species:"Elatostema spp, Fern, Rubia cordifolia, Paris polyphylla, Pouzolzia spp, Mushroom, Daphne spp, Viscum album",villages:null,pdf:"DFO-SJongkhar_Perung- Bargonpa NWFP.pdf"},
+    {id:44,group:"Barzor-Fremi NWFP Group",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Barzor",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-SJongkhar_Barzor-Fremi NWFP Plan.pdf"},
+    {id:45,group:"Denchi Non-Wood Forest Products Management Group",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Denchi",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-SJongkhar_Denchi NWFP Plan.pdf"},
+    {id:46,group:"Dupthob Shingmin Detshen",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Dupthob",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:null},
+    {id:47,group:"Pangthang NWFP Group",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Pangthang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-SJongkhar_Panthang NWFP Plan.pdf"},
+    {id:48,group:"Potala Shingmin Drongdey Nagtshel",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Potala",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-SJongkhar_Potala NWFP.pdf"},
+    {id:49,group:"Remung Lhuendrup Shingmin Gongphel Detshen",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Remung",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-SJongkhar_Remung NWFP mgt. plan.pdf"},
+    {id:50,group:"Thungshing Yubephodrang Shingmin Detshen",div:"DFO Samdrup Jongkhar",dzong:"Samdrup Jongkhar",gewog:"Thungshing",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:null},
+
+    // ── DFO SAMTSE ───────────────────────────────────────────────────────
+    {id:51,group:"Majuwa-Pangkha NWFP Management and Marketing Group",div:"DFO Samtse",dzong:"Samtse",gewog:"Dophuchen",hh:38,area:175,est:2019,plan:"2023–2033",revision:"2023",ptype:"revised",status:"active",species:"Fern, Damru, Chirata, Tupistra nutans, Patsa, other medicinal plants",villages:null,pdf:"DFO-Samtse_Majuwapangkha NWFPG.pdf"},
+    {id:52,group:"Namseling NWFP Management Group",div:"DFO Samtse",dzong:"Samtse",gewog:"Namseling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:null},
+
+    // ── DFO SARPANG ──────────────────────────────────────────────────────
+    {id:53,group:"Bumpa Shingmin Dulen Tshopa",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Chudzom",hh:85,area:11238,est:2010,plan:"2022–2026",revision:"2016, 2022",ptype:"revised",status:"active",species:"Swertia chirata, Persea fructifera, Litsea cubeba, Rubia cordifolia, Piper longum, Paris polyphylla, Thysanolaena latifolia, Acorus calamus, Diplazium esculentum",villages:null,pdf:"DFO-Sarpang_Bumpa NWFP.pdf"},
+    {id:54,group:"Doringphu NWFP Management and Marketing Group",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Doringphu",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Sarpang_Doringphu_NWFP.pdf"},
+    {id:55,group:"Pemaling Pagshing Tshopa",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Pemaling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Sarpang_Pema Yoezerling Plan.pdf"},
+    {id:56,group:"Ratey Pani NWFP Group",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Sarpang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Sarpang_RATEY PANI PLAN.pdf"},
+    {id:57,group:"Sangkha NWFP Group",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Sangkha",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Sarpang_Sangkha NWFPG.pdf"},
+    {id:58,group:"Tashiling Shingmin Dulen and Tsongdrel Tshogpa",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Tashiling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Sarpang_Tashiling NWFP.pdf"},
+    {id:59,group:"Thongjazor Yargay Pakshing Tshogpa",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Sompangkha",hh:29,area:1.3,est:2013,plan:"2023–2028",revision:"2019, 2023",ptype:"revised",status:"inactive",species:"Bambusa nutans, Bambusa tulda, Dendrocalamus hamiltonii, Meloconna braccifera",villages:null,pdf:"DFO-Sarpang_Thongjazor_pahkey.pdf"},
+    {id:60,group:"Thuendrel NWFP Group",div:"DFO Sarpang",dzong:"Sarpang",gewog:"Thuendrel",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Sarpang_Thuendrel NWFP.pdf"},
+
+    // ── DFO TRASHIGANG ───────────────────────────────────────────────────
+    {id:61,group:"Bimkhar Bamboo Management Group",div:"DFO Trashigang",dzong:"Trashiyangtse",gewog:"Yangtse",hh:49,area:530.1,est:2020,plan:"2025–2034",revision:"2025",ptype:"revised",status:"active",species:"Borinda grossa",villages:null,pdf:"DFO-Trashigang_Bimkhar Bamboo Management and Marketing Plan (2025-2034).pdf"},
+    {id:62,group:"Baepam Sorbang Detshen (Lemon Grass)",div:"DFO Trashigang",dzong:"Trashigang",gewog:"Baepam",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Cymbopogon flexuosus (Lemon grass)",villages:null,pdf:"DFO-Trashigang_BAEPAM SORBANG DETSHEN Lemon Grass Management Plan.pdf"},
+    {id:63,group:"Daphne Management Plan (Trashigang)",div:"DFO Trashigang",dzong:"Trashigang",gewog:"Trashigang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Daphne spp (Daphne, Dhaphne)",villages:null,pdf:"DFO-Trashigang_Daphne Management Plan.pdf"},
+    {id:64,group:"Gengkhar Bangsee Group (Bangtshe)",div:"DFO Trashigang",dzong:"Trashigang",gewog:"Gengkhar",hh:null,area:null,est:null,plan:null,revision:null,ptype:"revised",status:"active",species:"Mixed NWFPs, Bamboo",villages:null,pdf:"DFO-Trashigang_Gengkhar Bengtse Detshen Revised Management Plan.pdf"},
+    {id:65,group:"Rubia NWFP Group",div:"DFO Trashigang",dzong:"Trashigang",gewog:"Trashigang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Rubia cordifolia",villages:null,pdf:"DFO-Trashigang_Rubia_NWFP_Plan.pdf"},
+    {id:66,group:"Udzorong Sorbang Detshen",div:"DFO Trashigang",dzong:"Trashigang",gewog:"Udzorong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Cymbopogon flexuosus (Lemon grass)",villages:null,pdf:"DFO-Trashigang_UDZORONG SORBANG DETSHEN.pdf"},
+
+    // ── DFO THIMPHU ──────────────────────────────────────────────────────
+    {id:67,group:"Genye Mushroom Management Group (Genekha)",div:"DFO Thimphu",dzong:"Thimphu",gewog:"Genye",hh:126,area:857.5,est:2008,plan:"2019–2029",revision:null,ptype:"unknown",status:"active",species:"Tricholoma matsutake (Sangay Shamu, Matsutake mushroom)",villages:null,pdf:"DFO-Thimphu_Mushroom_Management_Plan_of_Genekha_2019_2029.pdf"},
+    {id:68,group:"Dagala NWFP Group",div:"DFO Thimphu",dzong:"Thimphu",gewog:"Dagala",hh:null,area:null,est:null,plan:"2025",revision:null,ptype:"new",status:"active",species:"Alpine medicinal herbs, Cordyceps sinensis",villages:null,pdf:"DFO-Thimphu_Dagala_NWFP_Plan, 2025.pdf"},
+
+    // ── DFO TSIRANG ──────────────────────────────────────────────────────
+    {id:69,group:"Batasey Non-Wood Forest Products Group",div:"DFO Tsirang",dzong:"Tsirang",gewog:"Kikorthang",hh:12,area:1.781,est:2019,plan:"2022–2027",revision:"2022",ptype:"revised",status:"active",species:"Thysanolaena latifolia (Broom grass)",villages:null,pdf:"DF0-Tsirang_BATASEY NWFPs Management Plan.pdf"},
+    {id:70,group:"Serzhong and Menchuna NWFP Group",div:"DFO Tsirang",dzong:"Tsirang",gewog:"Tsirang Gewog",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Tsirang_Serzhong and Menchuna.pdf"},
+    {id:71,group:"Tashiling NWFP Group (Tsirang)",div:"DFO Tsirang",dzong:"Tsirang",gewog:"Tashiling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Tsirang_Tashiling NWFPG.pdf"},
+
+    // ── DFO WANGDUE PHODRANG ─────────────────────────────────────────────
+    {id:72,group:"Dangchu Gewog Chithun NWFPs Group",div:"DFO Wangdue Phodrang",dzong:"Wangdue Phodrang",gewog:"Dangchu",hh:170,area:3116.55,est:2018,plan:"2023–2028",revision:"2023",ptype:"revised",status:"active",species:"Paris polyphylla, Borinda grossa, Algae (churu)",villages:null,pdf:"DFO-WangdueP_DANGCHU NWFP MANAGEMENT PLAN.pdf"},
+    {id:73,group:"Gorgoen Shingmin Thoenketh Management Group",div:"DFO Wangdue Phodrang",dzong:"Wangdue Phodrang",gewog:"Gorgoen",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-WangdueP_Gorgoen Shingmin Thoenketh mgt group plan.pdf"},
+    {id:74,group:"Phangyuel Kumchi and Goenkha NWFP Group",div:"DFO Wangdue Phodrang",dzong:"Wangdue Phodrang",gewog:"Phangyuel",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-WangdueP_Phangyuel Kumchi and Goenkha NWFP Group plan.pdf"},
+    {id:75,group:"Sephu NWFP Management Group (DFO)",div:"DFO Wangdue Phodrang",dzong:"Wangdue Phodrang",gewog:"Sephu",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-WangdueP_SEPHU NWFP MANAGEMENT PLAN.pdf"},
+    {id:76,group:"Tongzhuna NWFP Group",div:"DFO Wangdue Phodrang",dzong:"Wangdue Phodrang",gewog:"Tongzhuna",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-WangdueP_Tongzhuna NWFPG.pdf"},
+
+    // ── DFO ZHEMGANG ─────────────────────────────────────────────────────
+    {id:77,group:"Bjoka Tsharzo Gongphel Tshogpa (CFMP)",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Bjoka",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_CFMP of Bjoka Tsharzo Gongphel Tshogpa.pdf"},
+    {id:78,group:"Dali Shingmen Tshogpa",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Bjoka",hh:20,area:119,est:2020,plan:"2025–2035",revision:"2025",ptype:"revised",status:"active",species:"Piper longum (Long pipla), Piper spp",villages:null,pdf:"DFO-Zhemgang_Dali NWFP Management Plan.pdf"},
+    {id:79,group:"Goling NWFP Management Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Goling",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_Goling NWFP Management Plan.pdf"},
+    {id:80,group:"Kamati NWFP Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Kamati",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_ Kamati  NWFPG.pdf"},
+    {id:81,group:"Lamtang NWFP Management Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Lamtang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_Lamtang NWFP Management Plan.pdf"},
+    {id:82,group:"Marangduth NWFP Management Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Marangduth",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_Marangduth NWFP Management Plan.pdf"},
+    {id:83,group:"Ngangla-Trong NWFP Management Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Ngangla-Trong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_Ngangla-Trong NWFP Management Plan.pdf"},
+    {id:84,group:"Tshaidang NWFP Management Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Tshaidang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_Tshaidang NWFP Management Plan.pdf"},
+    {id:85,group:"Zhobleng NWFP Management Group",div:"DFO Zhemgang",dzong:"Zhemgang",gewog:"Zhobleng",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"DFO-Zhemgang_Zhobleng NWFP Management Plan.pdf"},
+
+    // ── JIGME DORJI NATIONAL PARK ────────────────────────────────────────
+    {id:86,group:"Gangri Phunsum Ngomen Tshokpa",div:"JDNP",dzong:"Thimphu",gewog:"Naro",hh:74,area:28100,est:2010,plan:"2023–2027",revision:"2023",ptype:"revised",status:"active",species:"Mecanopsis simplicifolia, Nardostachys grandiflora, Rhododendron spp, Juniperus spp, Podophyllum hexandrum, Dactylorhiza hatagirea, Aconitum spp, Paris polyphylla, Cordyceps sinensis",villages:null,pdf:null},
+    {id:87,group:"Jomolhari Ngomen Tshogpa",div:"JDNP",dzong:"Paro",gewog:"Jomolhari",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Alpine medicinal herbs, Cordyceps sinensis",villages:null,pdf:"JDNP_Jomolhari_Ngomen_Tshogpa.PDF"},
+    {id:88,group:"Laya NWFP Group",div:"JDNP",dzong:"Gasa",gewog:"Laya",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Alpine NWFPs, Cordyceps sinensis",villages:null,pdf:"JDNP_Laya_NWFPG.pdf"},
+
+    // ── JIGME SINGYE WANGCHUCK NP / PHIBSOO WILDLIFE SANCTUARY ──────────
+    {id:89,group:"Mongpa Selwai Yoezer Tshokpa",div:"JSWNP",dzong:"Trongsa",gewog:"Langthel",hh:59,area:599.94,est:2014,plan:"2018–2028",revision:"2018",ptype:"revised",status:"active",species:"Dendrocalamus hamiltonii, Dendrocalamus sikkimensis, Plectocomia himalayana, Bambusa clavata, Cephalostachyum spp",villages:null,pdf:null},
+    {id:90,group:"Rukha Nagtshel Thunken Tshogpa",div:"JSWNP",dzong:"Trongsa",gewog:"Rukha",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JSWNP_Rukha_Nagtshel_Thunken_ Tshogpa_NWFP.pdf"},
+    {id:91,group:"Ura Mushroom Conservation and Marketing Group",div:"PNP",dzong:"Bumthang",gewog:"Ura",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Tricholoma matsutake (Matsutake mushroom)",villages:null,pdf:"PNP_Ura Mushroom group plan.pdf"},
+
+    // ── JOMOTSHANGKHA WILDLIFE SANCTUARY ─────────────────────────────────
+    {id:92,group:"Beytseling Shingmein Yargay Gongphel Tshogpa",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Lauri",hh:13,area:2507.34,est:2011,plan:"2023–2028",revision:"2023",ptype:"revised",status:"active",species:"Rubia cordifolia, Elatostema spp, Pouzolzia spp, Illicium griffithii",villages:null,pdf:"JWS_Beytseling_NWFP.pdf"},
+    {id:93,group:"Barkangna NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Barkangna",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Barkangna_NWFP_plan.pdf"},
+    {id:94,group:"Chitori NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Chitori",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Chitori_NWFP.pdf"},
+    {id:95,group:"Dungmanma NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Dungmanma",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Dungmanma_NWFP.pdf"},
+    {id:96,group:"Kakani Shingmein Thuenkyed Tshogpa",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Martshala",hh:37,area:289.35,est:2010,plan:"2025–2035",revision:"2025",ptype:"revised",status:"active",species:"Mixed NWFPs",villages:"Kakani",pdf:"JWS_KAKANI SHNGMIEN THUENKYED TSOGPA_NWFP.pdf"},
+    {id:97,group:"Lauri NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Lauri",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Lauri_NWFP.pdf"},
+    {id:98,group:"Momring NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Momring",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Momring_NWFP.pdf"},
+    {id:99,group:"Patpanadang NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Patpanadang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Patpanadang_NWFP.pdf"},
+    {id:100,group:"Rigsum NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Rigsum",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Rigsum_NWFP.pdf"},
+    {id:101,group:"Samten Shingmein Thuenkyed Tshogpa",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Martshala",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_SAMTEN SHINGMEIN THUENKYED TSHOGPA_NWFP.pdf"},
+    {id:102,group:"Serthi NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Serthi",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Serthi_NWFP.pdf"},
+    {id:103,group:"Tashithangjay NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Tashithangjay",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Tashithangjay_NWFP.pdf"},
+    {id:104,group:"Thekcho Choling Phajogoenpa NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Phajogoenpa",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Thekcho_Choling_Phajogoenpa_NWFP.pdf"},
+    {id:105,group:"Woongthi NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Woongthi",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Woongthi_NWFP.pdf"},
+    {id:106,group:"Zangthi NWFP Group",div:"JWS",dzong:"Samdrup Jongkhar",gewog:"Zangthi",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"JWS_Zangthi_NWFP.pdf"},
+
+    // ── ROYAL MANAS NATIONAL PARK ────────────────────────────────────────
+    {id:107,group:"Mamung Bamboo Management Group",div:"RMNP",dzong:"Zhemgang",gewog:"Phangkhar",hh:16,area:38.63,est:2019,plan:"2025–2035",revision:"2024",ptype:"revised",status:"active",species:"Neomicrocalamus andropogonifolius, Dendrocalamus hamiltonii",villages:null,pdf:"RMNP_Mamung_NWFP.pdf"},
+    {id:108,group:"Panabe NWFP Group",div:"RMNP",dzong:"Zhemgang",gewog:"Panabe",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"RMNP_Panabe_ NWFP.pdf"},
+    {id:109,group:"Pongchula NWFP Group",div:"RMNP",dzong:"Zhemgang",gewog:"Pongchula",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"RMNP_Pongchula_NWFP.pdf"},
+    {id:110,group:"Salapong NWFP Group",div:"RMNP",dzong:"Sarpang",gewog:"Salapong",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"RMNP_Salapong_NWFP.pdf"},
+    {id:111,group:"Zangbi NWFP Group",div:"RMNP",dzong:"Zhemgang",gewog:"Zangbi",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"RMNP_Zangbi_NWFP.pdf"},
+
+    // ── SAKTENG WILDLIFE SANCTUARY ───────────────────────────────────────
+    {id:112,group:"Chewchew Khachap Chetrin Tshogpa",div:"SWS",dzong:"Trashigang",gewog:"Merak",hh:6,area:20,est:2018,plan:"2022–2027",revision:null,ptype:"unknown",status:"active",species:"Juniper spp, Rhododendron anthopogon, Nardostachys grandiflora, Cassiopeia fastigiata, Swertia wardii, Saussurea spp",villages:"Chewchew",pdf:"SWS_Chew Chew Khachap Chetrin Tsokpa_NWFP.pdf"},
+    {id:113,group:"Daphne Management Group — Yumzang Semthuen",div:"SWS",dzong:"Trashigang",gewog:"Sakteng",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Daphne spp",villages:null,pdf:"SWS_Daphne Management Plan_Yumzang_Semthuen_NWFP.pdf"},
+    {id:114,group:"Kuenphen Poina Tshokpa",div:"SWS",dzong:"Trashigang",gewog:"Merak",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"SWS_Kuenphen Poina Tshokpa_NWFP.pdf"},
+    {id:115,group:"Sakteng Lhayul Sangzey Deytshen",div:"SWS",dzong:"Trashigang",gewog:"Sakteng",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"SWS_SAKTENG LHAYUL SANGZEY DEYTSHEN_NWFP.pdf"},
+
+    // ── WANGCHUCK CENTENNIAL NATIONAL PARK ──────────────────────────────
+    {id:116,group:"Sephu Detsi Ngomen Ketshel Tshochung Detshen (SDNKT)",div:"WCNP",dzong:"Wangdue Phodrang",gewog:"Sephu",hh:262,area:18391.87,est:2024,plan:"2024–2034",revision:null,ptype:"new",status:"active",species:"Nardostachys spp, Ophiocordyceps sinensis (Cordyceps), Rhodiola spp, Juniperus spp, Rhododendron spp, Picrorhiza spp",villages:"Lungtey, Longmey, Rukbub Ji, Bumilo, Naki-la, Zeri, Busa Chazam",pdf:"WCNP_Sephu-NWFP.pdf"},
+    {id:117,group:"Tang NWFP Group",div:"WCNP",dzong:"Bumthang",gewog:"Tang",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Alpine medicinal herbs",villages:null,pdf:"WCNP_Tang-NWFP.pdf"},
+    {id:118,group:"Chokhor NWFP Group",div:"WCNP",dzong:"Bumthang",gewog:"Chokhor",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Alpine NWFPs",villages:null,pdf:"WCNP_Chokhor-NWFP.pdf"},
+    {id:119,group:"Ney Khuenphen NWFP Group",div:"WCNP",dzong:"Bumthang",gewog:"Ney",hh:null,area:null,est:null,plan:null,revision:null,ptype:"unknown",status:"active",species:"Mixed NWFPs",villages:null,pdf:"WCNP_Ney_Khuenphen_NWFP.pdf"},
+  ];
+
+  return {
+    tab:'home',
+    search:'',
+    docSearch:'',
+    filterDiv:'',
+    filterDzong:'',
+    filterStatus:'',
+    selectedDzong:'',
+    page:1,
+    pageSize:18,
+    docPage:1,
+    docPageSize:12,
+    sel:null,
+    plans,
+
+    get filtered(){
+      return this.plans.filter(p=>{
+        if(this.filterDiv && p.div!==this.filterDiv) return false;
+        if(this.filterDzong && p.dzong!==this.filterDzong) return false;
+        if(this.filterStatus && p.status!==this.filterStatus) return false;
+        if(this.search){
+          const q=this.search.toLowerCase();
+          return p.group.toLowerCase().includes(q)
+            ||(p.gewog&&p.gewog.toLowerCase().includes(q))
+            ||(p.dzong&&p.dzong.toLowerCase().includes(q))
+            ||(p.species&&p.species.toLowerCase().includes(q))
+            ||(p.div&&p.div.toLowerCase().includes(q));
+        }
+        return true;
+      });
+    },
+
+    get filteredDocs(){
+      const q=this.docSearch.toLowerCase();
+      return this.plans.filter(p=>p.pdf&&(!q||p.group.toLowerCase().includes(q)||p.div.toLowerCase().includes(q)||(p.gewog&&p.gewog.toLowerCase().includes(q))));
+    },
+
+    get totalPages(){
+      return Math.max(1, Math.ceil(this.filtered.length / this.pageSize));
+    },
+
+    get currentPage(){
+      return Math.min(Math.max(this.page, 1), this.totalPages);
+    },
+
+    get pagedPlans(){
+      const start = (this.currentPage - 1) * this.pageSize;
+      return this.filtered.slice(start, start + this.pageSize);
+    },
+
+    get pageStart(){
+      return this.filtered.length ? ((this.currentPage - 1) * this.pageSize) + 1 : 0;
+    },
+
+    get pageEnd(){
+      return Math.min(this.filtered.length, this.currentPage * this.pageSize);
+    },
+
+    get docTotalPages(){
+      return Math.max(1, Math.ceil(this.filteredDocs.length / this.docPageSize));
+    },
+
+    get docCurrentPage(){
+      return Math.min(Math.max(this.docPage, 1), this.docTotalPages);
+    },
+
+    get pagedDocs(){
+      const start = (this.docCurrentPage - 1) * this.docPageSize;
+      return this.filteredDocs.slice(start, start + this.docPageSize);
+    },
+
+    get docPageStart(){
+      return this.filteredDocs.length ? ((this.docCurrentPage - 1) * this.docPageSize) + 1 : 0;
+    },
+
+    get docPageEnd(){
+      return Math.min(this.filteredDocs.length, this.docCurrentPage * this.docPageSize);
+    },
+
+    get totalAreaLabel(){
+      const s=this.plans.reduce((a,p)=>a+(p.area||0),0);
+      return s>=1000?(s/1000).toFixed(1)+'k':s.toFixed(0);
+    },
+
+    get divisions(){
+      return[...new Set(this.plans.map(p=>p.div))].sort();
+    },
+
+    get dzongkhags(){
+      return[...new Set(this.plans.map(p=>p.dzong).filter(Boolean))].sort();
+    },
+
+    get dzongGroups(){
+      const m={};
+      this.plans.forEach(p=>{
+        if(!p.dzong) return;
+        if(!m[p.dzong]) m[p.dzong]={name:p.dzong,plans:[],hh:0,area:0,divisions:new Set()};
+        m[p.dzong].plans.push(p);
+        m[p.dzong].divisions.add(p.div);
+        if(p.hh) m[p.dzong].hh+=p.hh;
+        if(p.area) m[p.dzong].area=Math.round(m[p.dzong].area+p.area);
+      });
+      return Object.values(m)
+        .map(g=>({...g,divisions:[...g.divisions].sort()}))
+        .sort((a,b)=>b.plans.length-a.plans.length || a.name.localeCompare(b.name));
+    },
+
+    get selectedDzongGroup(){
+      return this.dzongGroups.find(g=>g.name===this.selectedDzong) || this.dzongGroups[0] || {name:'',plans:[],hh:0,area:0,divisions:[]};
+    },
+
+    get selectedDzongPlans(){
+      return this.selectedDzongGroup.plans.slice().sort((a,b)=>a.div.localeCompare(b.div) || a.group.localeCompare(b.group));
+    },
+
+    selectDzong(name){
+      this.selectedDzong=name;
+      this.filterDzong=name;
+      this.page=1;
+    },
+
+    get divGroups(){
+      const m={};
+      this.plans.forEach(p=>{
+        if(!m[p.div]) m[p.div]={name:p.div,plans:[],hh:0,area:0};
+        m[p.div].plans.push(p);
+        if(p.hh) m[p.div].hh+=p.hh;
+        if(p.area) m[p.div].area=Math.round(m[p.div].area+p.area);
+      });
+      return Object.values(m).sort((a,b)=>a.name.localeCompare(b.name));
+    }
+  };
+}
+</script>
+</body>
+</html>

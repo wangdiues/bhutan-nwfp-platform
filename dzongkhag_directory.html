@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dzongkhag Directory - Bhutan NWFP Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/nwfp_pages.css">
+</head>
+<body data-title="Dzongkhag NWFP Directory">
+  <div class="shell">
+    <div id="siteHeader"></div>
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <section class="hero rounded-[2rem] p-6 text-white shadow-2xl md:p-10">
+        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Dzongkhag coverage</p>
+        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Groups, plans, products, and spatial links by Dzongkhag.</h1>
+        <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50">Each Dzongkhag card summarizes linked NWFP records, households, reported management area, managing offices or parks, product signals, and shortcuts to plans and GIS resources.</p>
+      </section>
+      <section id="stats" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></section>
+      <section id="dzongDirectory" class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3"></section>
+    </main>
+    <div id="siteFooter"></div>
+  </div>
+  <script src="assets/nwfp_plan_data.js"></script>
+  <script src="assets/nwfp_pages.js"></script>
+</body>
+</html>

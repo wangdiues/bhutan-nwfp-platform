@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Species Profiles - Bhutan NWFP Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/nwfp_pages.css">
+</head>
+<body data-title="NWFP Species Profiles">
+  <div class="shell">
+    <div id="siteHeader"></div>
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <section class="hero-photo rounded-[2rem] p-6 text-white shadow-2xl md:p-10" style="--hero-image:url('assets/nwfp_images/cordyceps-sinensis.jpg')">
+        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Species profiles</p>
+        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Searchable profiles for priority NWFP species and product groups.</h1>
+        <input id="speciesSearch" class="mt-7 max-w-md rounded-xl border border-white/20 bg-white/95 px-4 py-3 text-sm font-bold text-emerald-950" placeholder="Search species or category...">
+      </section>
+      <section id="speciesGrid" class="mt-6 grid gap-4"></section>
+    </main>
+    <div id="siteFooter"></div>
+  </div>
+  <script src="assets/nwfp_plan_data.js"></script>
+  <script src="assets/nwfp_pages.js"></script>
+</body>
+</html>

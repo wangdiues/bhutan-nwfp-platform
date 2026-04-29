@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NWFP Groups Registry - Bhutan NWFP Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/nwfp_pages.css">
+</head>
+<body data-title="NWFP Groups Registry">
+  <div class="shell">
+    <div id="siteHeader"></div>
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <section class="hero rounded-[2rem] p-6 text-white shadow-2xl md:p-10">
+        <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Group registry</p>
+        <h1 class="mt-4 max-w-4xl text-4xl font-black leading-none md:text-6xl">Search NWFP groups by gewog, Dzongkhag, office, status, households, and products.</h1>
+      </section>
+      <section id="stats" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></section>
+      <section class="card mt-6 overflow-hidden rounded-3xl">
+        <div class="flex flex-wrap items-center justify-between gap-3 p-4">
+          <div><p class="kicker">Registry table</p><h2 class="text-2xl font-black text-emerald-950">Group records</h2></div>
+          <input id="groupSearch" class="field max-w-sm" placeholder="Search group, gewog, product, office...">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table">
+            <thead><tr><th>Group and Products</th><th>Gewog / Dzongkhag</th><th>Office</th><th>Status</th><th>HH</th><th>Area</th></tr></thead>
+            <tbody id="groupsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <div id="siteFooter"></div>
+  </div>
+  <script src="assets/nwfp_plan_data.js"></script>
+  <script src="assets/nwfp_pages.js"></script>
+</body>
+</html>

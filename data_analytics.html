@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NWFP Data Analytics - Bhutan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--forest:#082f1a;--canopy:#14532d;--lime:#bef264;--gold:#facc15;--paper:#f6f4ea;--ink:#102116}
+    body{color:var(--ink);background:radial-gradient(circle at 15% 0%, rgba(190,242,100,.25), transparent 26rem),linear-gradient(135deg, rgba(8,47,26,.08) 0 28%, transparent 28% 100%),var(--paper)}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:repeating-linear-gradient(90deg, rgba(8,47,26,.45) 0 1px, transparent 1px 56px)}
+    .shell{position:relative;z-index:1}
+    .logo-shadow{filter:drop-shadow(0 14px 22px rgba(0,0,0,.26))}
+    .card{border:1px solid rgba(20,83,45,.14);background:rgba(255,255,255,.92);box-shadow:0 18px 45px rgba(8,47,26,.08)}
+    .hero{background:linear-gradient(120deg, rgba(8,47,26,.96), rgba(20,83,45,.86));}
+    .bar{height:.8rem;border-radius:999px;background:#e2e8f0;overflow:hidden}
+    .bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#facc15,#84cc16,#22c55e)}
+    .kicker{font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#166534}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="sticky top-0 z-30 border-b border-white/10 bg-emerald-950/95 text-white shadow-xl backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="h-14 w-14 object-contain logo-shadow">
+          <div>
+            <strong class="block leading-tight">NWFP Data Analytics</strong>
+            <small class="text-xs text-lime-100">Forest Resources Planning and Management Division, Department of Forests and Park Services</small>
+          </div>
+        </a>
+        <nav class="hidden flex-wrap items-center justify-end gap-2 text-sm font-bold md:flex">
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="index.html">Home</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="NWFP_Management_Plans.html">Management Plans</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="data_analytics.html">Data Analytics</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="spatial_resources.html">Spatial Resources</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="nwfp_gallery.html">Gallery</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="marketplace_sample.html">Market</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="about.html">About</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="dzongkhag_directory.html">Dzongkhags</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="product_catalog.html">Products</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="nwfp_groups.html">Groups</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="species_profile.html">Species</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="people_nwfp.html">People &amp; NWFP</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="certification_traceability.html">Traceability</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="training_resources.html">Training</a>
+          <a class="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20" href="buyer_enquiry.html">Enquiry</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <section class="hero overflow-hidden rounded-[2rem] p-6 text-white shadow-2xl md:p-8">
+        <div class="grid gap-6 lg:grid-cols-[1fr_22rem]">
+          <div>
+            <p class="text-xs font-black uppercase tracking-[.18em] text-yellow-300">Data analytics</p>
+            <h1 class="mt-3 max-w-3xl text-4xl font-black leading-none tracking-tight md:text-6xl">NWFP management plans at a glance.</h1>
+            <p class="mt-5 max-w-2xl text-sm leading-7 text-emerald-50">This standalone analytics page summarizes the existing management plan dataset by Dzongkhag, division or park, document coverage, status, household participation, and reported management area.</p>
+          </div>
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services logo" class="hidden h-56 w-56 place-self-center object-contain logo-shadow lg:block">
+        </div>
+      </section>
+
+      <section id="metrics" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"></section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-[1.1fr_.9fr]">
+        <article class="card rounded-3xl p-5">
+          <div class="flex items-end justify-between gap-3">
+            <div>
+              <p class="kicker">Dzongkhag Distribution</p>
+              <h2 class="mt-1 text-2xl font-black text-emerald-950">Plans by Dzongkhag</h2>
+            </div>
+            <span class="text-xs font-bold text-slate-500">Top districts</span>
+          </div>
+          <div id="dzongBars" class="mt-5 space-y-4"></div>
+        </article>
+
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Status and Plan Type</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Portfolio composition</h2>
+          <div id="statusCards" class="mt-5 grid gap-3 sm:grid-cols-2"></div>
+          <div id="ptypeCards" class="mt-4 grid gap-3 sm:grid-cols-3"></div>
+        </article>
+      </section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-[.9fr_1.1fr]">
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Reported Management Area</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Area concentration</h2>
+          <div id="areaBars" class="mt-5 space-y-4"></div>
+        </article>
+
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Administrative Coverage</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Plans by division or park</h2>
+          <div id="divisionBars" class="mt-5 space-y-4"></div>
+        </article>
+      </section>
+
+      <section class="mt-6 grid gap-4 lg:grid-cols-3">
+        <article class="card rounded-3xl p-5 lg:col-span-2">
+          <p class="kicker">Planning Timeline</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">Records with plan or establishment years</h2>
+          <div id="yearBars" class="mt-5 grid gap-3 sm:grid-cols-2"></div>
+        </article>
+        <article class="card rounded-3xl p-5">
+          <p class="kicker">Analytic Notes</p>
+          <h2 class="mt-1 text-2xl font-black text-emerald-950">What the data suggests</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+            <li><strong>Document coverage is high:</strong> 112 of 119 records have linked documents.</li>
+            <li><strong>Coverage is concentrated:</strong> Samdrup Jongkhar, Pemagatshel, Mongar, and Zhemgang have the largest record counts.</li>
+            <li><strong>Most plans are active:</strong> only one record is marked inactive in the current dataset.</li>
+            <li><strong>Area figures are uneven:</strong> some records have no reported area, so area analytics reflect known plans only.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <footer class="mx-auto max-w-7xl px-4 pb-8 pt-2">
+      <div class="rounded-2xl border border-emerald-900/10 bg-white/80 px-5 py-4 text-center text-sm font-bold text-emerald-950 shadow-sm">
+        Made by Wangdi · <a class="text-emerald-700 hover:text-emerald-950" href="mailto:wangidues@gmail.com">wangidues@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const analytics = {
+      total:119, docs:112, active:118, area:83259, hh:1240,
+      dzong:[{"name":"Samdrup Jongkhar","count":23,"hh":69,"area":3083.69,"docs":21,"active":23},{"name":"Pemagatshel","count":19,"hh":13,"area":554,"docs":18,"active":19},{"name":"Mongar","count":14,"hh":126,"area":502,"docs":13,"active":14},{"name":"Zhemgang","count":13,"hh":36,"area":157.63,"docs":13,"active":13},{"name":"Sarpang","count":9,"hh":114,"area":11239.3,"docs":9,"active":8},{"name":"Trashigang","count":9,"hh":6,"area":20,"docs":9,"active":9},{"name":"Wangdue Phodrang","count":6,"hh":432,"area":21508.42,"docs":6,"active":6},{"name":"Bumthang","count":4,"hh":0,"area":0,"docs":4,"active":4},{"name":"Dagana","count":4,"hh":30,"area":24.9,"docs":4,"active":4},{"name":"Paro","count":3,"hh":22,"area":14400,"docs":3,"active":3},{"name":"Thimphu","count":3,"hh":200,"area":28957.5,"docs":2,"active":3},{"name":"Trongsa","count":3,"hh":77,"area":2102.94,"docs":2,"active":3},{"name":"Tsirang","count":3,"hh":12,"area":1.781,"docs":3,"active":3},{"name":"Chukha","count":2,"hh":16,"area":2.023,"docs":2,"active":2},{"name":"Samtse","count":2,"hh":38,"area":175,"docs":1,"active":2},{"name":"Gasa","count":1,"hh":0,"area":0,"docs":1,"active":1},{"name":"Trashiyangtse","count":1,"hh":49,"area":530.1,"docs":1,"active":1}],
+      div:[{"name":"DFO Pemagatshel","count":19,"hh":13,"area":554,"docs":18,"active":19},{"name":"JWS","count":15,"hh":50,"area":2796.69,"docs":15,"active":15},{"name":"DFO Zhemgang","count":9,"hh":20,"area":119,"docs":9,"active":9},{"name":"DFO Mongar","count":8,"hh":109,"area":200,"docs":8,"active":8},{"name":"DFO Samdrup Jongkhar","count":8,"hh":19,"area":287,"docs":6,"active":8},{"name":"DFO Sarpang","count":8,"hh":114,"area":11239.3,"docs":8,"active":7},{"name":"BWS","count":6,"hh":17,"area":302,"docs":5,"active":6},{"name":"DFO Trashigang","count":6,"hh":49,"area":530.1,"docs":6,"active":6},{"name":"DFO Wangdue Phodrang","count":5,"hh":170,"area":3116.55,"docs":5,"active":5},{"name":"RMNP","count":5,"hh":16,"area":38.63,"docs":5,"active":5},{"name":"DFO Dagana","count":4,"hh":30,"area":24.9,"docs":4,"active":4},{"name":"SWS","count":4,"hh":6,"area":20,"docs":4,"active":4},{"name":"WCNP","count":4,"hh":262,"area":18391.87,"docs":4,"active":4},{"name":"DFO Tsirang","count":3,"hh":12,"area":1.781,"docs":3,"active":3},{"name":"JDNP","count":3,"hh":74,"area":28100,"docs":2,"active":3},{"name":"DFO Gedu","count":2,"hh":16,"area":2.023,"docs":2,"active":2},{"name":"DFO Paro","count":2,"hh":22,"area":14400,"docs":2,"active":2},{"name":"DFO Samtse","count":2,"hh":38,"area":175,"docs":1,"active":2},{"name":"DFO Thimphu","count":2,"hh":126,"area":857.5,"docs":2,"active":2},{"name":"JSWNP","count":2,"hh":59,"area":599.94,"docs":1,"active":2},{"name":"DFO Bumthang","count":1,"hh":18,"area":1503,"docs":1,"active":1},{"name":"PNP","count":1,"hh":0,"area":0,"docs":1,"active":1}],
+      status:[{"name":"active","count":118},{"name":"inactive","count":1}],
+      ptypes:[{"name":"unknown","count":93},{"name":"revised","count":22},{"name":"new","count":4}],
+      years:[{"year":2018,"count":1},{"year":2019,"count":1},{"year":2020,"count":1},{"year":2021,"count":3},{"year":2022,"count":4},{"year":2023,"count":6},{"year":2024,"count":3},{"year":2025,"count":6}]
+    };
+
+    const fmt = n => Number(n).toLocaleString(undefined, {maximumFractionDigits: 1});
+    const pct = (value, max) => max ? Math.max(3, Math.round((value / max) * 100)) : 0;
+    const metric = (label, value, note) => `<div class="card rounded-3xl p-5"><div class="text-xs font-black uppercase tracking-wide text-slate-500">${label}</div><div class="mt-2 text-4xl font-black text-emerald-800">${value}</div><div class="mt-1 text-xs text-slate-500">${note}</div></div>`;
+    document.getElementById('metrics').innerHTML = [
+      metric('Total plans', fmt(analytics.total), 'management records'),
+      metric('Active', fmt(analytics.active), 'currently active'),
+      metric('Documents', fmt(analytics.docs), 'linked PDFs or files'),
+      metric('Known area', fmt(analytics.area), 'hectares reported'),
+      metric('Households', fmt(analytics.hh), 'recorded member HH')
+    ].join('');
+
+    function bars(id, rows, key, limit, suffix='') {
+      const data = rows.slice().sort((a,b)=>(b[key]||0)-(a[key]||0)).slice(0, limit);
+      const max = Math.max(...data.map(d=>d[key]||0), 1);
+      document.getElementById(id).innerHTML = data.map(d => `
+        <div>
+          <div class="mb-1 flex items-center justify-between gap-3 text-sm">
+            <strong class="text-slate-800">${d.name}</strong>
+            <span class="font-black text-emerald-800">${fmt(d[key]||0)}${suffix}</span>
+          </div>
+          <div class="bar"><span style="width:${pct(d[key]||0,max)}%"></span></div>
+          <div class="mt-1 text-xs text-slate-500">${d.docs || 0} documents / ${d.active || 0} active</div>
+        </div>
+      `).join('');
+    }
+
+    bars('dzongBars', analytics.dzong, 'count', 12);
+    bars('areaBars', analytics.dzong, 'area', 8, ' ha');
+    bars('divisionBars', analytics.div, 'count', 14);
+
+    document.getElementById('statusCards').innerHTML = analytics.status.map(s => `
+      <div class="rounded-2xl bg-lime-50 p-4">
+        <div class="text-xs font-black uppercase tracking-wide text-slate-500">${s.name}</div>
+        <div class="mt-1 text-3xl font-black text-emerald-800">${s.count}</div>
+      </div>
+    `).join('');
+    document.getElementById('ptypeCards').innerHTML = analytics.ptypes.map(s => `
+      <div class="rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10">
+        <div class="text-xs font-black uppercase tracking-wide text-slate-500">${s.name}</div>
+        <div class="mt-1 text-2xl font-black text-emerald-800">${s.count}</div>
+      </div>
+    `).join('');
+    const maxYear = Math.max(...analytics.years.map(y=>y.count), 1);
+    document.getElementById('yearBars').innerHTML = analytics.years.map(y => `
+      <div class="rounded-2xl bg-white p-4 ring-1 ring-emerald-900/10">
+        <div class="mb-2 flex items-center justify-between text-sm"><strong>${y.year}</strong><span class="font-black text-emerald-800">${y.count}</span></div>
+        <div class="bar"><span style="width:${pct(y.count,maxYear)}%"></span></div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
