@@ -38,8 +38,7 @@ jobs:
           cp -R assets public/assets
           cp -R Images public/Images
           cp -R management_plans_nwfp public/management_plans_nwfp
-          mkdir -p "public/NWFP Groups Shp Files/outputs"
-          cp -R "NWFP Groups Shp Files/outputs/figures" "public/NWFP Groups Shp Files/outputs/figures"
+          cp -R "NWFP Groups Shp Files" "public/NWFP Groups Shp Files"
           touch public/.nojekyll
 
       - name: Configure Pages
