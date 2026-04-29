@@ -1,4 +1,4 @@
-name: Deploy static PWA prototype
+name: Deploy static site
 
 on:
   push:
@@ -36,7 +36,10 @@ jobs:
           cp national-nwfp-groups.csv public/
           cp "NWFP Group-National Data.xlsx" public/
           cp -R assets public/assets
+          cp -R Images public/Images
           cp -R management_plans_nwfp public/management_plans_nwfp
+          mkdir -p "public/NWFP Groups Shp Files/outputs"
+          cp -R "NWFP Groups Shp Files/outputs/figures" "public/NWFP Groups Shp Files/outputs/figures"
           touch public/.nojekyll
 
       - name: Configure Pages
