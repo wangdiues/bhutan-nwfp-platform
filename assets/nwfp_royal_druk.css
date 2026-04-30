@@ -1,0 +1,1552 @@
+/* ═══════════════════════════════════════════════════════════════
+   ROYAL DRUK EDITION — Global Design Override
+   Applies to all pages via <link rel="stylesheet" href="assets/nwfp_royal_druk.css">
+   Palette: Deep Obsidian × Ceremonial Gold × Dragon Crimson
+   Fonts: Cormorant Garamond (display) + Outfit (UI)
+═══════════════════════════════════════════════════════════════ */
+
+/* ── TOKEN OVERRIDES ─────────────────────────────────────────── */
+:root {
+  --void:      #07060d;
+  --abyss:     #0c0a18;
+  --deep:      #12102a;
+  --surface:   #1a1730;
+  --layer:     #221f3a;
+  /* Remap legacy tokens */
+  --ink:       #f0ece0;
+  --forest:    #07060d;
+  --canopy:    #0c0a18;
+  --sage:      #c9a227;
+  --leaf:      #f0c848;
+  --lime:      #c9a227;
+  --gold:      #c9a227;
+  --gold-lt:   #f0c848;
+  --gold-dk:   #8a6d18;
+  --amber:     #f0c848;
+  --rust:      #9b1c2e;
+  --crimson:   #9b1c2e;
+  --jade:      #1a5c50;
+  --jade-lt:   #27a08e;
+  --ivory:     #f0ece0;
+  --mist:      rgba(240,236,224,0.65);
+  --smoke:     rgba(240,236,224,0.35);
+  --cream:     #f0ece0;
+  --paper:     #07060d;
+  --shadow:    rgba(0,0,0,0.45);
+  --border:    rgba(201,162,39,0.18);
+  --border-lt: rgba(201,162,39,0.22);
+  --border-g:  rgba(201,162,39,0.25);
+  --border-dk: rgba(201,162,39,0.09);
+  --glass:     rgba(255,255,255,0.04);
+  --glass-md:  rgba(255,255,255,0.08);
+}
+
+/* ── BODY & GLOBAL ───────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+body {
+  background: #07060d !important;
+  color: #f0ece0 !important;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E") !important;
+  background-image: none !important; /* reset old grain */
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* ── NAV — ROYAL DRUK ────────────────────────────────────────── */
+.site-nav {
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  z-index: 100 !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s !important;
+}
+.site-nav.scrolled {
+  background: rgba(7,6,13,0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 1px 0 rgba(201,162,39,0.25) !important;
+}
+.nav-inner {
+  max-width: 92rem !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: unset !important;
+  gap: 1.25rem !important;
+}
+.nav-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  flex-shrink: 0 !important;
+}
+.nav-logo,
+.nav-brand > img:first-child {
+  height: 42px !important;
+  width: auto !important;
+  filter: none !important;
+}
+.nav-brand-text strong,
+.nav-brand-title {
+  display: block !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #f0c848 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+.nav-brand-text small,
+.nav-brand-sub {
+  display: block !important;
+  font-size: 0.62rem !important;
+  font-weight: 500 !important;
+  color: rgba(240,236,224,0.55) !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+
+/* Nav links list */
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 auto !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0 !important;
+}
+/* Both old .nav-link and new <li><a> approach */
+.nav-links a,
+.nav-links li a,
+.nav-link {
+  display: block !important;
+  padding: 0.3rem 0.58rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: rgba(240,236,224,0.62) !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: color 0.2s !important;
+}
+.nav-links a:hover,
+.nav-links li a:hover,
+.nav-link:hover { color: #f0c848 !important; }
+.nav-link.active { color: rgba(240,236,224,0.62) !important; }
+.nav-link.cta {
+  color: #c9a227 !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+}
+.nav-link.cta:hover { color: #f0c848 !important; }
+
+/* Nav seal badge */
+.nav-seal {
+  flex-shrink: 0 !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 1.5px solid rgba(201,162,39,0.3) !important;
+  box-shadow: 0 0 12px rgba(201,162,39,0.3) !important;
+}
+.nav-seal img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+
+/* Hamburger */
+.nav-ham {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  margin-left: auto;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+}
+.nav-ham span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #f0ece0;
+  border-radius: 0 !important;
+  transition: all 0.3s;
+}
+
+/* Mobile Drawer — right-side slide */
+.nav-drawer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 200 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  display: block !important;    /* override old display:none */
+  transition: opacity 0.3s !important;
+}
+.nav-drawer.open {
+  pointer-events: all !important;
+  opacity: 1 !important;
+}
+.nav-backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(7,6,13,0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  cursor: pointer !important;
+}
+.nav-panel {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: min(320px, 88vw) !important;
+  height: 100% !important;
+  background: #0c0a18 !important;
+  border-left: 1px solid rgba(201,162,39,0.25) !important;
+  border-right: none !important;
+  padding: 5rem 2rem 2rem !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.35s cubic-bezier(.22,1,.36,1) !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  animation: none !important;
+}
+.nav-drawer.open .nav-panel { transform: translateX(0) !important; }
+@keyframes drawerIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+.nav-panel a,
+.nav-panel .nav-link {
+  display: block !important;
+  padding: 0.75rem 0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: rgba(240,236,224,0.65) !important;
+  border-bottom: 1px solid rgba(201,162,39,0.09) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  transition: color 0.2s, padding-left 0.2s !important;
+  white-space: normal !important;
+}
+.nav-panel a:hover,
+.nav-panel .nav-link:hover {
+  color: #f0c848 !important;
+  padding-left: 0.5rem !important;
+  background: transparent !important;
+}
+.nav-panel-label { display: none !important; }
+.nav-panel-divider { display: none !important; }
+
+.nav-close,
+.nav-panel-close {
+  position: absolute !important;
+  top: 1.5rem !important; right: 1.5rem !important;
+  width: 36px !important; height: 36px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  border: 1px solid rgba(201,162,39,0.3) !important;
+  border-radius: 50% !important;
+  color: #f0ece0 !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  background: none !important;
+  opacity: 1 !important;
+  align-self: auto !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
+  transition: border-color 0.2s, color 0.2s !important;
+}
+.nav-close:hover,
+.nav-panel-close:hover {
+  border-color: #c9a227 !important;
+  color: #c9a227 !important;
+}
+
+/* Offset content below fixed nav */
+.hero, .hero-wrap, .hero-photo,
+section:first-of-type,
+.page-hero { margin-top: 0 !important; }
+
+/* For pages that use .shell or .page-container */
+.shell, .page-container { padding-top: 72px !important; }
+
+/* ── FOOTER — ROYAL DRUK ─────────────────────────────────────── */
+footer, .site-footer {
+  background: #04030a !important;
+  border-top: 1px solid rgba(201,162,39,0.25) !important;
+  padding: 5rem 2rem 2.5rem !important;
+  text-align: left !important;
+  margin-top: 0 !important;
+  color: #f0ece0 !important;
+}
+.footer-inner { max-width: 92rem; margin: 0 auto; }
+.footer-top {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  gap: 3rem !important;
+  padding-bottom: 3rem !important;
+  border-bottom: 1px solid rgba(201,162,39,0.09) !important;
+}
+.footer-brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+.footer-brand img {
+  height: 50px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  filter: none !important;
+}
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.05rem !important;
+  font-style: italic !important;
+  color: rgba(240,236,224,0.65) !important;
+  line-height: 1.55 !important;
+  max-width: 260px !important;
+}
+.footer-col-title {
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #c9a227 !important;
+  margin-bottom: 1.3rem !important;
+  display: block !important;
+}
+.footer-links {
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.6rem !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  margin-bottom: 0 !important;
+}
+.footer-links a {
+  font-size: 0.83rem !important;
+  color: rgba(240,236,224,0.65) !important;
+  transition: color 0.2s, padding-left 0.2s !important;
+  display: block !important;
+}
+.footer-links a:hover {
+  color: #f0c848 !important;
+  padding-left: 0.25rem !important;
+}
+.footer-bottom {
+  padding-top: 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+.footer-copy { font-size: 0.78rem !important; color: rgba(240,236,224,0.35) !important; }
+.footer-copy a { color: #c9a227 !important; }
+.footer-ornament {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1rem !important;
+  font-style: italic !important;
+  color: rgba(240,236,224,0.35) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-align: left !important;
+}
+.footer-signature-logo {
+  width: 4.5rem !important;
+  height: 3rem !important;
+  object-fit: contain !important;
+  border-radius: 0.4rem !important;
+  background: #f8f4e8 !important;
+  padding: 0.25rem !important;
+  border: 1px solid rgba(201,162,39,0.2) !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── OLD FOOTER OVERRIDES ────────────────────────────────────── */
+/* Kill the old centered one-liner footer style */
+.site-footer p { color: rgba(240,236,224,0.45) !important; line-height: 1.8 !important; }
+.site-footer a { color: #c9a227 !important; }
+
+/* ── CARD & CONTENT OVERRIDES ────────────────────────────────── */
+.card {
+  background: #12102a !important;
+  border-color: rgba(201,162,39,0.15) !important;
+  color: #f0ece0 !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4) !important;
+}
+.card-dark { background: #0c0a18 !important; }
+.card-gold { border-color: rgba(201,162,39,0.4) !important; }
+
+/* Text colour fixes */
+.section-title, .page-title { color: #f0ece0 !important; }
+.section-label, .kicker { color: #c9a227 !important; }
+.kicker-lt { color: #f0c848 !important; }
+
+/* Cards inner text */
+.card h2, .card h3, .card h4,
+.card strong { color: #f0ece0 !important; }
+.card p, .card span, .card li { color: rgba(240,236,224,0.65) !important; }
+
+/* Problem/inst/priority mini-cards */
+.problem-card, .inst-chip, .priority-card {
+  background: rgba(201,162,39,0.06) !important;
+  border-color: rgba(201,162,39,0.18) !important;
+}
+.problem-card strong, .inst-chip strong, .priority-card strong { color: #f0ece0 !important; }
+.problem-card p, .inst-chip span, .priority-card p { color: rgba(240,236,224,0.6) !important; }
+
+/* Hero section — dark theme */
+.hero, .hero-wrap {
+  background: radial-gradient(ellipse 90% 80% at 50% 38%, #1e1535 0%, #0e0b1e 35%, #07060d 75%) !important;
+}
+.hero-wrap::before { display: none !important; }
+
+/* Hero text colors */
+.hero-h1 { color: #f0ece0 !important; }
+.hero-h1 em { color: #f0c848 !important; }
+.hero-lead { color: rgba(240,236,224,0.68) !important; }
+
+/* Buttons */
+.btn-hero-primary, .btn-forest {
+  background: linear-gradient(135deg, #8a6d18, #c9a227, #f0c848) !important;
+  color: #07060d !important;
+}
+.btn-hero-ghost, .btn-outline, .btn-amber {
+  border-color: rgba(201,162,39,0.35) !important;
+  color: #f0ece0 !important;
+  background: transparent !important;
+}
+.btn-hero-ghost:hover, .btn-outline:hover {
+  background: rgba(201,162,39,0.1) !important;
+  border-color: #c9a227 !important;
+}
+
+/* Stats band */
+.stats-band, .stats-band-inner { background: #0e0c1e !important; }
+.stat-num { color: #f0ece0 !important; }
+.stat-label { color: rgba(201,162,39,0.8) !important; }
+
+/* Hero stat boxes */
+.hero-stat { background: rgba(255,255,255,0.05) !important; border-color: rgba(201,162,39,0.2) !important; }
+.hero-stat-num { color: #f0ece0 !important; }
+.hero-stat-label { color: rgba(201,162,39,0.75) !important; }
+
+/* Nav cards (old platform navigator) */
+.nav-card {
+  background: #12102a !important;
+  border-color: rgba(201,162,39,0.15) !important;
+}
+.nav-card:hover { border-color: rgba(201,162,39,0.4) !important; box-shadow: 0 8px 28px rgba(0,0,0,0.5) !important; }
+.nav-card-icon { background: rgba(201,162,39,0.1) !important; color: #c9a227 !important; }
+.nav-card-label { color: #c9a227 !important; }
+.nav-card-title { color: #f0ece0 !important; }
+.nav-card-desc { color: rgba(240,236,224,0.55) !important; }
+.nav-card-featured {
+  background: #0c0a18 !important;
+  border-color: rgba(201,162,39,0.3) !important;
+}
+.nav-card-featured .nav-card-label { color: rgba(201,162,39,0.65) !important; }
+.nav-card-featured .nav-card-title { color: #f0ece0 !important; }
+.nav-card-featured .nav-card-desc { color: rgba(240,236,224,0.6) !important; }
+
+/* Eyebrow / badge */
+.hero-eyebrow {
+  background: rgba(201,162,39,0.1) !important;
+  border-color: rgba(201,162,39,0.25) !important;
+  color: #c9a227 !important;
+}
+
+/* Bullet dots */
+.bullet-dot { background: #c9a227 !important; box-shadow: 0 0 0 3px rgba(201,162,39,0.2) !important; }
+.bullet-list li { color: rgba(240,236,224,0.75) !important; }
+
+/* PDF CTA */
+.pdf-cta { background: #0c0a18 !important; border-color: rgba(201,162,39,0.25) !important; }
+
+/* Tables */
+table { border-color: rgba(201,162,39,0.15) !important; }
+th { background: #0c0a18 !important; color: #f0ece0 !important; border-color: rgba(201,162,39,0.15) !important; }
+td { color: rgba(240,236,224,0.75) !important; border-color: rgba(201,162,39,0.09) !important; }
+tr:nth-child(even) td { background: rgba(255,255,255,0.02) !important; }
+tr:hover td { background: rgba(201,162,39,0.05) !important; }
+
+/* Form inputs */
+input, select, textarea {
+  background: #12102a !important;
+  border-color: rgba(201,162,39,0.2) !important;
+  color: #f0ece0 !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #c9a227 !important;
+  outline-color: rgba(201,162,39,0.3) !important;
+}
+label { color: rgba(240,236,224,0.8) !important; }
+
+/* Metrics */
+.metric {
+  background: #12102a !important;
+  border-color: rgba(201,162,39,0.15) !important;
+}
+.metric-num { color: #f0ece0 !important; }
+.metric-label { color: rgba(240,236,224,0.6) !important; }
+
+/* Photo cards */
+.photo-card img { filter: saturate(0.8) brightness(0.85) !important; }
+.photo-card:hover img { filter: saturate(1) brightness(0.9) !important; }
+
+/* Product cards */
+.product-card {
+  background: #12102a !important;
+  border-color: rgba(201,162,39,0.12) !important;
+}
+.product-card:hover { border-color: rgba(201,162,39,0.35) !important; }
+
+/* Chips */
+.chip {
+  background: rgba(201,162,39,0.1) !important;
+  border-color: rgba(201,162,39,0.25) !important;
+  color: #c9a227 !important;
+}
+.badge {
+  background: rgba(201,162,39,0.15) !important;
+  color: #f0c848 !important;
+}
+
+/* Step cards */
+.step-card { background: #12102a !important; border-color: rgba(201,162,39,0.15) !important; }
+.step-card:hover { border-color: rgba(201,162,39,0.4) !important; }
+
+/* Training cards */
+.training-card { background: #12102a !important; border-color: rgba(201,162,39,0.15) !important; }
+.training-card:hover { border-color: rgba(201,162,39,0.4) !important; }
+
+/* Bar charts */
+.bar-fill { background: linear-gradient(90deg, #8a6d18, #c9a227) !important; }
+
+/* File links */
+.file-link { color: #c9a227 !important; }
+.file-link:hover { color: #f0c848 !important; }
+
+/* Active dot */
+.active-dot { background: #c9a227 !important; }
+
+/* Page sections with inline bg styles */
+[style*="background:var(--paper)"],
+[style*="background: var(--paper)"] { background: #07060d !important; }
+[style*="background:var(--forest)"],
+[style*="background: var(--forest)"] { background: #07060d !important; }
+[style*="background:var(--canopy)"],
+[style*="background: var(--canopy)"] { background: #0c0a18 !important; }
+[style*="color:var(--forest)"],
+[style*="color: var(--forest)"] { color: #f0ece0 !important; }
+[style*="color:#4b5563"] { color: rgba(240,236,224,0.65) !important; }
+[style*="color:#6b7280"] { color: rgba(240,236,224,0.5) !important; }
+
+/* Dzongkhag directory table */
+#dzongDirectory td, #groupsBody td { color: rgba(240,236,224,0.75) !important; }
+
+/* ── UNIFORM PAGE SURFACE & TYPE LAYER ──────────────────────── */
+html,
+body {
+  font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  background-color: #07060d !important;
+  background-image:
+    radial-gradient(ellipse 72% 48% at 10% -10%, rgba(201,162,39,0.12), transparent 58%),
+    radial-gradient(ellipse 48% 34% at 92% 2%, rgba(155,28,46,0.12), transparent 52%),
+    linear-gradient(180deg, #07060d 0%, #0c0a18 48%, #07060d 100%) !important;
+  color: #f0ece0 !important;
+}
+
+body,
+.shell,
+.page-main,
+.page-container,
+.min-h-screen,
+main {
+  background-color: transparent !important;
+}
+
+body > .shell,
+main,
+.page-main,
+.page-container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body > .site-nav + .nav-drawer + main {
+  padding-top: calc(72px + 1.25rem) !important;
+}
+
+h1,
+h2,
+.hero-h1,
+.page-title,
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  letter-spacing: 0 !important;
+  line-height: 1.05 !important;
+  color: #f0ece0 !important;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+dt,
+dd,
+span,
+small,
+strong,
+button,
+input,
+select,
+textarea {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+}
+
+/* Tailwind colour utilities from older green pages now inherit the Royal Druk palette. */
+.text-slate-300,
+.text-slate-400,
+.text-slate-500,
+.text-slate-600,
+.text-slate-700,
+.text-slate-800,
+.text-slate-900 {
+  color: rgba(240,236,224,0.68) !important;
+}
+
+.text-emerald-300,
+.text-emerald-400,
+.text-emerald-500,
+.text-emerald-600,
+.text-emerald-700,
+.text-emerald-800,
+.text-emerald-900,
+.text-emerald-950,
+.text-lime-100,
+.text-lime-200,
+.text-lime-300,
+.text-lime-400,
+.text-amber-200 {
+  color: #f0c848 !important;
+}
+
+.bg-emerald-950,
+.bg-emerald-900,
+.hero-panel,
+.feature-tile,
+thead,
+th {
+  background: #0c0a18 !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.22) !important;
+}
+
+.bg-emerald-950 *,
+.bg-emerald-900 *,
+.hero-panel *,
+.feature-tile *,
+thead *,
+th * {
+  color: inherit !important;
+}
+
+/* Keep intentional white/parchment areas readable: white background = black text. */
+.bg-white,
+.bg-white\/75,
+.bg-slate-50,
+.bg-slate-100,
+.bg-lime-50,
+.bg-emerald-50,
+.bg-emerald-100,
+.eco-card,
+.metric-card,
+.home-section,
+[class*="bg-[#f8"],
+[style*="background:white"],
+[style*="background: white"],
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background:#ffffff"],
+[style*="background: #ffffff"],
+[style*="background:rgba(255,255,255,0.9"],
+[style*="background: rgba(255,255,255,0.9"],
+[style*="background:rgba(255,255,255,0.93"],
+[style*="background: rgba(255,255,255,0.93"] {
+  background: #f8f4e8 !important;
+  color: #0b0b0f !important;
+  border-color: rgba(11,11,15,0.14) !important;
+}
+
+.bg-white *,
+.bg-white\/75 *,
+.bg-slate-50 *,
+.bg-slate-100 *,
+.bg-lime-50 *,
+.bg-emerald-50 *,
+.bg-emerald-100 *,
+.eco-card *,
+.metric-card *,
+.home-section *,
+[class*="bg-[#f8"] *,
+[style*="background:white"] *,
+[style*="background: white"] *,
+[style*="background:#fff"] *,
+[style*="background: #fff"] *,
+[style*="background:#ffffff"] *,
+[style*="background: #ffffff"] *,
+[style*="background:rgba(255,255,255,0.9"] *,
+[style*="background: rgba(255,255,255,0.9"] *,
+[style*="background:rgba(255,255,255,0.93"] *,
+[style*="background: rgba(255,255,255,0.93"] * {
+  color: #0b0b0f !important;
+}
+
+[style*="background:var(--amber)"],
+[style*="background: var(--amber)"],
+[style*="background:var(--gold)"],
+[style*="background: var(--gold)"],
+[style*="background:var(--gold-lt)"],
+[style*="background: var(--gold-lt)"],
+[style*="background:rgba(219,185,107"],
+[style*="background: rgba(219,185,107"],
+[style*="background:rgba(240,200,72"],
+[style*="background: rgba(240,200,72"] {
+  color: #0b0b0f !important;
+}
+
+[style*="background:var(--amber)"] *,
+[style*="background: var(--amber)"] *,
+[style*="background:var(--gold)"] *,
+[style*="background: var(--gold)"] *,
+[style*="background:var(--gold-lt)"] *,
+[style*="background: var(--gold-lt)"] *,
+[style*="background:rgba(219,185,107"] *,
+[style*="background: rgba(219,185,107"] *,
+[style*="background:rgba(240,200,72"] *,
+[style*="background: rgba(240,200,72"] * {
+  color: #0b0b0f !important;
+}
+
+.bg-white a,
+.bg-white\/75 a,
+.bg-slate-50 a,
+.bg-slate-100 a,
+.bg-lime-50 a,
+.bg-emerald-50 a,
+.bg-emerald-100 a,
+.eco-card a,
+.metric-card a,
+.home-section a,
+[class*="bg-[#f8"] a,
+[style*="background:white"] a,
+[style*="background: white"] a,
+[style*="background:#fff"] a,
+[style*="background: #fff"] a,
+[style*="background:#ffffff"] a,
+[style*="background: #ffffff"] a {
+  color: #6f540d !important;
+}
+
+/* Restore contrast for dark elements nested inside light panels. */
+.bg-white .bg-emerald-950,
+.bg-white .bg-emerald-900,
+.bg-white\/75 .bg-emerald-950,
+.bg-white\/75 .bg-emerald-900,
+.bg-slate-50 .bg-emerald-950,
+.bg-slate-50 .bg-emerald-900,
+.bg-slate-100 .bg-emerald-950,
+.bg-slate-100 .bg-emerald-900,
+.bg-lime-50 .bg-emerald-950,
+.bg-lime-50 .bg-emerald-900,
+.bg-emerald-50 .bg-emerald-950,
+.bg-emerald-50 .bg-emerald-900,
+.bg-emerald-100 .bg-emerald-950,
+.bg-emerald-100 .bg-emerald-900,
+.eco-card .bg-emerald-950,
+.eco-card .bg-emerald-900,
+.metric-card .bg-emerald-950,
+.metric-card .bg-emerald-900,
+[class*="bg-[#f8"] .bg-emerald-950,
+[class*="bg-[#f8"] .bg-emerald-900 {
+  background: #0c0a18 !important;
+  color: #f0ece0 !important;
+}
+
+.bg-white .bg-emerald-950 *,
+.bg-white .bg-emerald-900 *,
+.bg-white\/75 .bg-emerald-950 *,
+.bg-white\/75 .bg-emerald-900 *,
+.bg-slate-50 .bg-emerald-950 *,
+.bg-slate-50 .bg-emerald-900 *,
+.bg-slate-100 .bg-emerald-950 *,
+.bg-slate-100 .bg-emerald-900 *,
+.bg-lime-50 .bg-emerald-950 *,
+.bg-lime-50 .bg-emerald-900 *,
+.bg-emerald-50 .bg-emerald-950 *,
+.bg-emerald-50 .bg-emerald-900 *,
+.bg-emerald-100 .bg-emerald-950 *,
+.bg-emerald-100 .bg-emerald-900 *,
+.eco-card .bg-emerald-950 *,
+.eco-card .bg-emerald-900 *,
+.metric-card .bg-emerald-950 *,
+.metric-card .bg-emerald-900 *,
+[class*="bg-[#f8"] .bg-emerald-950 *,
+[class*="bg-[#f8"] .bg-emerald-900 * {
+  color: #f0ece0 !important;
+}
+
+/* Common rounded panels without a named component class. */
+.rounded-xl,
+.rounded-2xl,
+.rounded-3xl {
+  border-color: rgba(201,162,39,0.16) !important;
+}
+
+/* Align form and table surfaces with the same visual weight across pages. */
+.field,
+input,
+select,
+textarea {
+  border-radius: 0.65rem !important;
+}
+
+.table-shell,
+table {
+  background: #12102a !important;
+  border-color: rgba(201,162,39,0.18) !important;
+}
+
+/* ── NO GREEN BACKGROUNDS ───────────────────────────────────── */
+.bg-emerald-50,
+.bg-emerald-100,
+.bg-emerald-200,
+.bg-lime-50,
+.bg-lime-100,
+.bg-lime-200,
+[class*="hover:bg-emerald-50"]:hover,
+[class*="hover:bg-emerald-100"]:hover,
+[class*="hover:bg-lime-50"]:hover,
+[class*="hover:bg-lime-100"]:hover {
+  background: #f8f4e8 !important;
+  background-color: #f8f4e8 !important;
+  color: #0b0b0f !important;
+}
+
+.bg-emerald-300,
+.bg-emerald-400,
+.bg-emerald-500,
+.bg-lime-300,
+.bg-lime-400,
+.bg-lime-500,
+.bg-lime-400\/30,
+.status-dot,
+.active-dot,
+[style*="background:#aed45e"],
+[style*="background: #aed45e"],
+[style*="background:#67b886"],
+[style*="background: #67b886"] {
+  background: #c9a227 !important;
+  background-color: #c9a227 !important;
+}
+
+.bg-emerald-700,
+.bg-emerald-800,
+.bg-emerald-900,
+.bg-emerald-950,
+[class*="bg-emerald-9"],
+[class*="bg-emerald-8"],
+[class*="bg-emerald-7"] {
+  background: #0c0a18 !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.22) !important;
+}
+
+[style*="background:rgba(13,36,25"],
+[style*="background: rgba(13,36,25"],
+[style*="background:rgba(24,61,43"],
+[style*="background: rgba(24,61,43"],
+[style*="background:#0d2419"],
+[style*="background: #0d2419"],
+[style*="background:#183d2b"],
+[style*="background: #183d2b"],
+[style*="background:linear-gradient(135deg,rgba(13,36,25"],
+[style*="background: linear-gradient(135deg,rgba(13,36,25"],
+[style*="background:linear-gradient(145deg, rgba(13,36,25"],
+[style*="background: linear-gradient(145deg, rgba(13,36,25"],
+[style*="background:linear-gradient(90deg, rgba(11,47,29"],
+[style*="background: linear-gradient(90deg, rgba(11,47,29"] {
+  background: linear-gradient(135deg, #0c0a18 0%, #171126 56%, #241121 100%) !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+}
+
+[style*="background:rgba(174,212,94"],
+[style*="background: rgba(174,212,94"],
+[style*="background:rgba(103,184,134"],
+[style*="background: rgba(103,184,134"],
+[style*="background:radial-gradient(circle,rgba(174,212,94"],
+[style*="background: radial-gradient(circle,rgba(174,212,94"] {
+  background: rgba(201,162,39,0.1) !important;
+  background-color: rgba(201,162,39,0.1) !important;
+  color: #f0ece0 !important;
+}
+
+[style*="background:rgba(174,212,94"] *,
+[style*="background: rgba(174,212,94"] *,
+[style*="background:rgba(103,184,134"] *,
+[style*="background: rgba(103,184,134"] * {
+  color: inherit !important;
+}
+
+/* ── FINAL CONTRAST LOCK ────────────────────────────────────── */
+body { color: #f0ece0 !important; }
+
+.card,
+.product-card,
+.training-card,
+.step-card,
+.priority-card,
+.problem-card,
+.inst-chip,
+.table-shell,
+.hero,
+.hero-wrap,
+.hero-photo,
+.feature-tile,
+.hero-panel,
+.stats-band,
+.nav-card,
+.pdf-cta,
+.cart-total,
+[style*="background:rgba(201,162,39,0.08"],
+[style*="background: rgba(201,162,39,0.08"],
+[style*="background:rgba(201,162,39,0.1"],
+[style*="background: rgba(201,162,39,0.1"],
+[style*="background:rgba(201,162,39,0.12"],
+[style*="background: rgba(201,162,39,0.12"],
+[style*="background:rgba(201,162,39,0.18"],
+[style*="background: rgba(201,162,39,0.18"] {
+  color: #f0ece0 !important;
+}
+
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6,
+.product-card h1, .product-card h2, .product-card h3, .product-card h4,
+.training-card h1, .training-card h2, .training-card h3, .training-card h4,
+.step-card h1, .step-card h2, .step-card h3, .step-card h4,
+.priority-card h1, .priority-card h2, .priority-card h3, .priority-card h4,
+.problem-card h1, .problem-card h2, .problem-card h3, .problem-card h4,
+.inst-chip h1, .inst-chip h2, .inst-chip h3, .inst-chip h4,
+.table-shell h1, .table-shell h2, .table-shell h3, .table-shell h4,
+.hero h1, .hero h2, .hero h3, .hero h4,
+.hero-wrap h1, .hero-wrap h2, .hero-wrap h3, .hero-wrap h4,
+.hero-photo h1, .hero-photo h2, .hero-photo h3, .hero-photo h4,
+.feature-tile h1, .feature-tile h2, .feature-tile h3, .feature-tile h4,
+.hero-panel h1, .hero-panel h2, .hero-panel h3, .hero-panel h4,
+.stats-band h1, .stats-band h2, .stats-band h3, .stats-band h4,
+.nav-card h1, .nav-card h2, .nav-card h3, .nav-card h4,
+.pdf-cta h1, .pdf-cta h2, .pdf-cta h3, .pdf-cta h4,
+.cart-total h1, .cart-total h2, .cart-total h3, .cart-total h4 {
+  color: #f0ece0 !important;
+}
+
+.card p, .card li, .card span, .card small, .card dd, .card dt,
+.product-card p, .product-card li, .product-card span, .product-card small, .product-card dd, .product-card dt,
+.training-card p, .training-card li, .training-card span, .training-card small, .training-card dd, .training-card dt,
+.step-card p, .step-card li, .step-card span, .step-card small, .step-card dd, .step-card dt,
+.priority-card p, .priority-card li, .priority-card span, .priority-card small, .priority-card dd, .priority-card dt,
+.problem-card p, .problem-card li, .problem-card span, .problem-card small, .problem-card dd, .problem-card dt,
+.inst-chip p, .inst-chip li, .inst-chip span, .inst-chip small, .inst-chip dd, .inst-chip dt,
+.table-shell p, .table-shell li, .table-shell span, .table-shell small, .table-shell dd, .table-shell dt,
+.hero p, .hero li, .hero span, .hero small, .hero dd, .hero dt,
+.hero-wrap p, .hero-wrap li, .hero-wrap span, .hero-wrap small, .hero-wrap dd, .hero-wrap dt,
+.hero-photo p, .hero-photo li, .hero-photo span, .hero-photo small, .hero-photo dd, .hero-photo dt,
+.feature-tile p, .feature-tile li, .feature-tile span, .feature-tile small, .feature-tile dd, .feature-tile dt,
+.hero-panel p, .hero-panel li, .hero-panel span, .hero-panel small, .hero-panel dd, .hero-panel dt,
+.stats-band p, .stats-band li, .stats-band span, .stats-band small, .stats-band dd, .stats-band dt,
+.nav-card p, .nav-card li, .nav-card span, .nav-card small, .nav-card dd, .nav-card dt,
+.pdf-cta p, .pdf-cta li, .pdf-cta span, .pdf-cta small, .pdf-cta dd, .pdf-cta dt,
+.cart-total p, .cart-total li, .cart-total span, .cart-total small, .cart-total dd, .cart-total dt {
+  color: rgba(240,236,224,0.72) !important;
+}
+
+.card .kicker,
+.product-card .kicker,
+.training-card .kicker,
+.step-card .kicker,
+.priority-card .kicker,
+.problem-card .kicker,
+.inst-chip .kicker,
+.table-shell .kicker,
+.hero .kicker,
+.hero-wrap .kicker,
+.hero-photo .kicker,
+.feature-tile .kicker,
+.hero-panel .kicker,
+.stats-band .kicker,
+.nav-card .kicker,
+.pdf-cta .kicker,
+.cart-total .kicker,
+.card a,
+.product-card a,
+.training-card a,
+.step-card a,
+.priority-card a,
+.problem-card a,
+.inst-chip a,
+.table-shell a,
+.hero a,
+.hero-wrap a,
+.hero-photo a,
+.feature-tile a,
+.hero-panel a,
+.stats-band a,
+.nav-card a,
+.pdf-cta a,
+.cart-total a {
+  color: #f0c848 !important;
+}
+
+.bg-white,
+.bg-white\/75,
+.bg-slate-50,
+.bg-slate-100,
+.bg-lime-50,
+.bg-lime-100,
+.bg-lime-200,
+.bg-emerald-50,
+.bg-emerald-100,
+.eco-card,
+.metric-card,
+.home-section,
+[class*="bg-[#f8"],
+[style*="background:white"],
+[style*="background: white"],
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background:#ffffff"],
+[style*="background: #ffffff"],
+[style*="background:rgba(255,255,255,0.9"],
+[style*="background: rgba(255,255,255,0.9"] {
+  background: #f8f4e8 !important;
+  background-color: #f8f4e8 !important;
+  color: #0b0b0f !important;
+}
+
+.bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+.bg-white\/75 h1, .bg-white\/75 h2, .bg-white\/75 h3, .bg-white\/75 h4, .bg-white\/75 h5, .bg-white\/75 h6,
+.bg-slate-50 h1, .bg-slate-50 h2, .bg-slate-50 h3, .bg-slate-50 h4, .bg-slate-50 h5, .bg-slate-50 h6,
+.bg-slate-100 h1, .bg-slate-100 h2, .bg-slate-100 h3, .bg-slate-100 h4, .bg-slate-100 h5, .bg-slate-100 h6,
+.bg-lime-50 h1, .bg-lime-50 h2, .bg-lime-50 h3, .bg-lime-50 h4, .bg-lime-50 h5, .bg-lime-50 h6,
+.bg-lime-100 h1, .bg-lime-100 h2, .bg-lime-100 h3, .bg-lime-100 h4, .bg-lime-100 h5, .bg-lime-100 h6,
+.bg-lime-200 h1, .bg-lime-200 h2, .bg-lime-200 h3, .bg-lime-200 h4, .bg-lime-200 h5, .bg-lime-200 h6,
+.bg-emerald-50 h1, .bg-emerald-50 h2, .bg-emerald-50 h3, .bg-emerald-50 h4, .bg-emerald-50 h5, .bg-emerald-50 h6,
+.bg-emerald-100 h1, .bg-emerald-100 h2, .bg-emerald-100 h3, .bg-emerald-100 h4, .bg-emerald-100 h5, .bg-emerald-100 h6,
+.eco-card h1, .eco-card h2, .eco-card h3, .eco-card h4, .eco-card h5, .eco-card h6,
+.metric-card h1, .metric-card h2, .metric-card h3, .metric-card h4, .metric-card h5, .metric-card h6,
+.home-section h1, .home-section h2, .home-section h3, .home-section h4, .home-section h5, .home-section h6,
+[class*="bg-[#f8"] h1, [class*="bg-[#f8"] h2, [class*="bg-[#f8"] h3, [class*="bg-[#f8"] h4, [class*="bg-[#f8"] h5, [class*="bg-[#f8"] h6,
+[style*="background:white"] h1, [style*="background:white"] h2, [style*="background:white"] h3, [style*="background:white"] h4, [style*="background:white"] h5, [style*="background:white"] h6,
+[style*="background: white"] h1, [style*="background: white"] h2, [style*="background: white"] h3, [style*="background: white"] h4, [style*="background: white"] h5, [style*="background: white"] h6 {
+  color: #0b0b0f !important;
+}
+
+.bg-white p, .bg-white li, .bg-white span, .bg-white small, .bg-white dd, .bg-white dt, .bg-white strong,
+.bg-white\/75 p, .bg-white\/75 li, .bg-white\/75 span, .bg-white\/75 small, .bg-white\/75 dd, .bg-white\/75 dt, .bg-white\/75 strong,
+.bg-slate-50 p, .bg-slate-50 li, .bg-slate-50 span, .bg-slate-50 small, .bg-slate-50 dd, .bg-slate-50 dt, .bg-slate-50 strong,
+.bg-slate-100 p, .bg-slate-100 li, .bg-slate-100 span, .bg-slate-100 small, .bg-slate-100 dd, .bg-slate-100 dt, .bg-slate-100 strong,
+.bg-lime-50 p, .bg-lime-50 li, .bg-lime-50 span, .bg-lime-50 small, .bg-lime-50 dd, .bg-lime-50 dt, .bg-lime-50 strong,
+.bg-lime-100 p, .bg-lime-100 li, .bg-lime-100 span, .bg-lime-100 small, .bg-lime-100 dd, .bg-lime-100 dt, .bg-lime-100 strong,
+.bg-lime-200 p, .bg-lime-200 li, .bg-lime-200 span, .bg-lime-200 small, .bg-lime-200 dd, .bg-lime-200 dt, .bg-lime-200 strong,
+.bg-emerald-50 p, .bg-emerald-50 li, .bg-emerald-50 span, .bg-emerald-50 small, .bg-emerald-50 dd, .bg-emerald-50 dt, .bg-emerald-50 strong,
+.bg-emerald-100 p, .bg-emerald-100 li, .bg-emerald-100 span, .bg-emerald-100 small, .bg-emerald-100 dd, .bg-emerald-100 dt, .bg-emerald-100 strong,
+.eco-card p, .eco-card li, .eco-card span, .eco-card small, .eco-card dd, .eco-card dt, .eco-card strong,
+.metric-card p, .metric-card li, .metric-card span, .metric-card small, .metric-card dd, .metric-card dt, .metric-card strong,
+.home-section p, .home-section li, .home-section span, .home-section small, .home-section dd, .home-section dt, .home-section strong,
+[class*="bg-[#f8"] p, [class*="bg-[#f8"] li, [class*="bg-[#f8"] span, [class*="bg-[#f8"] small, [class*="bg-[#f8"] dd, [class*="bg-[#f8"] dt, [class*="bg-[#f8"] strong,
+[style*="background:white"] p, [style*="background:white"] li, [style*="background:white"] span, [style*="background:white"] small, [style*="background:white"] dd, [style*="background:white"] dt, [style*="background:white"] strong,
+[style*="background: white"] p, [style*="background: white"] li, [style*="background: white"] span, [style*="background: white"] small, [style*="background: white"] dd, [style*="background: white"] dt, [style*="background: white"] strong {
+  color: #0b0b0f !important;
+}
+
+.bg-white a,
+.bg-white\/75 a,
+.bg-slate-50 a,
+.bg-slate-100 a,
+.bg-lime-50 a,
+.bg-lime-100 a,
+.bg-lime-200 a,
+.bg-emerald-50 a,
+.bg-emerald-100 a,
+.eco-card a,
+.metric-card a,
+.home-section a,
+[class*="bg-[#f8"] a,
+[style*="background:white"] a,
+[style*="background: white"] a {
+  color: #6f540d !important;
+}
+
+.bg-emerald-700 *,
+.bg-emerald-800 *,
+.bg-emerald-900 *,
+.bg-emerald-950 *,
+[class*="bg-emerald-9"] *,
+[class*="bg-emerald-8"] *,
+[class*="bg-emerald-7"] *,
+thead *,
+th * {
+  color: #f0ece0 !important;
+}
+
+.bg-emerald-100 *,
+.bg-emerald-50 *,
+.bg-lime-50 *,
+.bg-lime-100 *,
+.bg-lime-200 * {
+  color: #0b0b0f !important;
+}
+
+[style*="font-family:'Cormorant Garamond'"],
+[style*="font-family: 'Cormorant Garamond'"] {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+/* Management page: dark nested panels inside light sections must stay readable. */
+.home-section .bg-emerald-700,
+.home-section .bg-emerald-800,
+.home-section .bg-emerald-900,
+.home-section .bg-emerald-950,
+.home-section [class*="bg-emerald-9"],
+.home-section [class*="bg-emerald-8"],
+.home-section [class*="bg-emerald-7"] {
+  background: #0c0a18 !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.24) !important;
+}
+
+.home-section .bg-emerald-700 *,
+.home-section .bg-emerald-800 *,
+.home-section .bg-emerald-900 *,
+.home-section .bg-emerald-950 *,
+.home-section [class*="bg-emerald-9"] *,
+.home-section [class*="bg-emerald-8"] *,
+.home-section [class*="bg-emerald-7"] * {
+  color: #f0ece0 !important;
+}
+
+.home-section .bg-emerald-700 .text-yellow-300,
+.home-section .bg-emerald-800 .text-yellow-300,
+.home-section .bg-emerald-900 .text-yellow-300,
+.home-section .bg-emerald-950 .text-yellow-300,
+.home-section [class*="bg-emerald-9"] .text-yellow-300,
+.home-section [class*="bg-emerald-8"] .text-yellow-300,
+.home-section [class*="bg-emerald-7"] .text-yellow-300 {
+  color: #f0c848 !important;
+}
+
+.metric-card,
+.metric {
+  background: #12102a !important;
+  background-color: #12102a !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.2) !important;
+}
+
+.metric-card *,
+.metric * {
+  color: #f0ece0 !important;
+}
+
+.metric-card .text-slate-400,
+.metric-card .text-slate-500,
+.metric-card .metric-label,
+.metric .text-slate-400,
+.metric .text-slate-500,
+.metric .metric-label {
+  color: rgba(240,236,224,0.66) !important;
+}
+
+.metric-card .text-emerald-700,
+.metric-card .text-emerald-800,
+.metric-card .text-emerald-900,
+.metric-card .text-emerald-950,
+.metric-card .metric-value,
+.metric .text-emerald-700,
+.metric .text-emerald-800,
+.metric .text-emerald-900,
+.metric .text-emerald-950,
+.metric .metric-value {
+  color: #f0c848 !important;
+}
+
+/* Management plan table: keep all tabular text white on dark surface. */
+.table-shell,
+.table-shell.eco-card {
+  background: #12102a !important;
+  background-color: #12102a !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.2) !important;
+}
+
+.table-shell table,
+.table-shell thead,
+.table-shell tbody,
+.table-shell tr,
+.table-shell td,
+.table-shell th {
+  background-color: transparent !important;
+  color: #f0ece0 !important;
+}
+
+.table-shell th,
+.table-shell th *,
+.table-shell td,
+.table-shell td *,
+.table-shell .text-slate-300,
+.table-shell .text-slate-400,
+.table-shell .text-slate-500,
+.table-shell .text-slate-600,
+.table-shell .text-slate-700,
+.table-shell .text-slate-800,
+.table-shell .text-slate-900,
+.table-shell .text-emerald-600,
+.table-shell .text-emerald-700,
+.table-shell .text-emerald-800,
+.table-shell .text-emerald-900,
+.table-shell .text-emerald-950,
+.table-shell .text-lime-100 {
+  color: #f0ece0 !important;
+}
+
+.table-shell thead,
+.table-shell thead tr,
+.table-shell thead th {
+  background: #0c0a18 !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+}
+
+.table-shell tbody tr:nth-child(even) td {
+  background: rgba(255,255,255,0.025) !important;
+}
+
+.table-shell tbody tr:hover td {
+  background: rgba(201,162,39,0.08) !important;
+}
+
+.table-shell a,
+.table-shell a *,
+.table-shell .text-yellow-300,
+.table-shell .file-link {
+  color: #f0c848 !important;
+}
+
+.table-shell .bg-emerald-100,
+.table-shell .bg-slate-100,
+.table-shell .bg-red-100,
+.table-shell .bg-blue-100,
+.table-shell .bg-amber-100 {
+  background: rgba(201,162,39,0.18) !important;
+  background-color: rgba(201,162,39,0.18) !important;
+  color: #f0ece0 !important;
+  border: 1px solid rgba(201,162,39,0.24) !important;
+}
+
+.table-shell .bg-emerald-100 *,
+.table-shell .bg-slate-100 *,
+.table-shell .bg-red-100 *,
+.table-shell .bg-blue-100 *,
+.table-shell .bg-amber-100 * {
+  color: #f0ece0 !important;
+}
+
+.table-shell > .bg-white\/75,
+.table-shell > div.bg-white\/75 {
+  background: #0c0a18 !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.18) !important;
+}
+
+.table-shell > .bg-white\/75 *,
+.table-shell > div.bg-white\/75 * {
+  color: #f0ece0 !important;
+}
+
+.table-shell .page-button {
+  background: transparent !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.28) !important;
+}
+
+/* Management plan filter bar above the table. */
+.eco-card input,
+.eco-card select,
+.eco-card textarea {
+  background: #0c0a18 !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.28) !important;
+}
+
+.eco-card input::placeholder,
+.eco-card textarea::placeholder {
+  color: rgba(240,236,224,0.58) !important;
+  opacity: 1 !important;
+}
+
+.eco-card option {
+  background: #0c0a18 !important;
+  color: #f0ece0 !important;
+}
+
+/* ── SITE-WIDE CONTRAST AUDIT CONTRACT ──────────────────────── */
+[class*="accent-emerald"],
+[class*="accent-lime"] {
+  accent-color: #c9a227 !important;
+}
+
+.bg-white\/80,
+.bg-white\/90,
+.bg-slate-200,
+.bg-red-100,
+.bg-blue-100,
+.bg-amber-100,
+.bg-yellow-100,
+.bg-yellow-200,
+.bg-yellow-300 {
+  background: #f8f4e8 !important;
+  background-color: #f8f4e8 !important;
+  color: #0b0b0f !important;
+  border-color: rgba(11,11,15,0.14) !important;
+}
+
+.bg-white\/80 *,
+.bg-white\/90 *,
+.bg-slate-200 *,
+.bg-red-100 *,
+.bg-blue-100 *,
+.bg-amber-100 *,
+.bg-yellow-100 *,
+.bg-yellow-200 *,
+.bg-yellow-300 * {
+  color: #0b0b0f !important;
+}
+
+.bg-black\/40,
+.bg-white\/10,
+.bg-white\/15,
+.bg-white\/20,
+.bg-blue-400\/40,
+.bg-amber-400\/40 {
+  color: #f0ece0 !important;
+}
+
+.bg-black\/40 *,
+.bg-white\/10 *,
+.bg-white\/15 *,
+.bg-white\/20 *,
+.bg-blue-400\/40 *,
+.bg-amber-400\/40 * {
+  color: #f0ece0 !important;
+}
+
+/* Default old utility colours on dark surfaces. Light surfaces override these below. */
+[class*="text-emerald"],
+[class*="text-lime"] {
+  color: #f0c848 !important;
+}
+
+[class*="text-slate"] {
+  color: rgba(240,236,224,0.72) !important;
+}
+
+[class*="text-red"],
+[class*="text-blue"],
+[class*="text-amber"],
+[class*="text-yellow"] {
+  color: #f0c848 !important;
+}
+
+/* Light surfaces: all old utility colours collapse to readable black. */
+.bg-white [class*="text-"],
+.bg-white\/75 [class*="text-"],
+.bg-white\/80 [class*="text-"],
+.bg-white\/90 [class*="text-"],
+.bg-slate-50 [class*="text-"],
+.bg-slate-100 [class*="text-"],
+.bg-slate-200 [class*="text-"],
+.bg-lime-50 [class*="text-"],
+.bg-lime-100 [class*="text-"],
+.bg-lime-200 [class*="text-"],
+.bg-emerald-50 [class*="text-"],
+.bg-emerald-100 [class*="text-"],
+.bg-red-100 [class*="text-"],
+.bg-blue-100 [class*="text-"],
+.bg-amber-100 [class*="text-"],
+.bg-yellow-100 [class*="text-"],
+.bg-yellow-200 [class*="text-"],
+.bg-yellow-300 [class*="text-"],
+.eco-card [class*="text-"],
+.metric-card [class*="text-"],
+.home-section [class*="text-"],
+[class*="bg-[#f8"] [class*="text-"],
+[style*="background:white"] [class*="text-"],
+[style*="background: white"] [class*="text-"],
+[style*="background:#fff"] [class*="text-"],
+[style*="background: #fff"] [class*="text-"],
+[style*="background:#ffffff"] [class*="text-"],
+[style*="background: #ffffff"] [class*="text-"] {
+  color: #0b0b0f !important;
+}
+
+/* Dark exceptions nested inside light sections must remain light. */
+.home-section .bg-emerald-950 [class*="text-"],
+.home-section .bg-emerald-900 [class*="text-"],
+.home-section [class*="bg-emerald-9"] [class*="text-"],
+.eco-card .bg-emerald-950 [class*="text-"],
+.eco-card .bg-emerald-900 [class*="text-"],
+.eco-card [class*="bg-emerald-9"] [class*="text-"],
+.metric-card [class*="text-"],
+.table-shell [class*="text-"],
+.hero-panel [class*="text-"],
+.feature-tile [class*="text-"] {
+  color: #f0ece0 !important;
+}
+
+.metric-card .text-slate-300,
+.metric-card .text-slate-400,
+.metric-card .text-slate-500,
+.metric-card .text-slate-600 {
+  color: rgba(240,236,224,0.66) !important;
+}
+
+.metric-card .text-emerald-600,
+.metric-card .text-emerald-700,
+.metric-card .text-emerald-800,
+.metric-card .text-emerald-900,
+.metric-card .text-emerald-950 {
+  color: #f0c848 !important;
+}
+
+.home-section .bg-emerald-950 .text-yellow-300,
+.home-section .bg-emerald-900 .text-yellow-300,
+.home-section [class*="bg-emerald-9"] .text-yellow-300,
+.table-shell a,
+.table-shell a *,
+.hero-panel .text-yellow-300,
+.feature-tile .text-yellow-300 {
+  color: #f0c848 !important;
+}
+
+/* Forms are dark unless intentionally placed on a light surface. */
+input,
+select,
+textarea,
+.field {
+  background: #0c0a18 !important;
+  background-color: #0c0a18 !important;
+  color: #f0ece0 !important;
+  border-color: rgba(201,162,39,0.28) !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+.field::placeholder {
+  color: rgba(240,236,224,0.58) !important;
+  opacity: 1 !important;
+}
+
+.bg-white input,
+.bg-white select,
+.bg-white textarea,
+.bg-white .field,
+.bg-white\/75 input,
+.bg-white\/75 select,
+.bg-white\/75 textarea,
+.bg-white\/75 .field,
+.bg-white\/80 input,
+.bg-white\/80 select,
+.bg-white\/80 textarea,
+.bg-white\/80 .field,
+.bg-slate-50 input,
+.bg-slate-50 select,
+.bg-slate-50 textarea,
+.bg-slate-50 .field,
+[class*="bg-[#f8"] input,
+[class*="bg-[#f8"] select,
+[class*="bg-[#f8"] textarea,
+[class*="bg-[#f8"] .field {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #0b0b0f !important;
+  border-color: rgba(11,11,15,0.18) !important;
+}
+
+.bg-white input::placeholder,
+.bg-white textarea::placeholder,
+.bg-white\/75 input::placeholder,
+.bg-white\/75 textarea::placeholder,
+.bg-white\/80 input::placeholder,
+.bg-white\/80 textarea::placeholder,
+.bg-slate-50 input::placeholder,
+.bg-slate-50 textarea::placeholder,
+[class*="bg-[#f8"] input::placeholder,
+[class*="bg-[#f8"] textarea::placeholder {
+  color: rgba(11,11,15,0.5) !important;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .footer-top { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .nav-seal  { display: none !important; }
+  .nav-ham   { display: flex !important; }
+  .footer-top { grid-template-columns: 1fr !important; }
+  .footer-brand { flex-direction: column !important; }
+}

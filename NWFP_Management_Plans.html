@@ -8,28 +8,29 @@
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/nwfp_design.css">
 <style>
   [x-cloak]{display:none!important}
   :root{
-    --forest:#0d2419;
-    --canopy:#183d2b;
-    --leaf:#67b886;
-    --lime:#aed45e;
-    --gold:#c08a35;
-    --amber:#dbb96b;
-    --paper:#f8f4e8;
-    --ink:#0c1a0f;
+    --forest:#07060d;
+    --canopy:#0c0a18;
+    --leaf:#f0c848;
+    --lime:#c9a227;
+    --gold:#c9a227;
+    --amber:#f0c848;
+    --paper:#07060d;
+    --ink:#f0ece0;
     --cream:#f3e8ce;
-    --sage:#3e7056;
+    --sage:#c9a227;
     --border:rgba(13,36,25,0.12);
-    --border-lt:rgba(174,212,94,0.18);
+    --border-lt:rgba(201,162,39,0.18);
     --shadow:rgba(13,36,25,0.12);
   }
   body{
     font-family:'Outfit',system-ui,sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(ellipse 80% 55% at 12% -8%, rgba(174,212,94,0.16), transparent 55%),
+      radial-gradient(ellipse 80% 55% at 12% -8%, rgba(201,162,39,0.13), transparent 55%),
       radial-gradient(ellipse 55% 40% at 90% 3%, rgba(192,138,53,0.09), transparent 50%),
       var(--paper);
   }
@@ -42,8 +43,8 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='none'/%3E%3Cpath d='M0 64L64 0' stroke='%230d2419' stroke-opacity='1' stroke-width='1'/%3E%3C/svg%3E");
   }
   .forest-header{
-    background: rgba(13,36,25,0.97);
-    border-bottom: 1px solid rgba(174,212,94,0.18);
+    background: rgba(7,6,13,0.97);
+    border-bottom: 1px solid rgba(201,162,39,0.18);
     backdrop-filter: blur(16px);
   }
   .brand-mark{
@@ -54,8 +55,8 @@
   }
   .hero-panel{
     background:
-      linear-gradient(90deg, rgba(11,47,29,.88), rgba(20,83,45,.74)),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='420' viewBox='0 0 900 420'%3E%3Cg fill='none' stroke='%23b7e75c' stroke-opacity='.32'%3E%3Cpath d='M60 360C180 250 270 210 420 205c190-7 240-130 410-143' stroke-width='26'/%3E%3Cpath d='M-20 130C130 230 220 260 370 232c190-36 282 18 470 103' stroke-width='20'/%3E%3C/g%3E%3Cg fill='%23fff' fill-opacity='.09'%3E%3Cellipse cx='690' cy='112' rx='124' ry='44' transform='rotate(-29 690 112)'/%3E%3Cellipse cx='455' cy='275' rx='180' ry='54' transform='rotate(-11 455 275)'/%3E%3C/g%3E%3C/svg%3E");
+      linear-gradient(90deg, rgba(12,10,24,.9), rgba(36,17,33,.78)),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='420' viewBox='0 0 900 420'%3E%3Cg fill='none' stroke='%23c9a227' stroke-opacity='.3'%3E%3Cpath d='M60 360C180 250 270 210 420 205c190-7 240-130 410-143' stroke-width='26'/%3E%3Cpath d='M-20 130C130 230 220 260 370 232c190-36 282 18 470 103' stroke-width='20'/%3E%3C/g%3E%3Cg fill='%23fff' fill-opacity='.09'%3E%3Cellipse cx='690' cy='112' rx='124' ry='44' transform='rotate(-29 690 112)'/%3E%3Cellipse cx='455' cy='275' rx='180' ry='54' transform='rotate(-11 455 275)'/%3E%3C/g%3E%3C/svg%3E");
     background-size:cover;
     background-position:center;
   }
@@ -65,18 +66,20 @@
     letter-spacing:.08em;
   }
   .eco-card{
-    border:1px solid rgba(13,36,25,0.12);
-    background:rgba(255,255,255,0.93);
-    box-shadow:0 4px 24px rgba(13,36,25,0.1);
+    border:1px solid rgba(201,162,39,0.2);
+    background:#12102a;
+    color:var(--ink);
+    box-shadow:0 4px 24px rgba(0,0,0,0.3);
     border-radius:1.25rem;
   }
   .metric-card{
     position:relative;
     overflow:hidden;
-    background:white;
-    border:1px solid rgba(13,36,25,0.12);
+    background:#12102a;
+    color:var(--ink);
+    border:1px solid rgba(201,162,39,0.2);
     border-radius:1.25rem;
-    box-shadow:0 2px 10px rgba(13,36,25,0.08);
+    box-shadow:0 2px 10px rgba(0,0,0,0.28);
   }
   .metric-card:after{
     content:"";
@@ -86,21 +89,47 @@
     width:6rem;
     height:6rem;
     border-radius:999px;
-    background:radial-gradient(circle,rgba(174,212,94,0.18),transparent 70%);
+    background:radial-gradient(circle,rgba(201,162,39,0.18),transparent 70%);
     pointer-events:none;
   }
   .ribbon-tab{
     clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
   }
+  .plan-tabs{
+    background:#0c0a18;
+    border:1px solid rgba(201,162,39,0.22);
+    box-shadow:0 8px 28px rgba(0,0,0,0.32);
+  }
+  .plan-tab{
+    border:1px solid transparent;
+    color:rgba(240,236,224,0.72);
+    background:transparent;
+    min-height:2.65rem;
+  }
+  .plan-tab:hover{
+    color:#f0c848;
+    background:rgba(201,162,39,0.1);
+    border-color:rgba(201,162,39,0.22);
+  }
+  .plan-tab-active{
+    color:#07060d !important;
+    background:linear-gradient(135deg,#8a6d18,#c9a227,#f0c848) !important;
+    border-color:rgba(240,200,72,0.7) !important;
+    box-shadow:0 10px 22px rgba(0,0,0,0.28);
+  }
+  .plan-tab-idle{
+    color:rgba(240,236,224,0.72) !important;
+    background:transparent !important;
+  }
   .table-shell table{border-collapse:separate;border-spacing:0}
-  .table-shell tbody tr:nth-child(even){background:rgba(174,212,94,0.04)}
-  .table-shell tbody tr:hover{background:rgba(174,212,94,0.1)!important}
-  .status-dot{box-shadow:0 0 0 3px rgba(103,184,134,0.2)}
+  .table-shell tbody tr:nth-child(even){background:rgba(201,162,39,0.04)}
+  .table-shell tbody tr:hover{background:rgba(201,162,39,0.1)!important}
+  .status-dot{box-shadow:0 0 0 3px rgba(201,162,39,0.2)}
   .feature-tile{
     position:relative;
     overflow:hidden;
     min-height:12rem;
-    background:linear-gradient(145deg, rgba(13,36,25,0.97), rgba(24,61,43,0.9));
+    background:linear-gradient(145deg, rgba(12,10,24,0.97), rgba(36,17,33,0.9));
     border-radius:1.25rem;
   }
   .feature-tile:after{
@@ -114,13 +143,14 @@
   }
   .page-button[disabled]{opacity:.45;cursor:not-allowed}
   .home-section{
-    border:1px solid rgba(13,36,25,0.12);
-    background:rgba(255,255,255,0.93);
-    box-shadow:0 4px 24px rgba(13,36,25,0.1);
+    border:1px solid rgba(201,162,39,0.2);
+    background:#12102a;
+    color:var(--ink);
+    box-shadow:0 4px 24px rgba(0,0,0,0.3);
     border-radius:1.25rem;
   }
   .home-kicker{
-    color:#3e7056;
+    color:#c9a227;
     font-size:.62rem;
     font-weight:800;
     letter-spacing:.22em;
@@ -143,82 +173,102 @@
   }
   @media print{.no-print{display:none!important}.print-full{max-width:100%!important}body{background:#fff!important}body:before{display:none!important}}
 </style>
+<link rel="stylesheet" href="assets/nwfp_royal_druk.css">
 </head>
 <body class="min-h-screen" x-data="plansApp()">
 
-<!-- HEADER -->
-<header class="no-print" style="position:sticky;top:0;z-index:50;background:rgba(13,36,25,0.97);border-bottom:1px solid rgba(174,212,94,0.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
-  <div style="max-width:96rem;margin:0 auto;padding:0 1.25rem;height:4.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
-
-    <!-- Brand -->
-    <a href="index.html" style="display:flex;align-items:center;gap:0.875rem;flex-shrink:0;text-decoration:none">
-      <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" style="width:2.875rem;height:2.875rem;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35))">
-      <div>
-        <strong style="display:block;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:800;color:#f3e8ce;line-height:1.3">Bhutan NWFP Management Plans</strong>
-        <small style="display:block;font-size:0.575rem;font-weight:500;color:rgba(174,212,94,0.65);line-height:1.45">Forest Resources Planning and Management Division · DoFPS</small>
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="DoFPS_Bhutan_Logo.png" alt="NWFP Section, FRPMD, DoFPS">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">NWFP Section, FRPMD, DoFPS</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="NWFP_Management_Plans.html">Plans</a></li>
+        <li><a href="data_analytics.html">Analytics</a></li>
+        <li><a href="spatial_resources.html">Spatial</a></li>
+        <li><a href="nwfp_gallery.html">Gallery</a></li>
+        <li><a href="marketplace_sample.html">Market</a></li>
+        <li><a href="about.html">About NWFP Platform</a></li>
+        <li><a href="developer.html">Developer</a></li>
+        <li><a href="dzongkhag_directory.html">Dzongkhags</a></li>
+        <li><a href="product_catalog.html">Products</a></li>
+        <li><a href="nwfp_groups.html">Groups</a></li>
+        <li><a href="species_profile.html">Species</a></li>
+        <li><a href="people_nwfp.html">People</a></li>
+        <li><a href="certification_traceability.html">Traceability</a></li>
+        <li><a href="training_resources.html">Training</a></li>
+        <li><a href="buyer_enquiry.html">Enquiry</a></li>
+      </ul>
+      <div class="nav-seal">
+        <img src="Bhutan.gov.logo.jpg" alt="Bhutan Royal Seal">
       </div>
-    </a>
-
-    <!-- Nav links + utilities -->
-    <div style="display:flex;align-items:center;gap:0.35rem;flex-wrap:wrap;justify-content:flex-end">
-      <!-- Plan count badge -->
-      <span class="hidden sm:inline-flex" style="background:rgba(255,255,255,0.08);border:1px solid rgba(174,212,94,0.2);border-radius:999px;padding:0.28rem 0.75rem;font-size:0.65rem;font-weight:700;color:rgba(174,212,94,0.85)">
-        <span x-text="filtered.length"></span>/<span x-text="plans.length"></span> shown
-      </span>
-      <a href="index.html"                   style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Home</a>
-      <a href="NWFP_Management_Plans.html"   style="font-size:0.68rem;font-weight:700;color:#dbb96b;padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid rgba(219,185,107,0.28);background:rgba(192,138,53,0.13)">Plans</a>
-      <a href="data_analytics.html"          style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Analytics</a>
-      <a href="spatial_resources.html"       style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Spatial</a>
-      <a href="nwfp_gallery.html"            style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Gallery</a>
-      <a href="marketplace_sample.html"      style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Market</a>
-      <a href="about.html"                   style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">About</a>
-      <a href="dzongkhag_directory.html"     style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Dzongkhags</a>
-      <a href="nwfp_groups.html"             style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Groups</a>
-      <a href="people_nwfp.html"             style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">People</a>
-      <a href="buyer_enquiry.html"           style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid transparent;transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Enquiry</a>
-      <a href="Overview of NWFPs in Bhutan.pdf" target="_blank"
-         style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.68);padding:0.38rem 0.6rem;border-radius:0.45rem;border:1px solid rgba(174,212,94,0.18);transition:all 0.18s" onmouseover="this.style.background='rgba(255,255,255,0.11)'" onmouseout="this.style.background='transparent'">Overview PDF</a>
-      <button onclick="window.print()"
-         style="font-size:0.68rem;font-weight:800;color:#183d2b;padding:0.38rem 0.75rem;border-radius:0.45rem;background:#dbb96b;border:none;cursor:pointer;transition:all 0.18s" onmouseover="this.style.background='#c08a35';this.style.color='white'" onmouseout="this.style.background='#dbb96b';this.style.color='#183d2b'">Print</button>
+      <button class="nav-ham" id="navHam" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-drawer" id="navDrawer">
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <div class="nav-panel">
+      <button class="nav-close" id="navClose">&#x2715;</button>
+      <a href="index.html">Home</a>
+      <a href="NWFP_Management_Plans.html">Management Plans</a>
+      <a href="data_analytics.html">Data Analytics</a>
+      <a href="spatial_resources.html">Spatial Resources</a>
+      <a href="nwfp_gallery.html">Gallery</a>
+      <a href="marketplace_sample.html">Marketplace</a>
+      <a href="about.html">About NWFP Platform</a>
+      <a href="developer.html">Developer</a>
+      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
+      <a href="product_catalog.html">Product Catalog</a>
+      <a href="nwfp_groups.html">NWFP Groups</a>
+      <a href="species_profile.html">Species Profiles</a>
+      <a href="people_nwfp.html">People</a>
+      <a href="certification_traceability.html">Traceability</a>
+      <a href="training_resources.html">Training</a>
+      <a href="buyer_enquiry.html">Buyer Enquiry</a>
     </div>
   </div>
-</header>
 
 <main class="max-w-screen-2xl mx-auto px-4 py-5 print-full">
 
   <!-- HERO -->
-  <section class="mb-5 overflow-hidden rounded-[1.5rem] text-white shadow-2xl" style="background:linear-gradient(135deg,rgba(13,36,25,0.97),rgba(24,61,43,0.93));position:relative">
+  <section class="mb-5 overflow-hidden rounded-[1.5rem] text-white shadow-2xl" style="background:linear-gradient(135deg,rgba(12,10,24,0.97),rgba(36,17,33,0.93));position:relative">
     <!-- Decorative rings -->
-    <div style="position:absolute;right:-4rem;top:-4rem;width:28rem;height:28rem;border-radius:999px;border:1px solid rgba(174,212,94,0.1);pointer-events:none"></div>
-    <div style="position:absolute;right:-1rem;top:-1rem;width:18rem;height:18rem;border-radius:999px;border:1px solid rgba(174,212,94,0.07);pointer-events:none"></div>
+    <div style="position:absolute;right:-4rem;top:-4rem;width:28rem;height:28rem;border-radius:999px;border:1px solid rgba(201,162,39,0.12);pointer-events:none"></div>
+    <div style="position:absolute;right:-1rem;top:-1rem;width:18rem;height:18rem;border-radius:999px;border:1px solid rgba(201,162,39,0.09);pointer-events:none"></div>
     <div class="grid min-h-[20rem] md:grid-cols-[4.5rem_1fr_24rem]" style="position:relative;z-index:1">
       <!-- Accent bar -->
       <div class="hidden md:flex items-center justify-center" style="background:rgba(219,185,107,0.9)">
-        <div style="writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:0.08em;font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#183d2b">NWFP</div>
+        <div style="writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:0.08em;font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#0b0b0f">NWFP</div>
       </div>
       <!-- Text -->
       <div class="px-7 py-9">
-        <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:999px;padding:0.3rem 0.85rem;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(174,212,94,0.9);margin-bottom:1.25rem">
-          <span style="width:0.5rem;height:0.5rem;border-radius:999px;background:#aed45e;flex-shrink:0"></span>
+        <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:999px;padding:0.3rem 0.85rem;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,200,72,0.9);margin-bottom:1.25rem">
+          <span style="width:0.5rem;height:0.5rem;border-radius:999px;background:#c9a227;flex-shrink:0"></span>
           Verified group management records
         </div>
         <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.25rem,5vw,4.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:#f3e8ce;max-width:42rem">Forest product stewardship across Bhutan</h1>
         <p style="margin-top:1rem;max-width:38rem;font-size:0.9rem;line-height:1.75;color:rgba(243,232,206,0.72)">Search management groups, plan periods, species, divisions, parks, and linked PDF plans from one field-ready dashboard.</p>
       </div>
       <!-- Stats -->
-      <div class="hidden md:flex flex-col justify-center gap-4 p-6" style="border-left:1px solid rgba(255,255,255,0.1);background:rgba(13,36,25,0.35)">
+      <div class="hidden md:flex flex-col justify-center gap-4 p-6" style="border-left:1px solid rgba(255,255,255,0.1);background:rgba(7,6,13,0.42)">
         <div style="border-left:3px solid #dbb96b;padding-left:1rem">
           <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:#f3e8ce;line-height:1" x-text="plans.length"></div>
-          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(174,212,94,0.8);margin-top:0.25rem">Management plans</div>
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,200,72,0.82);margin-top:0.25rem">Management plans</div>
         </div>
         <div class="grid grid-cols-2 gap-3">
-          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(174,212,94,0.15);border-radius:0.875rem;padding:0.875rem">
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(201,162,39,0.18);border-radius:0.875rem;padding:0.875rem">
             <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#f3e8ce;line-height:1" x-text="divisions.length"></div>
-            <div style="font-size:0.6rem;font-weight:600;color:rgba(174,212,94,0.7);margin-top:0.2rem;letter-spacing:0.08em;text-transform:uppercase">Divisions / parks</div>
+            <div style="font-size:0.6rem;font-weight:600;color:rgba(240,200,72,0.74);margin-top:0.2rem;letter-spacing:0.08em;text-transform:uppercase">Divisions / parks</div>
           </div>
-          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(174,212,94,0.15);border-radius:0.875rem;padding:0.875rem">
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(201,162,39,0.18);border-radius:0.875rem;padding:0.875rem">
             <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#f3e8ce;line-height:1" x-text="filteredDocs.length"></div>
-            <div style="font-size:0.6rem;font-weight:600;color:rgba(174,212,94,0.7);margin-top:0.2rem;letter-spacing:0.08em;text-transform:uppercase">PDF documents</div>
+            <div style="font-size:0.6rem;font-weight:600;color:rgba(240,200,72,0.74);margin-top:0.2rem;letter-spacing:0.08em;text-transform:uppercase">PDF documents</div>
           </div>
         </div>
       </div>
@@ -250,22 +300,22 @@
   </div>
 
   <!-- TABS -->
-  <div class="flex flex-wrap gap-1 mb-4 eco-card rounded-2xl p-1 w-full no-print">
+  <div class="plan-tabs flex flex-wrap gap-1 mb-4 rounded-2xl p-1 w-full no-print">
     <button @click="tab='home'"
-      :class="tab==='home'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
-      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Home</button>
+      :class="tab==='home'?'plan-tab-active':'plan-tab-idle'"
+      class="plan-tab ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Home</button>
     <button @click="tab='list'"
-      :class="tab==='list'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
-      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Plans</button>
+      :class="tab==='list'?'plan-tab-active':'plan-tab-idle'"
+      class="plan-tab ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Plans</button>
     <button @click="tab='dzongkhag'"
-      :class="tab==='dzongkhag'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
-      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">By Dzongkhag</button>
+      :class="tab==='dzongkhag'?'plan-tab-active':'plan-tab-idle'"
+      class="plan-tab ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">By Dzongkhag</button>
     <button @click="tab='division'"
-      :class="tab==='division'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
-      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">By Division / Park</button>
+      :class="tab==='division'?'plan-tab-active':'plan-tab-idle'"
+      class="plan-tab ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">By Division / Park</button>
     <button @click="tab='docs'"
-      :class="tab==='docs'?'bg-emerald-800 text-white shadow':'text-slate-600 hover:bg-lime-50'"
-      class="ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Documents</button>
+      :class="tab==='docs'?'plan-tab-active':'plan-tab-idle'"
+      class="plan-tab ribbon-tab flex-1 sm:flex-none px-5 py-2 text-sm font-semibold transition-colors">Documents</button>
   </div>
 
   <!-- ===== HOME PAGE ===== -->
@@ -278,7 +328,7 @@
           <h2 class="mt-3 max-w-3xl text-3xl font-black leading-tight md:text-5xl">Conservation-first management, rural livelihoods, and green value chains.</h2>
           <p class="mt-4 max-w-2xl text-sm leading-6 text-emerald-50">Bhutan's NWFP sector has considerable potential, but sustainable development depends on stronger inventories, technical capacity, processing infrastructure, certification, and market access.</p>
           <div class="mt-6 flex flex-wrap gap-2">
-            <button @click="tab='dzongkhag'" class="rounded-xl bg-yellow-300 px-4 py-2 text-sm font-black text-emerald-950 hover:bg-yellow-200">Open Dzongkhag View</button>
+            <button @click="tab='dzongkhag'" class="rounded-xl bg-white/10 px-4 py-2 text-sm font-black text-white ring-1 ring-white/15 hover:bg-white/20">Open Dzongkhag View</button>
             <button @click="tab='list'" class="rounded-xl bg-white/10 px-4 py-2 text-sm font-bold text-white ring-1 ring-white/15 hover:bg-white/20">Search Plans</button>
           </div>
         </div>
@@ -645,9 +695,49 @@
     </div>
   </div>
 
-  <footer class="no-print" style="background:rgba(13,36,25,0.97);border-top:1px solid rgba(174,212,94,0.18);padding:2.5rem 1.25rem;margin-top:3rem;text-align:center">
-    <p style="font-size:0.78rem;color:rgba(243,232,206,0.45);line-height:1.7">Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
-    <p style="font-size:0.78rem;color:rgba(243,232,206,0.45);margin-top:0.35rem">Made by Wangdi · <a href="mailto:wangdiues@gmail.com" style="color:#dbb96b">wangdiues@gmail.com</a></p>
+  <footer class="no-print">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services">
+          <p class="footer-tagline">Protecting Bhutan's living forest heritage through sustainable stewardship and community partnership.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="NWFP_Management_Plans.html">Management Plans</a></li>
+            <li><a href="data_analytics.html">Analytics</a></li>
+            <li><a href="spatial_resources.html">Spatial Data</a></li>
+            <li><a href="nwfp_gallery.html">Gallery</a></li>
+            <li><a href="about.html">About NWFP Platform</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="species_profile.html">Species Profiles</a></li>
+            <li><a href="nwfp_groups.html">NWFP Groups</a></li>
+            <li><a href="dzongkhag_directory.html">Dzongkhag Directory</a></li>
+            <li><a href="training_resources.html">Training</a></li>
+            <li><a href="people_nwfp.html">People</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="marketplace_sample.html">Marketplace</a></li>
+            <li><a href="product_catalog.html">Product Catalog</a></li>
+            <li><a href="certification_traceability.html">Traceability</a></li>
+            <li><a href="buyer_enquiry.html">Buyer Enquiry</a></li>
+            <li><a href="developer.html">Developer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Department of Forests &amp; Park Services &mdash; Royal Government of Bhutan &middot; <a href="about.html">About NWFP Platform</a> &middot; <a href="buyer_enquiry.html">Contact</a></p>
+        <p class="footer-ornament"><img class="footer-signature-logo" src="Images/ChatGPT Image Apr 30, 2026, 12_23_12 PM.png" alt="Wangdiues logo"><span>Build my Wangdiues, Contact: wangdiues@gmail.com</span></p>
+      </div>
+    </div>
   </footer>
 </main>
 
@@ -752,6 +842,13 @@
 </div>
 
 <script>
+  (function(){
+    var n=document.getElementById('siteNav');
+    if(n) window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+    var h=document.getElementById('navHam'),d=document.getElementById('navDrawer'),b=document.getElementById('navBackdrop'),c=document.getElementById('navClose');
+    if(h&&d&&b&&c){h.addEventListener('click',function(){d.classList.add('open');});c.addEventListener('click',function(){d.classList.remove('open');});b.addEventListener('click',function(){d.classList.remove('open');});}
+  })();
+
 function plansApp() {
   const plans = [
     // ── DFO BUMTHANG ──────────────────────────────────────────────────────
@@ -1050,5 +1147,6 @@ function plansApp() {
   };
 }
 </script>
+  <script src="assets/nwfp_reveal.js"></script>
 </body>
 </html>

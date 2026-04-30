@@ -6,60 +6,64 @@
   <title>Species Profiles — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/nwfp_design.css">
+  <link rel="stylesheet" href="assets/nwfp_royal_druk.css">
 </head>
 <body>
 <div class="shell">
 
-  <nav class="site-nav">
+  <nav class="site-nav" id="siteNav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+      <a class="nav-brand" href="index.html">
+        <img src="DoFPS_Bhutan_Logo.png" alt="NWFP Section, FRPMD, DoFPS">
         <div class="nav-brand-text">
-          <strong>Bhutan NWFP Platform</strong>
-          <small>Forest Resources Planning and Management Division · DoFPS</small>
+          <span class="nav-brand-title">NWFP Section, FRPMD, DoFPS</span>
         </div>
       </a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
-        <a href="data_analytics.html" class="nav-link">Analytics</a>
-        <a href="spatial_resources.html" class="nav-link">Spatial</a>
-        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
-        <a href="marketplace_sample.html" class="nav-link">Market</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
-        <a href="product_catalog.html" class="nav-link">Products</a>
-        <a href="nwfp_groups.html" class="nav-link">Groups</a>
-        <a href="species_profile.html" class="nav-link active">Species</a>
-        <a href="people_nwfp.html" class="nav-link">People</a>
-        <a href="certification_traceability.html" class="nav-link">Traceability</a>
-        <a href="training_resources.html" class="nav-link">Training</a>
-        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="NWFP_Management_Plans.html">Plans</a></li>
+        <li><a href="data_analytics.html">Analytics</a></li>
+        <li><a href="spatial_resources.html">Spatial</a></li>
+        <li><a href="nwfp_gallery.html">Gallery</a></li>
+        <li><a href="marketplace_sample.html">Market</a></li>
+        <li><a href="about.html">About NWFP Platform</a></li>
+        <li><a href="developer.html">Developer</a></li>
+        <li><a href="dzongkhag_directory.html">Dzongkhags</a></li>
+        <li><a href="product_catalog.html">Products</a></li>
+        <li><a href="nwfp_groups.html">Groups</a></li>
+        <li><a href="species_profile.html">Species</a></li>
+        <li><a href="people_nwfp.html">People</a></li>
+        <li><a href="certification_traceability.html">Traceability</a></li>
+        <li><a href="training_resources.html">Training</a></li>
+        <li><a href="buyer_enquiry.html">Enquiry</a></li>
+      </ul>
+      <div class="nav-seal">
+        <img src="Bhutan.gov.logo.jpg" alt="Bhutan Royal Seal">
       </div>
-      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+      <button class="nav-ham" id="navHam" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-
   <div class="nav-drawer" id="navDrawer">
-    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-backdrop" id="navBackdrop"></div>
     <div class="nav-panel">
-      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <button class="nav-close" id="navClose">&#x2715;</button>
       <a href="index.html">Home</a>
       <a href="NWFP_Management_Plans.html">Management Plans</a>
       <a href="data_analytics.html">Data Analytics</a>
       <a href="spatial_resources.html">Spatial Resources</a>
       <a href="nwfp_gallery.html">Gallery</a>
       <a href="marketplace_sample.html">Marketplace</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About NWFP Platform</a>
+      <a href="developer.html">Developer</a>
       <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
-      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="product_catalog.html">Product Catalog</a>
       <a href="nwfp_groups.html">NWFP Groups</a>
       <a href="species_profile.html">Species Profiles</a>
-      <a href="people_nwfp.html">People &amp; NWFP</a>
-      <a href="certification_traceability.html">Certification &amp; Traceability</a>
-      <a href="training_resources.html">Training Resources</a>
+      <a href="people_nwfp.html">People</a>
+      <a href="certification_traceability.html">Traceability</a>
+      <a href="training_resources.html">Training</a>
       <a href="buyer_enquiry.html">Buyer Enquiry</a>
     </div>
   </div>
@@ -99,15 +103,62 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="page-container">
-      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
-      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangdiues@gmail.com">wangdiues@gmail.com</a></p>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services">
+          <p class="footer-tagline">Protecting Bhutan's living forest heritage through sustainable stewardship and community partnership.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="NWFP_Management_Plans.html">Management Plans</a></li>
+            <li><a href="data_analytics.html">Analytics</a></li>
+            <li><a href="spatial_resources.html">Spatial Data</a></li>
+            <li><a href="nwfp_gallery.html">Gallery</a></li>
+            <li><a href="about.html">About NWFP Platform</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="species_profile.html">Species Profiles</a></li>
+            <li><a href="nwfp_groups.html">NWFP Groups</a></li>
+            <li><a href="dzongkhag_directory.html">Dzongkhag Directory</a></li>
+            <li><a href="training_resources.html">Training</a></li>
+            <li><a href="people_nwfp.html">People</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="marketplace_sample.html">Marketplace</a></li>
+            <li><a href="product_catalog.html">Product Catalog</a></li>
+            <li><a href="certification_traceability.html">Traceability</a></li>
+            <li><a href="buyer_enquiry.html">Buyer Enquiry</a></li>
+            <li><a href="developer.html">Developer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Department of Forests &amp; Park Services &mdash; Royal Government of Bhutan &middot; <a href="about.html">About NWFP Platform</a> &middot; <a href="buyer_enquiry.html">Contact</a></p>
+        <p class="footer-ornament"><img class="footer-signature-logo" src="Images/ChatGPT Image Apr 30, 2026, 12_23_12 PM.png" alt="Wangdiues logo"><span>Build my Wangdiues, Contact: wangdiues@gmail.com</span></p>
+      </div>
     </div>
   </footer>
 
 </div>
 <script src="assets/nwfp_plan_data.js"></script>
 <script src="assets/nwfp_pages.js"></script>
+<script>
+  (function(){
+    var n=document.getElementById('siteNav');
+    if(n) window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+    var h=document.getElementById('navHam'),d=document.getElementById('navDrawer'),b=document.getElementById('navBackdrop'),c=document.getElementById('navClose');
+    if(h){h.addEventListener('click',function(){d.classList.add('open');});c.addEventListener('click',function(){d.classList.remove('open');});b.addEventListener('click',function(){d.classList.remove('open');});}
+  })();
+</script>
+  <script src="assets/nwfp_reveal.js"></script>
 </body>
 </html>

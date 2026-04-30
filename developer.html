@@ -3,10 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — Bhutan NWFP Platform</title>
+  <title>Developer — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/nwfp_design.css">
   <link rel="stylesheet" href="assets/nwfp_royal_druk.css">
+  <style>
+    .developer-logo-wrap {
+      position: relative;
+      width: 9.5rem;
+      height: 9.5rem;
+      margin: 0 0 1.6rem;
+      display: grid;
+      place-items: center;
+    }
+    .developer-logo-ring,
+    .developer-logo-ring-soft {
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+    .developer-logo-ring {
+      inset: -0.85rem;
+      border: 1px solid rgba(240,200,72,0.38);
+      animation: developerSpin 58s linear infinite;
+    }
+    .developer-logo-ring::before,
+    .developer-logo-ring::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #f0c848;
+      box-shadow: 0 0 12px rgba(240,200,72,0.85);
+    }
+    .developer-logo-ring::before { width: 0.42rem; height: 0.42rem; top: -0.21rem; }
+    .developer-logo-ring::after { width: 0.32rem; height: 0.32rem; bottom: -0.16rem; }
+    .developer-logo-ring-soft {
+      inset: -0.35rem;
+      border: 1px dashed rgba(240,200,72,0.24);
+      animation: developerSpinReverse 38s linear infinite;
+    }
+    .developer-logo-img {
+      width: 9.5rem;
+      height: 9.5rem;
+      object-fit: contain;
+      border-radius: 1.35rem;
+      background: rgba(255,255,255,0.96);
+      padding: 0.85rem;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.34), 0 0 42px rgba(240,200,72,0.18);
+      animation: developerLogoFloat 7s ease-in-out infinite;
+    }
+    .developer-stat-logo {
+      width: 4.6rem;
+      height: 4.6rem;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 0.4rem;
+      border-radius: 0.9rem;
+      background: rgba(255,255,255,0.95);
+      padding: 0.35rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.24);
+    }
+    .developer-profile-logo {
+      animation: developerLogoFloat 7s ease-in-out infinite;
+    }
+    @keyframes developerSpin { to { transform: rotate(360deg); } }
+    @keyframes developerSpinReverse { to { transform: rotate(-360deg); } }
+    @keyframes developerLogoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @media (max-width: 640px) {
+      .developer-logo-wrap,
+      .developer-logo-img {
+        width: 7.5rem;
+        height: 7.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="shell">
@@ -68,102 +143,90 @@
     </div>
   </div>
 
-  <!-- MAIN -->
   <main class="page-main mx-auto max-w-7xl px-5 py-7">
-
-    <!-- HERO -->
     <section class="hero anim-1">
       <div class="hero-inner grid gap-8 lg:grid-cols-[1fr_22rem]">
         <div>
-          <p class="kicker kicker-lt">Platform overview</p>
-          <h1>A connected knowledge, planning, market &amp; traceability portal for Bhutan's NWFP sector.</h1>
-          <p class="lead">This platform brings together management plans, Dzongkhag coverage, NWFP groups, product opportunities, spatial resources, buyer enquiries, and training content for sustainable non-wood forest product development.</p>
-          <div class="flex flex-wrap gap-3 mt-8">
-            <a href="NWFP_Management_Plans.html" class="btn btn-amber">Explore Plans</a>
-            <a href="dzongkhag_directory.html" class="btn btn-outline">Browse Dzongkhags</a>
+          <div class="developer-logo-wrap reveal reveal-d1" aria-hidden="true">
+            <div class="developer-logo-ring"></div>
+            <div class="developer-logo-ring-soft"></div>
+            <img class="developer-logo-img" src="Images/ChatGPT Image Apr 30, 2026, 12_23_12 PM.png" alt="">
+          </div>
+          <p class="kicker kicker-lt reveal reveal-d2">Developer</p>
+          <h1 class="reveal reveal-d3">About Developer</h1>
+          <p class="lead reveal reveal-d4">Developer information for the Bhutan NWFP Web Marketplace and Management Platform.</p>
+          <div class="flex flex-wrap gap-3 mt-8 reveal reveal-d5">
+            <a href="https://wangdiues.github.io/Wangdi-portfolio-v7/" target="_blank" rel="noopener" class="btn btn-amber">Open Portfolio</a>
+            <a href="mailto:wangdiues@gmail.com" class="btn btn-outline">Contact Developer</a>
           </div>
         </div>
         <div class="hero-stats self-end">
-          <div class="hero-stat">
-            <div class="hero-stat-num">119</div>
-            <div class="hero-stat-label">Management records</div>
+          <div class="hero-stat reveal reveal-d2">
+            <img class="developer-stat-logo" src="Images/ChatGPT Image Apr 30, 2026, 12_23_12 PM.png" alt="Wangdiues logo">
+            <div class="hero-stat-label">Wangdiues</div>
           </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">17</div>
-            <div class="hero-stat-label">Dzongkhags covered</div>
+          <div class="hero-stat reveal reveal-d3">
+            <div class="hero-stat-num">NWFP</div>
+            <div class="hero-stat-label">Platform build</div>
           </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">83k</div>
-            <div class="hero-stat-label">Hectares managed</div>
+          <div class="hero-stat reveal reveal-d4">
+            <div class="hero-stat-num">Web</div>
+            <div class="hero-stat-label">Design &amp; development</div>
           </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">1.2k</div>
-            <div class="hero-stat-label">Households recorded</div>
+          <div class="hero-stat reveal reveal-d5">
+            <div class="hero-stat-num">2026</div>
+            <div class="hero-stat-label">Portfolio link added</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DYNAMIC STATS (injected by nwfp_pages.js) -->
-    <section id="stats" class="section-gap grid gap-4 sm:grid-cols-2 lg:grid-cols-4 anim-2"></section>
-
-    <!-- MODULE CARDS -->
-    <section class="section-gap anim-3">
-      <p class="kicker mb-4">Platform modules</p>
-      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <a class="card p-6 hoverable" href="dzongkhag_directory.html">
-          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">🗺</div>
-          <p class="kicker">Dzongkhag</p>
-          <h2 class="section-title mt-1">Directory</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Browse groups, plans, products, and spatial links by district.</p>
-        </a>
-        <a class="card p-6 hoverable" href="nwfp_groups.html">
-          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">👥</div>
-          <p class="kicker">Groups</p>
-          <h2 class="section-title mt-1">Registry</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Search group records, gewogs, offices, status, households, and products.</p>
-        </a>
-        <a class="card p-6 hoverable" href="product_catalog.html">
-          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">🌿</div>
-          <p class="kicker">Products</p>
-          <h2 class="section-title mt-1">Catalogue</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Review commercial product categories and linked records.</p>
-        </a>
-        <a class="card p-6 hoverable" href="certification_traceability.html">
-          <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-lime-300 text-lg mb-4">✅</div>
-          <p class="kicker">Compliance</p>
-          <h2 class="section-title mt-1">Traceability</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Follow the flow from management plan to buyer-ready product.</p>
-        </a>
+    <section class="section-gap anim-2">
+      <div class="grid gap-5 lg:grid-cols-[20rem_1fr]">
+        <div class="card p-6 text-center hoverable reveal reveal-d1">
+          <img class="developer-profile-logo mx-auto w-44 max-w-full rounded-2xl bg-white p-3 shadow-sm" src="Images/ChatGPT Image Apr 30, 2026, 12_23_12 PM.png" alt="Wangdiues logo">
+          <h2 class="section-title mt-5">Wangdiues</h2>
+          <p class="mt-2 text-sm text-slate-600">Build my Wangdiues</p>
+        </div>
+        <div class="card p-6 md:p-8 reveal reveal-d2">
+          <p class="kicker">Developer profile</p>
+          <h2 class="section-title mt-1">Portfolio and contact</h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">This page connects visitors to the developer portfolio and contact channel for the Bhutan NWFP Web Marketplace and Management Platform.</p>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <a class="card p-5 hoverable reveal reveal-d3" href="https://wangdiues.github.io/Wangdi-portfolio-v7/" target="_blank" rel="noopener">
+              <p class="kicker">Portfolio</p>
+              <h3 class="mt-1 font-bold text-lg text-emerald-950">Wangdi Portfolio</h3>
+              <p class="mt-2 text-sm text-slate-600 break-words">wangdiues.github.io/Wangdi-portfolio-v7/</p>
+            </a>
+            <a class="card p-5 hoverable reveal reveal-d4" href="mailto:wangdiues@gmail.com">
+              <p class="kicker">Contact</p>
+              <h3 class="mt-1 font-bold text-lg text-emerald-950">wangdiues@gmail.com</h3>
+              <p class="mt-2 text-sm text-slate-600">Email for platform development and updates.</p>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SECONDARY LINKS -->
-    <section class="section-gap anim-4">
-      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <a href="data_analytics.html" class="card p-6 hoverable">
+    <section class="section-gap anim-3">
+      <div class="grid gap-4 md:grid-cols-3">
+        <a href="about.html" class="card p-6 hoverable reveal reveal-d1">
+          <p class="kicker">Platform</p>
+          <h3 class="mt-1 font-bold text-lg text-emerald-950">About NWFP Platform</h3>
+          <p class="mt-2 text-sm text-slate-600">Return to the platform overview.</p>
+        </a>
+        <a href="data_analytics.html" class="card p-6 hoverable reveal reveal-d2">
           <p class="kicker">Analytics</p>
           <h3 class="mt-1 font-bold text-lg text-emerald-950">Data Dashboard</h3>
-          <p class="mt-2 text-sm text-slate-600">Plans by Dzongkhag, area, status, and timeline.</p>
+          <p class="mt-2 text-sm text-slate-600">Review NWFP planning and coverage insights.</p>
         </a>
-        <a href="spatial_resources.html" class="card p-6 hoverable">
-          <p class="kicker">GIS</p>
-          <h3 class="mt-1 font-bold text-lg text-emerald-950">Spatial Resources</h3>
-          <p class="mt-2 text-sm text-slate-600">GeoPackage, shapefiles, and map outputs.</p>
-        </a>
-        <a href="marketplace_sample.html" class="card p-6 hoverable">
-          <p class="kicker">Commerce</p>
-          <h3 class="mt-1 font-bold text-lg text-emerald-950">Marketplace Sample</h3>
-          <p class="mt-2 text-sm text-slate-600">Traceable product listings and buyer cart demo.</p>
-        </a>
-        <a href="developer.html" class="card p-6 hoverable">
-          <p class="kicker">Developer</p>
-          <h3 class="mt-1 font-bold text-lg text-emerald-950">About Developer</h3>
-          <p class="mt-2 text-sm text-slate-600">Portfolio, contact, and platform build information.</p>
+        <a href="buyer_enquiry.html" class="card p-6 hoverable reveal reveal-d3">
+          <p class="kicker">Connect</p>
+          <h3 class="mt-1 font-bold text-lg text-emerald-950">Buyer Enquiry</h3>
+          <p class="mt-2 text-sm text-slate-600">Go to the enquiry and contact workflow.</p>
         </a>
       </div>
     </section>
-
   </main>
 
   <footer>

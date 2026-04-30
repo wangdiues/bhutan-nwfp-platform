@@ -7,14 +7,14 @@
 /* 1. TOKENS
    ============================================================ */
 :root {
-  --ink:       #0c1a0f;
-  --forest:    #0d2419;
-  --canopy:    #183d2b;
-  --sage:      #3e7056;
-  --leaf:      #67b886;
-  --lime:      #aed45e;
-  --gold:      #c08a35;
-  --amber:     #dbb96b;
+  --ink:       #f0ece0;
+  --forest:    #07060d;
+  --canopy:    #0c0a18;
+  --sage:      #c9a227;
+  --leaf:      #f0c848;
+  --lime:      #c9a227;
+  --gold:      #c9a227;
+  --amber:     #f0c848;
   --rust:      #c46c35;
   --cream:     #f3e8ce;
   --paper:     #f8f4e8;
@@ -22,7 +22,7 @@
   --shadow:    rgba(13,36,25,0.12);
   --shadow-lg: rgba(13,36,25,0.22);
   --border:    rgba(13,36,25,0.12);
-  --border-lt: rgba(174,212,94,0.18);
+  --border-lt: rgba(201,162,39,0.18);
   --glass:     rgba(255,255,255,0.06);
   --glass-md:  rgba(255,255,255,0.11);
 }
@@ -40,7 +40,7 @@ body {
   color: var(--ink);
   background-color: var(--paper);
   background-image:
-    radial-gradient(ellipse 80% 55% at 12% -8%, rgba(174,212,94,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 55% at 12% -8%, rgba(201,162,39,0.13) 0%, transparent 55%),
     radial-gradient(ellipse 55% 40% at 90% 3%,  rgba(192,138,53,0.09) 0%, transparent 50%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='none'/%3E%3Cpath d='M0 64L64 0' stroke='%230d2419' stroke-opacity='.022' stroke-width='1'/%3E%3C/svg%3E");
   min-height: 100vh;
@@ -74,7 +74,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(13,36,25,0.97);
+  background: rgba(7,6,13,0.97);
   border-bottom: 1px solid var(--border-lt);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -117,7 +117,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   display: block;
   font-size: 0.575rem;
   font-weight: 500;
-  color: rgba(174,212,94,0.65);
+  color: rgba(240,200,72,0.65);
   line-height: 1.45;
   max-width: 22rem;
 }
@@ -186,7 +186,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
 .nav-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(6,14,9,0.78);
+  background: rgba(7,6,13,0.82);
   backdrop-filter: blur(6px);
   cursor: pointer;
 }
@@ -196,7 +196,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   z-index: 1;
   width: min(19rem, 88vw);
   height: 100%;
-  background: var(--forest);
+  background: #0c0a18;
   border-right: 1px solid var(--border-lt);
   overflow-y: auto;
   padding: 1.25rem;
@@ -241,7 +241,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
 /* 6. HERO SECTIONS
    ============================================================ */
 .hero {
-  background: linear-gradient(135deg, rgba(13,36,25,0.97) 0%, rgba(24,61,43,0.93) 100%);
+  background: linear-gradient(135deg, rgba(12,10,24,0.97) 0%, rgba(36,17,33,0.93) 100%);
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
@@ -255,7 +255,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   width: 28rem;
   height: 28rem;
   border-radius: 999px;
-  border: 1px solid rgba(174,212,94,0.1);
+  border: 1px solid rgba(201,162,39,0.14);
   pointer-events: none;
 }
 .hero::after {
@@ -266,7 +266,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   width: 18rem;
   height: 18rem;
   border-radius: 999px;
-  border: 1px solid rgba(174,212,94,0.07);
+  border: 1px solid rgba(201,162,39,0.1);
   pointer-events: none;
 }
 
@@ -282,7 +282,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(130deg, rgba(6,18,11,0.96) 0%, rgba(13,36,25,0.88) 58%, rgba(24,61,43,0.82) 100%);
+  background: linear-gradient(130deg, rgba(7,6,13,0.96) 0%, rgba(12,10,24,0.9) 58%, rgba(36,17,33,0.82) 100%);
 }
 
 .hero-inner {
@@ -373,7 +373,7 @@ h3, h4 { font-weight: 700; line-height: 1.25; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(174,212,94,0.8);
+  color: rgba(240,200,72,0.8);
   margin-top: 0.3rem;
 }
 
@@ -393,7 +393,7 @@ a.card:hover, .card.hoverable:hover {
 }
 
 .card-dark {
-  background: var(--forest);
+  background: #0c0a18;
   border-color: var(--border-lt);
   color: var(--cream);
 }
@@ -424,7 +424,7 @@ a.card:hover, .card.hoverable:hover {
   width: 5.5rem;
   height: 5.5rem;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(174,212,94,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(201,162,39,0.18), transparent 70%);
   pointer-events: none;
 }
 
@@ -457,8 +457,8 @@ a.card:hover, .card.hoverable:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(174,212,94,0.1);
-  border: 1px solid rgba(174,212,94,0.22);
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.22);
   border-radius: 999px;
   padding: 0.35rem 0.8rem;
   font-size: 0.7rem;
@@ -502,10 +502,10 @@ a.card:hover, .card.hoverable:hover {
   letter-spacing: 0.01em;
 }
 
-.btn-forest { background: var(--forest); color: var(--cream); }
-.btn-forest:hover { background: var(--canopy); }
+.btn-forest { background: #0c0a18; color: var(--cream); }
+.btn-forest:hover { background: #171126; }
 
-.btn-amber  { background: var(--amber); color: var(--forest); }
+.btn-amber  { background: var(--amber); color: #07060d; }
 .btn-amber:hover { background: var(--gold); color: white; }
 
 .btn-outline { background: transparent; border: 1px solid var(--border-lt); color: var(--cream); }
@@ -528,7 +528,7 @@ a.card:hover, .card.hoverable:hover {
 .field {
   width: 100%;
   background: white;
-  border: 1.5px solid rgba(62,112,86,0.18);
+  border: 1.5px solid rgba(201,162,39,0.18);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
@@ -542,7 +542,7 @@ a.card:hover, .card.hoverable:hover {
 
 .field:focus {
   border-color: var(--sage);
-  box-shadow: 0 0 0 3px rgba(62,112,86,0.1);
+  box-shadow: 0 0 0 3px rgba(201,162,39,0.1);
 }
 
 /* 12. DATA TABLE
@@ -555,8 +555,8 @@ a.card:hover, .card.hoverable:hover {
 }
 
 .data-table thead th {
-  background: var(--forest);
-  color: rgba(174,212,94,0.82);
+  background: #0c0a18;
+  color: rgba(240,200,72,0.86);
   font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -577,8 +577,8 @@ a.card:hover, .card.hoverable:hover {
   line-height: 1.55;
 }
 
-.data-table tbody tr:nth-child(even) td { background: rgba(174,212,94,0.04); }
-.data-table tbody tr:hover td { background: rgba(174,212,94,0.1) !important; cursor: default; }
+.data-table tbody tr:nth-child(even) td { background: rgba(201,162,39,0.04); }
+.data-table tbody tr:hover td { background: rgba(201,162,39,0.1) !important; cursor: default; }
 
 /* 13. BAR CHARTS
    ============================================================ */
@@ -586,8 +586,8 @@ a.card:hover, .card.hoverable:hover {
 .bar-row-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; font-size: 0.82rem; }
 .bar-row-head strong { color: var(--ink); }
 .bar-row-head span { font-weight: 800; color: var(--canopy); font-size: 0.82rem; }
-.bar-track { height: 0.55rem; background: rgba(13,36,25,0.08); border-radius: 999px; overflow: hidden; }
-.bar-fill  { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--amber) 0%, var(--lime) 100%); animation: barGrow 1s cubic-bezier(.22,1,.36,1) forwards; transform-origin: left; }
+.bar-track { height: 0.55rem; background: rgba(201,162,39,0.08); border-radius: 999px; overflow: hidden; }
+.bar-fill  { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--amber) 0%, var(--gold) 100%); animation: barGrow 1s cubic-bezier(.22,1,.36,1) forwards; transform-origin: left; }
 .bar-sub { font-size: 0.68rem; color: #9ca3af; }
 
 @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
@@ -598,7 +598,7 @@ a.card:hover, .card.hoverable:hover {
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
-  background: var(--forest);
+  background: #0c0a18;
 }
 
 .photo-card img {
@@ -614,7 +614,7 @@ a.card:hover, .card.hoverable:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13,36,25,0.88) 0%, rgba(13,36,25,0.18) 42%, transparent 100%);
+  background: linear-gradient(to top, rgba(7,6,13,0.88) 0%, rgba(7,6,13,0.2) 42%, transparent 100%);
   pointer-events: none;
 }
 
@@ -671,13 +671,13 @@ a.card:hover, .card.hoverable:hover {
   transition: all 0.18s;
 }
 
-.file-link:hover { background: rgba(174,212,94,0.06); border-color: var(--sage); }
+.file-link:hover { background: rgba(201,162,39,0.08); border-color: var(--gold); }
 
 .file-icon {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 0.5rem;
-  background: var(--forest);
+  background: #0c0a18;
   color: var(--lime);
   display: flex;
   align-items: center;
@@ -692,8 +692,8 @@ a.card:hover, .card.hoverable:hover {
 .folder-link {
   display: block;
   padding: 0.7rem 0.9rem;
-  background: rgba(174,212,94,0.06);
-  border: 1px solid rgba(174,212,94,0.16);
+  background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.18);
   border-radius: 0.75rem;
   font-size: 0.78rem;
   font-weight: 600;
@@ -701,7 +701,7 @@ a.card:hover, .card.hoverable:hover {
   transition: all 0.18s;
 }
 
-.folder-link:hover { background: rgba(174,212,94,0.14); border-color: var(--sage); color: var(--forest); }
+.folder-link:hover { background: rgba(201,162,39,0.16); border-color: var(--gold); color: var(--forest); }
 
 /* 17. GALLERY GRID
    ============================================================ */
@@ -736,7 +736,7 @@ a.card:hover, .card.hoverable:hover {
   font-family: 'Cormorant Garamond', serif;
   font-size: 5rem;
   font-weight: 700;
-  color: rgba(174,212,94,0.15);
+  color: rgba(240,200,72,0.18);
   line-height: 1;
   position: absolute;
   top: 0.5rem;
@@ -748,7 +748,7 @@ a.card:hover, .card.hoverable:hover {
 /* 19. FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--forest);
+  background: #04030a;
   border-top: 1px solid var(--border-lt);
   padding: 2.75rem 1.25rem;
   margin-top: 4rem;
@@ -772,6 +772,44 @@ a.card:hover, .card.hoverable:hover {
 .anim-4 { animation: fadeUp 0.6s cubic-bezier(.22,1,.36,1) 0.28s both; }
 .anim-5 { animation: fadeUp 0.6s cubic-bezier(.22,1,.36,1) 0.36s both; }
 .anim-6 { animation: fadeUp 0.6s cubic-bezier(.22,1,.36,1) 0.44s both; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+.reveal-d6 { transition-delay: 0.6s; }
+.reveal.anim-1,
+.reveal.anim-2,
+.reveal.anim-3,
+.reveal.anim-4,
+.reveal.anim-5,
+.reveal.anim-6 {
+  animation: none;
+}
+.reveal.anim-1 { transition-delay: 0.1s; }
+.reveal.anim-2 { transition-delay: 0.2s; }
+.reveal.anim-3 { transition-delay: 0.3s; }
+.reveal.anim-4 { transition-delay: 0.4s; }
+.reveal.anim-5 { transition-delay: 0.5s; }
+.reveal.anim-6 { transition-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 /* 21. RESPONSIVE
    ============================================================ */
@@ -800,8 +838,8 @@ a.card:hover, .card.hoverable:hover {
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
-  background: rgba(174,212,94,0.07);
-  border: 1px solid rgba(174,212,94,0.18);
+  background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.18);
   border-radius: 0.75rem;
   font-size: 0.85rem;
   font-weight: 600;
@@ -812,7 +850,7 @@ a.card:hover, .card.hoverable:hover {
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 999px;
-  background: var(--leaf);
+  background: var(--gold);
   flex-shrink: 0;
 }
 
@@ -838,7 +876,7 @@ a.card:hover, .card.hoverable:hover {
   width: 3rem;
   height: 3rem;
   border-radius: 0.875rem;
-  background: var(--forest);
+  background: #0c0a18;
   color: var(--lime);
   display: flex;
   align-items: center;
@@ -853,14 +891,14 @@ a.card:hover, .card.hoverable:hover {
   display: grid;
   grid-template-columns: 2rem 1fr 2rem;
   align-items: center;
-  border: 1.5px solid rgba(62,112,86,0.2);
+  border: 1.5px solid rgba(201,162,39,0.2);
   border-radius: 0.75rem;
   overflow: hidden;
 }
 
 .qty-ctrl button {
   height: 2.25rem;
-  background: rgba(174,212,94,0.12);
+  background: rgba(201,162,39,0.12);
   font-weight: 900;
   color: var(--canopy);
   border: none;
@@ -868,13 +906,13 @@ a.card:hover, .card.hoverable:hover {
   line-height: 1;
 }
 
-.qty-ctrl button:hover { background: rgba(174,212,94,0.22); }
+.qty-ctrl button:hover { background: rgba(201,162,39,0.22); }
 .qty-ctrl span { text-align: center; font-weight: 800; font-size: 0.9rem; color: var(--ink); }
 
 /* 26. CART TOTAL
    ============================================================ */
 .cart-total {
-  background: var(--forest);
+  background: #0c0a18;
   border-radius: 1rem;
   padding: 1.25rem;
   color: var(--cream);
@@ -886,4 +924,4 @@ a.card:hover, .card.hoverable:hover {
 /* 27. STATUS DOT
    ============================================================ */
 .status-active { color: var(--leaf); font-weight: 700; font-size: 0.78rem; }
-.status-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 999px; background: var(--leaf); margin-right: 0.35rem; box-shadow: 0 0 0 3px rgba(103,184,134,0.2); }
+.status-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 999px; background: var(--gold); margin-right: 0.35rem; box-shadow: 0 0 0 3px rgba(201,162,39,0.2); }

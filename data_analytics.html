@@ -6,60 +6,158 @@
   <title>NWFP Data Analytics — Bhutan NWFP Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/nwfp_design.css">
+  <link rel="stylesheet" href="assets/nwfp_royal_druk.css">
+  <style>
+    .chart-card {
+      background:#12102a;
+      border:1px solid rgba(201,162,39,0.18);
+      border-radius:1rem;
+      padding:1rem;
+    }
+    .pie-plot {
+      width:min(12rem,100%);
+      aspect-ratio:1;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      margin:0 auto;
+      box-shadow:inset 0 0 0 1px rgba(201,162,39,0.16), 0 14px 30px rgba(0,0,0,0.28);
+    }
+    .pie-hole {
+      width:58%;
+      aspect-ratio:1;
+      border-radius:999px;
+      background:#0c0a18;
+      border:1px solid rgba(201,162,39,0.2);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:0.5rem;
+    }
+    .chart-legend {
+      display:grid;
+      gap:0.55rem;
+      margin-top:1rem;
+    }
+    .legend-item {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:0.75rem;
+      font-size:0.78rem;
+      color:rgba(240,236,224,0.72);
+    }
+    .legend-name {
+      display:flex;
+      align-items:center;
+      gap:0.45rem;
+      min-width:0;
+    }
+    .legend-dot {
+      width:0.62rem;
+      height:0.62rem;
+      border-radius:999px;
+      flex:none;
+    }
+    .vertical-bars {
+      display:flex;
+      align-items:end;
+      gap:0.7rem;
+      min-height:14rem;
+      border-left:1px solid rgba(201,162,39,0.16);
+      border-bottom:1px solid rgba(201,162,39,0.16);
+      padding:1rem 0.5rem 0.5rem;
+      overflow-x:auto;
+    }
+    .vertical-bar {
+      min-width:2.65rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:end;
+      gap:0.4rem;
+      color:rgba(240,236,224,0.68);
+      font-size:0.7rem;
+    }
+    .vertical-bar-fill {
+      width:1.5rem;
+      min-height:0.35rem;
+      border-radius:999px 999px 0.35rem 0.35rem;
+      background:linear-gradient(180deg,#f0c848,#c9a227,#8a6d18);
+      box-shadow:0 8px 18px rgba(0,0,0,0.24);
+    }
+    .stack-row {
+      display:grid;
+      gap:0.45rem;
+    }
+    .stack-track {
+      height:0.8rem;
+      overflow:hidden;
+      border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(201,162,39,0.14);
+      display:flex;
+    }
+    .stack-doc { background:#f0c848; }
+    .stack-gap { background:#c46c35; }
+  </style>
 </head>
 <body>
 <div class="shell">
 
-  <nav class="site-nav">
+  <nav class="site-nav" id="siteNav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="DoFPS_Bhutan_Logo.png" alt="DoFPS Logo" class="nav-logo">
+      <a class="nav-brand" href="index.html">
+        <img src="DoFPS_Bhutan_Logo.png" alt="NWFP Section, FRPMD, DoFPS">
         <div class="nav-brand-text">
-          <strong>Bhutan NWFP Platform</strong>
-          <small>Forest Resources Planning and Management Division · DoFPS</small>
+          <span class="nav-brand-title">NWFP Section, FRPMD, DoFPS</span>
         </div>
       </a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="NWFP_Management_Plans.html" class="nav-link">Plans</a>
-        <a href="data_analytics.html" class="nav-link active">Analytics</a>
-        <a href="spatial_resources.html" class="nav-link">Spatial</a>
-        <a href="nwfp_gallery.html" class="nav-link">Gallery</a>
-        <a href="marketplace_sample.html" class="nav-link">Market</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="dzongkhag_directory.html" class="nav-link">Dzongkhags</a>
-        <a href="product_catalog.html" class="nav-link">Products</a>
-        <a href="nwfp_groups.html" class="nav-link">Groups</a>
-        <a href="species_profile.html" class="nav-link">Species</a>
-        <a href="people_nwfp.html" class="nav-link">People</a>
-        <a href="certification_traceability.html" class="nav-link">Traceability</a>
-        <a href="training_resources.html" class="nav-link">Training</a>
-        <a href="buyer_enquiry.html" class="nav-link">Enquiry</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="NWFP_Management_Plans.html">Plans</a></li>
+        <li><a href="data_analytics.html">Analytics</a></li>
+        <li><a href="spatial_resources.html">Spatial</a></li>
+        <li><a href="nwfp_gallery.html">Gallery</a></li>
+        <li><a href="marketplace_sample.html">Market</a></li>
+        <li><a href="about.html">About NWFP Platform</a></li>
+        <li><a href="developer.html">Developer</a></li>
+        <li><a href="dzongkhag_directory.html">Dzongkhags</a></li>
+        <li><a href="product_catalog.html">Products</a></li>
+        <li><a href="nwfp_groups.html">Groups</a></li>
+        <li><a href="species_profile.html">Species</a></li>
+        <li><a href="people_nwfp.html">People</a></li>
+        <li><a href="certification_traceability.html">Traceability</a></li>
+        <li><a href="training_resources.html">Training</a></li>
+        <li><a href="buyer_enquiry.html">Enquiry</a></li>
+      </ul>
+      <div class="nav-seal">
+        <img src="Bhutan.gov.logo.jpg" alt="Bhutan Royal Seal">
       </div>
-      <button class="nav-ham" onclick="document.getElementById('navDrawer').classList.add('open')" aria-label="Open menu">
+      <button class="nav-ham" id="navHam" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-
   <div class="nav-drawer" id="navDrawer">
-    <div class="nav-backdrop" onclick="document.getElementById('navDrawer').classList.remove('open')"></div>
+    <div class="nav-backdrop" id="navBackdrop"></div>
     <div class="nav-panel">
-      <button class="nav-panel-close" onclick="document.getElementById('navDrawer').classList.remove('open')">×</button>
+      <button class="nav-close" id="navClose">&#x2715;</button>
       <a href="index.html">Home</a>
       <a href="NWFP_Management_Plans.html">Management Plans</a>
       <a href="data_analytics.html">Data Analytics</a>
       <a href="spatial_resources.html">Spatial Resources</a>
       <a href="nwfp_gallery.html">Gallery</a>
       <a href="marketplace_sample.html">Marketplace</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About NWFP Platform</a>
+      <a href="developer.html">Developer</a>
       <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
-      <a href="product_catalog.html">Product Catalogue</a>
+      <a href="product_catalog.html">Product Catalog</a>
       <a href="nwfp_groups.html">NWFP Groups</a>
       <a href="species_profile.html">Species Profiles</a>
-      <a href="people_nwfp.html">People &amp; NWFP</a>
-      <a href="certification_traceability.html">Certification &amp; Traceability</a>
-      <a href="training_resources.html">Training Resources</a>
+      <a href="people_nwfp.html">People</a>
+      <a href="certification_traceability.html">Traceability</a>
+      <a href="training_resources.html">Training</a>
       <a href="buyer_enquiry.html">Buyer Enquiry</a>
     </div>
   </div>
@@ -126,6 +224,41 @@
       </div>
     </section>
 
+    <!-- PIE, DONUT, AND BARGRAPH MATRIX -->
+    <section class="section-gap anim-5">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-5">
+        <div>
+          <p class="kicker mb-1">Visual chart matrix</p>
+          <h2 class="section-title">Bargraphs, pie charts, and portfolio shares</h2>
+        </div>
+        <span class="text-xs font-semibold text-slate-400">Live charts from registry data</span>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div id="statusPie" class="chart-card"></div>
+        <div id="ptypePie" class="chart-card"></div>
+        <div id="documentPie" class="chart-card"></div>
+        <div id="areaPie" class="chart-card"></div>
+      </div>
+    </section>
+
+    <section class="section-gap anim-5 grid gap-5 lg:grid-cols-[.95fr_1.05fr]">
+      <div class="card p-6">
+        <p class="kicker mb-1">Vertical bargraph</p>
+        <h2 class="section-title mb-5">Plan records by timeline year</h2>
+        <div id="yearColumnChart" class="vertical-bars"></div>
+      </div>
+
+      <div class="card p-6">
+        <p class="kicker mb-1">Stacked bargraph</p>
+        <h2 class="section-title mb-5">Document coverage by top Dzongkhags</h2>
+        <div id="documentStackBars" class="grid gap-4"></div>
+        <div class="mt-5 flex flex-wrap gap-4 text-xs font-semibold text-slate-400">
+          <span class="inline-flex items-center gap-2"><span class="legend-dot stack-doc"></span>Documented</span>
+          <span class="inline-flex items-center gap-2"><span class="legend-dot stack-gap"></span>Gap</span>
+        </div>
+      </div>
+    </section>
+
     <!-- TIMELINE + NOTES -->
     <section class="section-gap anim-5 grid gap-5 lg:grid-cols-[1.1fr_.9fr]">
       <div class="card p-6">
@@ -146,17 +279,121 @@
       </div>
     </section>
 
+    <!-- ADVANCED ANALYTICS -->
+    <section class="section-gap anim-6">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-5">
+        <div>
+          <p class="kicker mb-1">Advanced analytics</p>
+          <h2 class="section-title">Operational intelligence</h2>
+        </div>
+        <span class="text-xs font-semibold text-slate-400">Computed from the plan registry</span>
+      </div>
+      <div id="advancedMetrics" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+    </section>
+
+    <section class="section-gap anim-6 grid gap-5 lg:grid-cols-[1fr_1fr]">
+      <div class="card p-6">
+        <p class="kicker mb-1">Dataset quality</p>
+        <h2 class="section-title mb-5">Completeness scorecard</h2>
+        <div id="qualityBars" class="flex flex-col gap-4"></div>
+      </div>
+
+      <div class="card p-6">
+        <p class="kicker mb-1">Coverage pressure</p>
+        <h2 class="section-title mb-5">Concentration and workload</h2>
+        <div id="concentrationPanel" class="grid gap-3"></div>
+      </div>
+    </section>
+
+    <section class="section-gap anim-6 grid gap-5 lg:grid-cols-[1.1fr_.9fr]">
+      <div class="card p-6">
+        <p class="kicker mb-1">Species intelligence</p>
+        <h2 class="section-title mb-5">Most frequent product/species terms</h2>
+        <div id="speciesCloud" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="card card-dark p-6">
+        <p class="kicker kicker-lt mb-1">Priority flags</p>
+        <h2 class="section-title mb-5" style="color:var(--cream)">Records needing attention</h2>
+        <div id="priorityFlags" class="grid gap-3"></div>
+      </div>
+    </section>
+
+    <section class="section-gap anim-6 card overflow-hidden">
+      <div class="flex flex-wrap items-end justify-between gap-4 p-6 pb-0">
+        <div>
+          <p class="kicker mb-1">Planning pipeline</p>
+          <h2 class="section-title">High-value records and data gaps</h2>
+        </div>
+        <span id="priorityCount" class="text-xs font-semibold text-slate-400"></span>
+      </div>
+      <div class="overflow-x-auto p-6">
+        <table class="data-table w-full">
+          <thead>
+            <tr>
+              <th>Group</th>
+              <th>Dzongkhag</th>
+              <th>Office / park</th>
+              <th>Issue</th>
+              <th>Area</th>
+              <th>HH</th>
+            </tr>
+          </thead>
+          <tbody id="priorityRows"></tbody>
+        </table>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="page-container">
-      <p>Department of Forests and Park Services · Forest Resources Planning and Management Division · Bhutan</p>
-      <p style="margin-top:0.5rem">Made by Wangdi · <a href="mailto:wangdiues@gmail.com">wangdiues@gmail.com</a></p>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="DoFPS_Bhutan_Logo.png" alt="Department of Forests and Park Services">
+          <p class="footer-tagline">Protecting Bhutan's living forest heritage through sustainable stewardship and community partnership.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="NWFP_Management_Plans.html">Management Plans</a></li>
+            <li><a href="data_analytics.html">Analytics</a></li>
+            <li><a href="spatial_resources.html">Spatial Data</a></li>
+            <li><a href="nwfp_gallery.html">Gallery</a></li>
+            <li><a href="about.html">About NWFP Platform</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="species_profile.html">Species Profiles</a></li>
+            <li><a href="nwfp_groups.html">NWFP Groups</a></li>
+            <li><a href="dzongkhag_directory.html">Dzongkhag Directory</a></li>
+            <li><a href="training_resources.html">Training</a></li>
+            <li><a href="people_nwfp.html">People</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="marketplace_sample.html">Marketplace</a></li>
+            <li><a href="product_catalog.html">Product Catalog</a></li>
+            <li><a href="certification_traceability.html">Traceability</a></li>
+            <li><a href="buyer_enquiry.html">Buyer Enquiry</a></li>
+            <li><a href="developer.html">Developer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Department of Forests &amp; Park Services &mdash; Royal Government of Bhutan &middot; <a href="about.html">About NWFP Platform</a> &middot; <a href="buyer_enquiry.html">Contact</a></p>
+        <p class="footer-ornament"><img class="footer-signature-logo" src="Images/ChatGPT Image Apr 30, 2026, 12_23_12 PM.png" alt="Wangdiues logo"><span>Build my Wangdiues, Contact: wangdiues@gmail.com</span></p>
+      </div>
     </div>
   </footer>
 
 </div>
 
+<script src="assets/nwfp_plan_data.js"></script>
 <script>
 const analytics = {
   total:119, docs:112, active:118, area:83259, hh:1240,
@@ -244,7 +481,7 @@ barRows('divisionBars', analytics.div, 'count', 14);
 
 // Status cards
 document.getElementById('statusCards').innerHTML = analytics.status.map(s => `
-  <div style="background:rgba(174,212,94,0.08);border:1px solid rgba(174,212,94,0.18);border-radius:0.875rem;padding:1rem">
+  <div style="background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.18);border-radius:0.875rem;padding:1rem">
     <div class="metric-label">${s.name}</div>
     <div class="metric-value" style="font-size:2.5rem">${s.count}</div>
   </div>
@@ -271,5 +508,15 @@ document.getElementById('yearBars').innerHTML = analytics.years.map(y => `
   </div>
 `).join('');
 </script>
+<script src="assets/nwfp_advanced_analytics.js"></script>
+<script>
+  (function(){
+    var n=document.getElementById('siteNav');
+    if(n) window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+    var h=document.getElementById('navHam'),d=document.getElementById('navDrawer'),b=document.getElementById('navBackdrop'),c=document.getElementById('navClose');
+    if(h){h.addEventListener('click',function(){d.classList.add('open');});c.addEventListener('click',function(){d.classList.remove('open');});b.addEventListener('click',function(){d.classList.remove('open');});}
+  })();
+</script>
+  <script src="assets/nwfp_reveal.js"></script>
 </body>
 </html>
