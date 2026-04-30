@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global NWFP News</title>
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --panel: #17171a;
+      --panel-soft: #202025;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #f5c542;
+      --accent-soft: rgba(245, 197, 66, 0.12);
+      --danger: #ef4444;
+      --radius: 28px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(245, 197, 66, 0.12), transparent 34%),
+        linear-gradient(135deg, #0d0d0f 0%, #151518 48%, #080809 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+
+    .hero-main,
+    .hero-card,
+    .controls,
+    .news-card,
+    .empty-state {
+      border: 1px solid var(--line);
+      background: rgba(23, 23, 26, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-main {
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 280px;
+      height: 280px;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(245, 197, 66, 0.12);
+    }
+
+    h1 {
+      margin: 28px 0 16px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .hero-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 340px;
+      background:
+        linear-gradient(160deg, rgba(245, 197, 66, 0.14), rgba(255, 255, 255, 0.04)),
+        rgba(23, 23, 26, 0.72);
+    }
+
+    .stat-number {
+      font-size: 64px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .stat-label {
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .source-note {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .controls {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .search-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0 16px;
+      min-height: 54px;
+    }
+
+    .search-wrap span {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      color: var(--text);
+      outline: 0;
+      font-size: 15px;
+    }
+
+    input::placeholder {
+      color: #71717a;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+      color: var(--text);
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      background: #2a2a31;
+    }
+
+    button.active,
+    .primary-btn {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #15120a;
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 8px 2px 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border 0.25s ease, background 0.25s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245, 197, 66, 0.45);
+      background: rgba(32, 32, 37, 0.9);
+    }
+
+    .thumb {
+      height: 190px;
+      background:
+        linear-gradient(135deg, rgba(245, 197, 66, 0.24), rgba(255, 255, 255, 0.04)),
+        #202025;
+      overflow: hidden;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.88;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .news-card:hover .thumb img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tag {
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .read-more {
+      color: var(--accent);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .empty-state {
+      padding: 36px;
+      text-align: center;
+      color: var(--muted);
+      display: none;
+    }
+
+    .loader {
+      width: 28px;
+      height: 28px;
+      border: 3px solid rgba(255, 255, 255, 0.16);
+      border-top-color: var(--accent);
+      border-radius: 999px;
+      animation: spin 0.9s linear infinite;
+      margin: 16px auto 0;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .buttons {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, 1180px);
+        padding-top: 24px;
+      }
+
+      .hero-main,
+      .hero-card {
+        padding: 26px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .status-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow"><span class="pulse"></span> Live global monitoring</div>
+        <h1>Global NWFP News</h1>
+        <p class="lead">
+          Track recent international news on non-wood forest products, non-timber forest products,
+          bamboo, rattan, medicinal plants, forest livelihoods, conservation, and sustainable trade.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div>
+          <div class="stat-number" id="articleCount">0</div>
+          <div class="stat-label">recent articles loaded from global news sources</div>
+        </div>
+        <div class="source-note">
+          Data source: GDELT Document API. Results are keyword-based and should be reviewed before being used as official NWFP intelligence.
+        </div>
+      </aside>
+    </section>
+
+    <section class="controls" aria-label="News filters">
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search within loaded news, e.g. bamboo, medicinal plants, trade" />
+      </div>
+
+      <div class="buttons">
+        <button class="active" data-query='"non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants"'>All</button>
+        <button data-query='bamboo OR rattan'>Bamboo & Rattan</button>
+        <button data-query='"medicinal plants" OR herbs OR herbal'>Medicinal Plants</button>
+        <button data-query='"forest livelihoods" OR "community forestry" OR "forest trade"'>Livelihoods</button>
+        <button data-query='Bhutan AND (NWFP OR NTFP OR bamboo OR "medicinal plants")'>Bhutan</button>
+      </div>
+    </section>
+
+    <div class="status-row">
+      <div id="statusText">Loading recent NWFP news...</div>
+      <button class="primary-btn" id="refreshBtn">Refresh news</button>
+    </div>
+
+    <section class="grid" id="newsGrid" aria-label="Recent NWFP news articles"></section>
+
+    <section class="empty-state" id="emptyState">
+      <h2>No articles found</h2>
+      <p>Try another filter or broaden the search keywords.</p>
+      <div class="loader" id="loader"></div>
+    </section>
+  </main>
+
+  <script>
+    const newsGrid = document.getElementById("newsGrid");
+    const statusText = document.getElementById("statusText");
+    const articleCount = document.getElementById("articleCount");
+    const searchInput = document.getElementById("searchInput");
+    const emptyState = document.getElementById("emptyState");
+    const refreshBtn = document.getElementById("refreshBtn");
+    const filterButtons = document.querySelectorAll("button[data-query]");
+
+    let currentQuery = '"non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants"';
+    let allArticles = [];
+
+    function formatDate(value) {
+      if (!value) return "Date unavailable";
+      const cleaned = value.replace(/(\d{8})T(\d{6})Z?/, "$1 $2");
+      const year = cleaned.slice(0, 4);
+      const month = cleaned.slice(4, 6);
+      const day = cleaned.slice(6, 8);
+      const hour = cleaned.slice(9, 11) || "00";
+      const minute = cleaned.slice(11, 13) || "00";
+      const date = new Date(`${year}-${month}-${day}T${hour}:${minute}:00Z`);
+      return isNaN(date.getTime()) ? value : date.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      });
+    }
+
+    function detectTopic(article) {
+      const text = `${article.title || ""} ${article.url || ""}`.toLowerCase();
+      if (text.includes("bamboo") || text.includes("rattan")) return "Bamboo & rattan";
+      if (text.includes("medicinal") || text.includes("herbal") || text.includes("herb")) return "Medicinal plants";
+      if (text.includes("trade") || text.includes("market") || text.includes("export")) return "Trade";
+      if (text.includes("livelihood") || text.includes("community")) return "Livelihoods";
+      if (text.includes("bhutan")) return "Bhutan";
+      return "NWFP";
+    }
+
+    function renderArticles(articles) {
+      newsGrid.innerHTML = "";
+      articleCount.textContent = articles.length;
+
+      if (!articles.length) {
+        emptyState.style.display = "block";
+        newsGrid.style.display = "none";
+        return;
+      }
+
+      emptyState.style.display = "none";
+      newsGrid.style.display = "grid";
+
+      articles.forEach(article => {
+        const card = document.createElement("a");
+        card.className = "news-card";
+        card.href = article.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+
+        const image = article.socialimage
+          ? `<img src="${article.socialimage}" alt="News image" loading="lazy" onerror="this.remove()" />`
+          : "";
+
+        card.innerHTML = `
+          <div class="thumb">${image}</div>
+          <div class="card-body">
+            <div class="tag">${detectTopic(article)}</div>
+            <div class="meta">
+              <span>${article.domain || "Unknown source"}</span>
+              <span>•</span>
+              <span>${article.sourcecountry || "Global"}</span>
+            </div>
+            <h2 class="card-title">${article.title || "Untitled article"}</h2>
+            <div class="card-footer">
+              <span>${formatDate(article.seendate)}</span>
+              <span class="read-more">Read ↗</span>
+            </div>
+          </div>
+        `;
+
+        newsGrid.appendChild(card);
+      });
+    }
+
+    function applyLocalSearch() {
+      const term = searchInput.value.trim().toLowerCase();
+      if (!term) {
+        renderArticles(allArticles);
+        statusText.textContent = `Showing ${allArticles.length} recent articles.`;
+        return;
+      }
+
+      const filtered = allArticles.filter(article => {
+        return `${article.title || ""} ${article.domain || ""} ${article.sourcecountry || ""}`
+          .toLowerCase()
+          .includes(term);
+      });
+
+      renderArticles(filtered);
+      statusText.textContent = `Showing ${filtered.length} articles matching “${term}”.`;
+    }
+
+    async function fetchNews(query = currentQuery) {
+      currentQuery = query;
+      statusText.textContent = "Loading recent NWFP news...";
+      emptyState.style.display = "block";
+      newsGrid.style.display = "none";
+
+      const encodedQuery = encodeURIComponent(query);
+      const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodedQuery}&mode=ArtList&format=json&timespan=7d&maxrecords=24&sort=DateDesc`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        allArticles = data.articles || [];
+        searchInput.value = "";
+        renderArticles(allArticles);
+        statusText.textContent = `Showing ${allArticles.length} recent articles from the last 7 days.`;
+      } catch (error) {
+        console.error(error);
+        allArticles = [];
+        articleCount.textContent = "0";
+        newsGrid.innerHTML = "";
+        newsGrid.style.display = "none";
+        emptyState.style.display = "block";
+        statusText.textContent = "Could not load news. Check internet access or try again later.";
+      }
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        fetchNews(button.dataset.query);
+      });
+    });
+
+    refreshBtn.addEventListener("click", () => fetchNews(currentQuery));
+    searchInput.addEventListener("input", applyLocalSearch);
+
+    fetchNews();
+  </script>
+</body>
+</html>
