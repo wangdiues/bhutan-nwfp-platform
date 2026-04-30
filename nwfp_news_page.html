@@ -216,6 +216,89 @@
       margin-bottom: 26px;
     }
 
+    .provider-panel {
+      border: 1px solid var(--line);
+      background: rgba(23, 23, 26, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 26px;
+    }
+
+    .provider-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .provider-title {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .provider-note {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .provider-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .provider-item {
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .provider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .provider-name {
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .provider-state {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .provider-item input[type="password"],
+    .provider-item input[type="url"] {
+      width: 100%;
+      min-height: 40px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      margin-top: 8px;
+    }
+
+    .provider-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
     .search-wrap {
       display: flex;
       gap: 12px;
@@ -422,6 +505,14 @@
         grid-template-columns: 1fr;
       }
 
+      .provider-head {
+        flex-direction: column;
+      }
+
+      .provider-grid {
+        grid-template-columns: 1fr;
+      }
+
       .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -511,6 +602,20 @@
       </div>
     </section>
 
+    <section class="provider-panel" aria-label="News API providers">
+      <div class="provider-head">
+        <div>
+          <h2 class="provider-title">News API providers</h2>
+          <p class="provider-note">GDELT runs without a key. Other providers need your own API key; keys are saved only in this browser and are not published to GitHub.</p>
+        </div>
+        <div class="provider-actions">
+          <button id="saveProvidersBtn" type="button">Save providers</button>
+          <button id="clearProvidersBtn" type="button">Clear keys</button>
+        </div>
+      </div>
+      <div class="provider-grid" id="providerGrid"></div>
+    </section>
+
     <div class="status-row">
       <div id="statusText">Loading recent NWFP news...</div>
       <button class="primary-btn" id="refreshBtn">Refresh news</button>
@@ -533,12 +638,38 @@
     const emptyState = document.getElementById("emptyState");
     const refreshBtn = document.getElementById("refreshBtn");
     const filterButtons = document.querySelectorAll("button[data-query]");
+    const providerGrid = document.getElementById("providerGrid");
+    const saveProvidersBtn = document.getElementById("saveProvidersBtn");
+    const clearProvidersBtn = document.getElementById("clearProvidersBtn");
 
     let currentQuery = '("non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants")';
     let allArticles = [];
     let lastFetchAt = 0;
     let pendingFetchTimer = null;
     const apiCooldownMs = 11000;
+    const providerStorageKey = "nwfpNewsProviders";
+    const providerDefaults = {
+      gdelt: { enabled: true },
+      webz: { enabled: false, key: "" },
+      newsapi: { enabled: false, key: "" },
+      newsapiAi: { enabled: false, key: "" },
+      worldnews: { enabled: false, key: "" },
+      newsdata: { enabled: false, key: "" },
+      thenewsapi: { enabled: false, key: "" },
+      litenewsapi: { enabled: false, key: "", endpoint: "https://litenewsapi.org/api/news?apiKey={key}&query={query}" },
+      bing: { enabled: false, key: "" }
+    };
+    const providers = [
+      { id: "gdelt", name: "GDELT Document API", keyless: true, note: "No key. Public fallback source." },
+      { id: "webz", name: "Webz.io News API Lite", note: "Uses token query parameter." },
+      { id: "newsapi", name: "NewsAPI.org", note: "Uses /v2/everything." },
+      { id: "newsapiAi", name: "NewsAPI.ai", note: "Uses Event Registry article endpoint." },
+      { id: "worldnews", name: "WorldNewsAPI.com", note: "Uses /search-news." },
+      { id: "newsdata", name: "NewsData.io", note: "Uses /api/1/latest." },
+      { id: "thenewsapi", name: "TheNewsAPI.com", note: "Uses /v1/news/all." },
+      { id: "litenewsapi", name: "LiteNewsAPI.org", hasEndpoint: true, note: "Custom endpoint template supported." },
+      { id: "bing", name: "Bing News API", retired: true, note: "Retired by Microsoft on August 11, 2025." }
+    ];
     const fallbackArticles = [
       {
         title: "NWFP global news feed is ready",
@@ -546,7 +677,8 @@
         sourcecountry: "Global",
         seendate: new Date().toISOString(),
         url: "https://www.fao.org/forestry/non-wood-forest-products/en/",
-        socialimage: "assets/nwfp_images/cordyceps-sinensis.jpg"
+        socialimage: "assets/nwfp_images/cordyceps-sinensis.jpg",
+        provider: "Fallback"
       },
       {
         title: "Track bamboo, rattan, medicinal plants, forest livelihoods, and sustainable trade",
@@ -554,7 +686,8 @@
         sourcecountry: "Global",
         seendate: new Date().toISOString(),
         url: "nwfp_news_page.html",
-        socialimage: "assets/nwfp_images/paris-polyphylla.jpg"
+        socialimage: "assets/nwfp_images/paris-polyphylla.jpg",
+        provider: "Fallback"
       },
       {
         title: "Use Refresh news after a few seconds if the public API is rate-limited",
@@ -562,7 +695,8 @@
         sourcecountry: "Global",
         seendate: new Date().toISOString(),
         url: "nwfp_news_page.html",
-        socialimage: "assets/nwfp_images/rubia-cordifolia.jpg"
+        socialimage: "assets/nwfp_images/rubia-cordifolia.jpg",
+        provider: "Fallback"
       }
     ];
 
@@ -571,6 +705,64 @@
       filterButtons.forEach(button => {
         button.disabled = disabled;
       });
+    }
+
+    function getProviderSettings() {
+      try {
+        return Object.assign({}, providerDefaults, JSON.parse(localStorage.getItem(providerStorageKey) || "{}"));
+      } catch (error) {
+        return Object.assign({}, providerDefaults);
+      }
+    }
+
+    function saveProviderSettings() {
+      const settings = getProviderSettings();
+      providers.forEach(provider => {
+        const enabled = document.getElementById(`provider-${provider.id}-enabled`);
+        const key = document.getElementById(`provider-${provider.id}-key`);
+        const endpoint = document.getElementById(`provider-${provider.id}-endpoint`);
+        settings[provider.id] = Object.assign({}, settings[provider.id], {
+          enabled: Boolean(enabled && enabled.checked),
+          key: key ? key.value.trim() : "",
+          endpoint: endpoint ? endpoint.value.trim() : settings[provider.id]?.endpoint
+        });
+      });
+      localStorage.setItem(providerStorageKey, JSON.stringify(settings));
+      return settings;
+    }
+
+    function renderProviderPanel() {
+      const settings = getProviderSettings();
+      providerGrid.innerHTML = providers.map(provider => {
+        const providerSettings = settings[provider.id] || {};
+        const disabled = provider.retired ? "disabled" : "";
+        const keyInput = provider.keyless || provider.retired ? "" : `
+          <input id="provider-${provider.id}-key" type="password" value="${providerSettings.key || ""}" placeholder="Paste API key">
+        `;
+        const endpointInput = provider.hasEndpoint ? `
+          <input id="provider-${provider.id}-endpoint" type="url" value="${providerSettings.endpoint || ""}" placeholder="Endpoint template with {key} and {query}">
+        ` : "";
+        return `
+          <div class="provider-item">
+            <div class="provider-row">
+              <label class="provider-name">
+                <input id="provider-${provider.id}-enabled" type="checkbox" ${providerSettings.enabled ? "checked" : ""} ${disabled}>
+                ${provider.name}
+              </label>
+              <span class="provider-state">${provider.retired ? "Retired" : provider.keyless ? "No key" : providerSettings.key ? "Ready" : "Needs key"}</span>
+            </div>
+            <div class="provider-note">${provider.note}</div>
+            ${keyInput}
+            ${endpointInput}
+          </div>
+        `;
+      }).join("");
+    }
+
+    function clearProviderSettings() {
+      localStorage.removeItem(providerStorageKey);
+      renderProviderPanel();
+      statusText.textContent = "Provider keys cleared from this browser.";
     }
 
     function formatDate(value) {
@@ -628,6 +820,8 @@
           <div class="card-body">
             <div class="tag">${detectTopic(article)}</div>
             <div class="meta">
+              <span>${article.provider || "News"}</span>
+              <span>•</span>
               <span>${article.domain || "Unknown source"}</span>
               <span>•</span>
               <span>${article.sourcecountry || "Global"}</span>
@@ -662,6 +856,168 @@
       statusText.textContent = `Showing ${filtered.length} articles matching “${term}”.`;
     }
 
+    function cleanQuery(query) {
+      return query.replace(/[()"]/g, "").replace(/\s+OR\s+/gi, " ").replace(/\s+AND\s+/gi, " ").trim();
+    }
+
+    function mergeUniqueArticles(articles) {
+      const seen = new Set();
+      return articles.filter(article => {
+        const key = (article.url || article.title || "").toLowerCase();
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+
+    function normalizeDate(value) {
+      if (!value) return new Date().toISOString();
+      return value;
+    }
+
+    function normalizeProviderArticles(providerId, data) {
+      if (providerId === "gdelt") {
+        return (data.articles || []).map(article => ({
+          title: article.title,
+          url: article.url,
+          socialimage: article.socialimage,
+          domain: article.domain || "GDELT",
+          sourcecountry: article.sourcecountry || "Global",
+          seendate: article.seendate,
+          provider: "GDELT"
+        }));
+      }
+      if (providerId === "newsapi") {
+        return (data.articles || []).map(article => ({
+          title: article.title,
+          url: article.url,
+          socialimage: article.urlToImage,
+          domain: article.source?.name || "NewsAPI.org",
+          sourcecountry: "Global",
+          seendate: article.publishedAt,
+          provider: "NewsAPI.org"
+        }));
+      }
+      if (providerId === "newsapiAi") {
+        const results = data.articles?.results || data.articles || [];
+        return results.map(article => ({
+          title: article.title,
+          url: article.url,
+          socialimage: article.image,
+          domain: article.source?.title || article.source?.uri || "NewsAPI.ai",
+          sourcecountry: article.source?.location?.country?.label?.eng || "Global",
+          seendate: article.dateTime || article.date,
+          provider: "NewsAPI.ai"
+        }));
+      }
+      if (providerId === "worldnews") {
+        return (data.news || []).map(article => ({
+          title: article.title,
+          url: article.url,
+          socialimage: article.image,
+          domain: article.author || "WorldNewsAPI",
+          sourcecountry: article.source_country || "Global",
+          seendate: article.publish_date,
+          provider: "WorldNewsAPI"
+        }));
+      }
+      if (providerId === "newsdata") {
+        return (data.results || []).map(article => ({
+          title: article.title,
+          url: article.link,
+          socialimage: article.image_url,
+          domain: article.source_id || "NewsData.io",
+          sourcecountry: Array.isArray(article.country) ? article.country.join(", ") : "Global",
+          seendate: article.pubDate,
+          provider: "NewsData.io"
+        }));
+      }
+      if (providerId === "thenewsapi") {
+        return (data.data || []).map(article => ({
+          title: article.title,
+          url: article.url,
+          socialimage: article.image_url,
+          domain: article.source || "TheNewsAPI",
+          sourcecountry: article.locale || "Global",
+          seendate: article.published_at,
+          provider: "TheNewsAPI"
+        }));
+      }
+      if (providerId === "webz") {
+        return (data.posts || data.articles || []).map(article => ({
+          title: article.title || article.thread?.title,
+          url: article.url || article.thread?.url,
+          socialimage: article.thread?.main_image,
+          domain: article.thread?.site_full || article.site || "Webz.io",
+          sourcecountry: article.thread?.country || "Global",
+          seendate: article.published || article.thread?.published,
+          provider: "Webz.io"
+        }));
+      }
+      if (providerId === "litenewsapi") {
+        const items = data.articles || data.news || data.results || data.data || [];
+        return items.map(article => ({
+          title: article.title,
+          url: article.url || article.link,
+          socialimage: article.image || article.image_url || article.urlToImage,
+          domain: article.source || article.source_id || "LiteNewsAPI.org",
+          sourcecountry: article.country || "Global",
+          seendate: article.published_at || article.publishedAt || article.pubDate,
+          provider: "LiteNewsAPI.org"
+        }));
+      }
+      return [];
+    }
+
+    function buildProviderRequest(provider, settings, query) {
+      const key = settings[provider.id]?.key || "";
+      const plain = cleanQuery(query);
+      if (provider.id === "gdelt") {
+        return {
+          url: `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(query)}&mode=ArtList&format=json&timespan=7d&maxrecords=24&sort=DateDesc`
+        };
+      }
+      if (provider.id === "webz") {
+        return { url: `https://api.webz.io/newsApiLite?token=${encodeURIComponent(key)}&q=${encodeURIComponent(plain)}&sort=published` };
+      }
+      if (provider.id === "newsapi") {
+        return { url: `https://newsapi.org/v2/everything?q=${encodeURIComponent(plain)}&language=en&pageSize=24&sortBy=publishedAt&apiKey=${encodeURIComponent(key)}` };
+      }
+      if (provider.id === "newsapiAi") {
+        return { url: `https://eventregistry.org/api/v1/article/getArticles?resultType=articles&keyword=${encodeURIComponent(plain)}&keywordOper=or&lang=eng&articlesSortBy=date&articlesCount=24&apiKey=${encodeURIComponent(key)}` };
+      }
+      if (provider.id === "worldnews") {
+        return { url: `https://api.worldnewsapi.com/search-news?api-key=${encodeURIComponent(key)}&text=${encodeURIComponent(plain)}&language=en&number=24` };
+      }
+      if (provider.id === "newsdata") {
+        return { url: `https://newsdata.io/api/1/latest?apikey=${encodeURIComponent(key)}&q=${encodeURIComponent(plain)}&language=en` };
+      }
+      if (provider.id === "thenewsapi") {
+        return { url: `https://api.thenewsapi.com/v1/news/all?api_token=${encodeURIComponent(key)}&search=${encodeURIComponent(plain)}&language=en&limit=24` };
+      }
+      if (provider.id === "litenewsapi") {
+        const template = settings.litenewsapi?.endpoint || providerDefaults.litenewsapi.endpoint;
+        return { url: template.replace("{key}", encodeURIComponent(key)).replace("{query}", encodeURIComponent(plain)) };
+      }
+      return null;
+    }
+
+    async function fetchProviderArticles(provider, settings, query) {
+      const request = buildProviderRequest(provider, settings, query);
+      if (!request) return [];
+      const response = await fetch(request.url, { headers: request.headers || {} });
+      if (!response.ok) {
+        if (response.status === 429) throw new Error(`${provider.name}: rate limited`);
+        throw new Error(`${provider.name}: HTTP ${response.status}`);
+      }
+      const contentType = response.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        const message = await response.text();
+        throw new Error(`${provider.name}: ${message.trim().slice(0, 120) || "non-JSON response"}`);
+      }
+      return normalizeProviderArticles(provider.id, await response.json()).filter(article => article.title && article.url);
+    }
+
     async function fetchNews(query = currentQuery, options = {}) {
       currentQuery = query;
       const now = Date.now();
@@ -684,44 +1040,36 @@
       emptyState.style.display = "block";
       newsGrid.style.display = "none";
 
-      const encodedQuery = encodeURIComponent(query);
-      const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodedQuery}&mode=ArtList&format=json&timespan=7d&maxrecords=24&sort=DateDesc`;
-
       try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          if (response.status === 429) {
-            throw new Error("RATE_LIMIT");
-          }
-          throw new Error(`HTTP ${response.status}`);
-        }
-        const contentType = response.headers.get("content-type") || "";
-        if (!contentType.includes("application/json")) {
-          const message = await response.text();
-          throw new Error(message.trim().slice(0, 180) || "News API returned a non-JSON response.");
-        }
+        const settings = getProviderSettings();
+        const activeProviders = providers.filter(provider => {
+          if (provider.retired) return false;
+          const configured = settings[provider.id] || {};
+          return configured.enabled && (provider.keyless || configured.key);
+        });
+        if (!activeProviders.length) activeProviders.push(providers[0]);
+        statusText.textContent = `Loading recent NWFP news from ${activeProviders.length} provider${activeProviders.length === 1 ? "" : "s"}...`;
 
-        const data = await response.json();
-        allArticles = data.articles || [];
+        const responses = await Promise.allSettled(activeProviders.map(provider => fetchProviderArticles(provider, settings, query)));
+        const providerErrors = responses
+          .filter(result => result.status === "rejected")
+          .map(result => result.reason.message);
+        allArticles = mergeUniqueArticles(responses
+          .filter(result => result.status === "fulfilled")
+          .flatMap(result => result.value))
+          .map(article => Object.assign({}, article, { seendate: normalizeDate(article.seendate) }));
         searchInput.value = "";
         if (allArticles.length) {
           renderArticles(allArticles);
-          statusText.textContent = `Showing ${allArticles.length} recent articles from the last 7 days.`;
+          statusText.textContent = `Showing ${allArticles.length} recent articles from ${activeProviders.length - providerErrors.length} provider${activeProviders.length - providerErrors.length === 1 ? "" : "s"}.${providerErrors.length ? " Some providers failed or were rate-limited." : ""}`;
         } else {
           renderArticles(fallbackArticles);
-          statusText.textContent = "The live API returned no articles for this filter. Showing fallback NWFP news links.";
+          statusText.textContent = providerErrors.length
+            ? `No live provider returned articles. ${providerErrors[0]}. Showing fallback NWFP links.`
+            : "The live providers returned no articles for this filter. Showing fallback NWFP news links.";
         }
       } catch (error) {
         console.error(error);
-        if (error.message === "RATE_LIMIT") {
-          renderArticles(fallbackArticles);
-          statusText.textContent = "News API rate limit reached. Showing fallback links and retrying in 11 seconds...";
-          pendingFetchTimer = setTimeout(() => {
-            pendingFetchTimer = null;
-            fetchNews(currentQuery, { force: true });
-          }, apiCooldownMs);
-          return;
-        }
         allArticles = fallbackArticles;
         renderArticles(fallbackArticles);
         statusText.textContent = error.message && error.message !== "Failed to fetch"
@@ -748,7 +1096,14 @@
 
     refreshBtn.addEventListener("click", () => fetchNews(currentQuery));
     searchInput.addEventListener("input", applyLocalSearch);
+    saveProvidersBtn.addEventListener("click", () => {
+      saveProviderSettings();
+      renderProviderPanel();
+      fetchNews(currentQuery, { force: true });
+    });
+    clearProvidersBtn.addEventListener("click", clearProviderSettings);
 
+    renderProviderPanel();
     fetchNews();
   </script>
 </body>
