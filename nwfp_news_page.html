@@ -538,7 +538,33 @@
     let allArticles = [];
     let lastFetchAt = 0;
     let pendingFetchTimer = null;
-    const apiCooldownMs = 5600;
+    const apiCooldownMs = 11000;
+    const fallbackArticles = [
+      {
+        title: "NWFP global news feed is ready",
+        domain: "Bhutan NWFP Platform",
+        sourcecountry: "Global",
+        seendate: new Date().toISOString(),
+        url: "https://www.fao.org/forestry/non-wood-forest-products/en/",
+        socialimage: "assets/nwfp_images/cordyceps-sinensis.jpg"
+      },
+      {
+        title: "Track bamboo, rattan, medicinal plants, forest livelihoods, and sustainable trade",
+        domain: "Live news monitor",
+        sourcecountry: "Global",
+        seendate: new Date().toISOString(),
+        url: "nwfp_news_page.html",
+        socialimage: "assets/nwfp_images/paris-polyphylla.jpg"
+      },
+      {
+        title: "Use Refresh news after a few seconds if the public API is rate-limited",
+        domain: "GDELT public API",
+        sourcecountry: "Global",
+        seendate: new Date().toISOString(),
+        url: "nwfp_news_page.html",
+        socialimage: "assets/nwfp_images/rubia-cordifolia.jpg"
+      }
+    ];
 
     function setControlsDisabled(disabled) {
       refreshBtn.disabled = disabled;
@@ -678,26 +704,29 @@
         const data = await response.json();
         allArticles = data.articles || [];
         searchInput.value = "";
-        renderArticles(allArticles);
-        statusText.textContent = `Showing ${allArticles.length} recent articles from the last 7 days.`;
+        if (allArticles.length) {
+          renderArticles(allArticles);
+          statusText.textContent = `Showing ${allArticles.length} recent articles from the last 7 days.`;
+        } else {
+          renderArticles(fallbackArticles);
+          statusText.textContent = "The live API returned no articles for this filter. Showing fallback NWFP news links.";
+        }
       } catch (error) {
         console.error(error);
         if (error.message === "RATE_LIMIT") {
-          statusText.textContent = "News API rate limit reached. Retrying in 6 seconds...";
+          renderArticles(fallbackArticles);
+          statusText.textContent = "News API rate limit reached. Showing fallback links and retrying in 11 seconds...";
           pendingFetchTimer = setTimeout(() => {
             pendingFetchTimer = null;
             fetchNews(currentQuery, { force: true });
           }, apiCooldownMs);
           return;
         }
-        allArticles = [];
-        articleCount.textContent = "0";
-        newsGrid.innerHTML = "";
-        newsGrid.style.display = "none";
-        emptyState.style.display = "block";
+        allArticles = fallbackArticles;
+        renderArticles(fallbackArticles);
         statusText.textContent = error.message && error.message !== "Failed to fetch"
-          ? `Could not load news: ${error.message}`
-          : "Could not load news. Check internet access or try again later.";
+          ? `Could not load live news: ${error.message}. Showing fallback NWFP links.`
+          : "Could not load live news. Showing fallback NWFP links.";
       } finally {
         if (!pendingFetchTimer) {
           setControlsDisabled(false);
