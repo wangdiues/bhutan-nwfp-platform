@@ -269,6 +269,12 @@
       background: #2a2a31;
     }
 
+    button:disabled {
+      cursor: wait;
+      opacity: 0.55;
+      transform: none;
+    }
+
     button.active,
     .primary-btn {
       background: var(--accent);
@@ -497,10 +503,10 @@
       </div>
 
       <div class="buttons">
-        <button class="active" data-query='"non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants"'>All</button>
-        <button data-query='bamboo OR rattan'>Bamboo & Rattan</button>
-        <button data-query='"medicinal plants" OR herbs OR herbal'>Medicinal Plants</button>
-        <button data-query='"forest livelihoods" OR "community forestry" OR "forest trade"'>Livelihoods</button>
+        <button class="active" data-query='("non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants")'>All</button>
+        <button data-query='(bamboo OR rattan)'>Bamboo & Rattan</button>
+        <button data-query='("medicinal plants" OR herbs OR herbal)'>Medicinal Plants</button>
+        <button data-query='("forest livelihoods" OR "community forestry" OR "forest trade")'>Livelihoods</button>
         <button data-query='Bhutan AND (NWFP OR NTFP OR bamboo OR "medicinal plants")'>Bhutan</button>
       </div>
     </section>
@@ -528,8 +534,18 @@
     const refreshBtn = document.getElementById("refreshBtn");
     const filterButtons = document.querySelectorAll("button[data-query]");
 
-    let currentQuery = '"non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants"';
+    let currentQuery = '("non wood forest products" OR "non timber forest products" OR NTFP OR NWFP OR bamboo OR rattan OR "medicinal plants")';
     let allArticles = [];
+    let lastFetchAt = 0;
+    let pendingFetchTimer = null;
+    const apiCooldownMs = 5600;
+
+    function setControlsDisabled(disabled) {
+      refreshBtn.disabled = disabled;
+      filterButtons.forEach(button => {
+        button.disabled = disabled;
+      });
+    }
 
     function formatDate(value) {
       if (!value) return "Date unavailable";
@@ -620,8 +636,24 @@
       statusText.textContent = `Showing ${filtered.length} articles matching “${term}”.`;
     }
 
-    async function fetchNews(query = currentQuery) {
+    async function fetchNews(query = currentQuery, options = {}) {
       currentQuery = query;
+      const now = Date.now();
+      const waitMs = Math.max(0, apiCooldownMs - (now - lastFetchAt));
+
+      if (!options.force && waitMs > 0) {
+        clearTimeout(pendingFetchTimer);
+        setControlsDisabled(true);
+        statusText.textContent = `Waiting ${Math.ceil(waitMs / 1000)} seconds for the news API rate limit...`;
+        pendingFetchTimer = setTimeout(() => {
+          pendingFetchTimer = null;
+          fetchNews(currentQuery, { force: true });
+        }, waitMs);
+        return;
+      }
+
+      lastFetchAt = Date.now();
+      setControlsDisabled(true);
       statusText.textContent = "Loading recent NWFP news...";
       emptyState.style.display = "block";
       newsGrid.style.display = "none";
@@ -631,7 +663,17 @@
 
       try {
         const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.ok) {
+          if (response.status === 429) {
+            throw new Error("RATE_LIMIT");
+          }
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const contentType = response.headers.get("content-type") || "";
+        if (!contentType.includes("application/json")) {
+          const message = await response.text();
+          throw new Error(message.trim().slice(0, 180) || "News API returned a non-JSON response.");
+        }
 
         const data = await response.json();
         allArticles = data.articles || [];
@@ -640,12 +682,30 @@
         statusText.textContent = `Showing ${allArticles.length} recent articles from the last 7 days.`;
       } catch (error) {
         console.error(error);
+        if (error.message === "RATE_LIMIT") {
+          statusText.textContent = "News API rate limit reached. Retrying in 6 seconds...";
+          pendingFetchTimer = setTimeout(() => {
+            pendingFetchTimer = null;
+            fetchNews(currentQuery, { force: true });
+          }, apiCooldownMs);
+          return;
+        }
         allArticles = [];
         articleCount.textContent = "0";
         newsGrid.innerHTML = "";
         newsGrid.style.display = "none";
         emptyState.style.display = "block";
-        statusText.textContent = "Could not load news. Check internet access or try again later.";
+        statusText.textContent = error.message && error.message !== "Failed to fetch"
+          ? `Could not load news: ${error.message}`
+          : "Could not load news. Check internet access or try again later.";
+      } finally {
+        if (!pendingFetchTimer) {
+          setControlsDisabled(false);
+        } else {
+          setTimeout(() => {
+            if (!pendingFetchTimer) setControlsDisabled(false);
+          }, apiCooldownMs);
+        }
       }
     }
 
