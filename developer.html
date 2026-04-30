@@ -8,6 +8,16 @@
   <link rel="stylesheet" href="assets/nwfp_design.css">
   <link rel="stylesheet" href="assets/nwfp_royal_druk.css">
   <style>
+    .developer-page .nav-brand-sub {
+      display: block;
+    }
+    .developer-page .nav-links a {
+      padding-inline: 0.52rem;
+      font-size: 0.7rem;
+    }
+    .developer-page .hero-inner > div:first-child {
+      min-width: 0;
+    }
     .developer-logo-wrap {
       position: relative;
       width: 9.5rem;
@@ -81,9 +91,98 @@
         height: 7.5rem;
       }
     }
+    @media (max-width: 1180px) {
+      .developer-page .nav-links,
+      .developer-page .nav-seal {
+        display: none !important;
+      }
+      .developer-page .nav-ham {
+        display: flex !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .developer-page .page-main {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+      }
+      .developer-page .nav-inner {
+        height: 64px;
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+      }
+      .developer-page .nav-brand {
+        min-width: 0;
+      }
+      .developer-page .nav-brand img {
+        width: 2.35rem !important;
+        height: 2.35rem !important;
+        object-fit: contain !important;
+      }
+      .developer-page .nav-brand-title {
+        font-size: 0.92rem !important;
+        white-space: normal !important;
+        line-height: 1.05 !important;
+      }
+      .developer-page .nav-brand-sub {
+        font-size: 0.58rem !important;
+      }
+      .developer-page .hero-inner {
+        text-align: center;
+        padding: 2rem 1rem !important;
+      }
+      .developer-page .developer-logo-wrap {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .developer-page .hero h1 {
+        font-size: clamp(2.1rem, 13vw, 3rem) !important;
+        line-height: 0.98 !important;
+      }
+      .developer-page .hero p.lead {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.98rem !important;
+      }
+      .developer-page .hero .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .developer-page .hero-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        align-self: stretch !important;
+      }
+      .developer-page .hero-stat {
+        min-width: 0;
+      }
+      .developer-page .hero-stat-num {
+        font-size: 1.25rem !important;
+        overflow-wrap: anywhere;
+      }
+      .developer-page .developer-stat-logo {
+        width: 3.7rem;
+        height: 3.7rem;
+      }
+      .developer-page .section-title {
+        overflow-wrap: anywhere;
+      }
+      .developer-page .footer-bottom,
+      .developer-page .footer-ornament {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+    @media (max-width: 430px) {
+      .developer-page .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .developer-page .nav-panel {
+        width: min(100vw, 22rem) !important;
+      }
+    }
   </style>
 </head>
-<body>
+<body class="developer-page">
 <div class="shell">
 
   <nav class="site-nav" id="siteNav">
@@ -92,6 +191,7 @@
         <img src="DoFPS_Bhutan_Logo.png" alt="NWFP Section, FRPMD, DoFPS">
         <div class="nav-brand-text">
           <span class="nav-brand-title">NWFP Section, FRPMD, DoFPS</span>
+          <span class="nav-brand-sub">NWFP Platform</span>
         </div>
       </a>
       <ul class="nav-links">
@@ -102,16 +202,8 @@
         <li><a href="nwfp_gallery.html">Gallery</a></li>
         <li><a href="nwfp_news_page.html">News</a></li>
         <li><a href="marketplace_sample.html">Market</a></li>
-        <li><a href="about.html">About NWFP Platform</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="developer.html">Developer</a></li>
-        <li><a href="dzongkhag_directory.html">Dzongkhags</a></li>
-        <li><a href="product_catalog.html">Products</a></li>
-        <li><a href="nwfp_groups.html">Groups</a></li>
-        <li><a href="species_profile.html">Species</a></li>
-        <li><a href="people_nwfp.html">People</a></li>
-        <li><a href="certification_traceability.html">Traceability</a></li>
-        <li><a href="training_resources.html">Training</a></li>
-        <li><a href="buyer_enquiry.html">Enquiry</a></li>
       </ul>
       <div class="nav-seal">
         <img src="Bhutan.gov.logo.jpg" alt="Bhutan Royal Seal">
@@ -132,16 +224,8 @@
       <a href="nwfp_gallery.html">Gallery</a>
       <a href="nwfp_news_page.html">News</a>
       <a href="marketplace_sample.html">Marketplace</a>
-      <a href="about.html">About NWFP Platform</a>
+      <a href="about.html">About</a>
       <a href="developer.html">Developer</a>
-      <a href="dzongkhag_directory.html">Dzongkhag Directory</a>
-      <a href="product_catalog.html">Product Catalog</a>
-      <a href="nwfp_groups.html">NWFP Groups</a>
-      <a href="species_profile.html">Species Profiles</a>
-      <a href="people_nwfp.html">People</a>
-      <a href="certification_traceability.html">Traceability</a>
-      <a href="training_resources.html">Training</a>
-      <a href="buyer_enquiry.html">Buyer Enquiry</a>
     </div>
   </div>
 
